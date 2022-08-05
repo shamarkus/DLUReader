@@ -1,50 +1,36 @@
-#include <iostream>
-#include <vector>
-#include <cstring>
-#include <fstream>
-#include <locale.h>
-#include <wchar.h>
+#include <logDecoder.h>
 
-#define ATO_NUM 0 
-#define ATP_NUM 1 
-#define AT_UNDEFINED_NUM 2
-#define ATP_STR "80_"
-#define ATO_STR "c0_"
+int determineATPorATO(int directoryPathLength, char* fileName);
+void initFileVec(std::vector<fileInfo*> &fileVec,int argc,char** argv);
 
-#define MAX_STRING_SIZE 512
-#define TXT_SUFFIX ".txt" 
-
-struct fileInfo {
-	char fileName[MAX_STRING_SIZE];
-	FILE* inputFile;
-	FILE* outputFile;
-
-	int logType;
-};
-
-int determineATPorATO(char* fileName){
-      if(strstr(fileName,ATP_STR) != NULL){
+int determineATPorATO(int directoryPathLength, char* fileName){
+	  //Eliminate directory in ATO/ATP search 
+	  char* tempFileName = fileName + directoryPathLength;
+      if(strstr(tempFileName,ATP_STR) != NULL){
 	      return ATP_NUM;
       }
-      else if(strstr(fileName,ATO_STR) != NULL){
+      else if(strstr(tempFileName,ATO_STR) != NULL){
 	      return ATO_NUM;
       }
       else{
-	      printf("Error: Passed filename was named incorrectly, and 8001c0 or 800180 OR 8002c0 or 800280  was unfound\n");
+	      printf("Error: Passed filename was named incorrectly, and 8001c0 or 800180 OR 8002c0 or 800280 was unfound\n");
 	      return AT_UNDEFINED_NUM;
       }
 }
 
+//Command formatting should be like this:
+// ./DLUReader "DIR" "DIR/FILE1" "DIR/FILE2" ... "DIR/FILEN"
 void initFileVec(std::vector<fileInfo*> &fileVec,int argc,char** argv){
-	fileVec.reserve(argc-1);
-	for(int i = 1;i < argc;i++){
+	fileVec.reserve(argc-2);
+	for(int i = 2;i < argc;i++){
 		struct fileInfo* tempFileInfo = new fileInfo();
 
+		strcpy(tempFileInfo->directoryPath,argv[1]);
 		strcpy(tempFileInfo->fileName,argv[i]);
-		tempFileInfo->inputFile = fopen(argv[1],"r");
-		tempFileInfo->logType = determineATPorATO(argv[1]);
+		tempFileInfo->inputFile = fopen(argv[i],"r");
+		tempFileInfo->logType = determineATPorATO(strlen(argv[1]),argv[i]);
 
-		tempFileInfo->outputFile = fopen(strcat(argv[1],TXT_SUFFIX),"w");
+		tempFileInfo->outputFile = fopen(strcat(argv[i],TXT_SUFFIX),"w");
 
 		fileVec.push_back(tempFileInfo);
 	}
@@ -53,16 +39,18 @@ void initFileVec(std::vector<fileInfo*> &fileVec,int argc,char** argv){
 int main(int argc,char** argv){
 	
 	std::setlocale(LC_ALL,"en_US.UTF8");
-	std::cout << setlocale(LC_ALL, NULL) << std::endl;
-	//Read arguments for filenames
+
 	std::vector<fileInfo*> fileVec; 
 	initFileVec(fileVec,argc,argv);
 
-	//Initialize all helper files
-	int c;
-	while((c = fgetwc(fileVec[0]->inputFile)) != WEOF){
-		printf("%d\n",c);
+	for(auto fileInfo in fileVec){
+		class fileParsingInfo* fileObj = new fileParsingInfo(fileInfo,fileInfo->logType);
+
+		parseFile(fileObj);
+
+		delete fileObj;
 	}
+
 	return 0;
 }
 
