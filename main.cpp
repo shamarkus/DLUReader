@@ -43,11 +43,30 @@ int main(int argc,char** argv){
 	std::vector<fileInfo*> fileVec; 
 	initFileVec(fileVec,argc,argv);
 
+	//Create an object for every file to parse
+	std::vector<class fileParsingInfo*> fileObjVec;
 	for(auto fileInfo in fileVec){
 		class fileParsingInfo* fileObj = new fileParsingInfo(fileInfo,fileInfo->logType);
+		fileObjVec.push_back(fileObj);
+	}
 
+	//Potentially multi-thread this
+	for(auto fileObj in fileObjVec){
 		parseFile(fileObj);
-
+	}
+	
+	//Deletion of all dynamically created objects
+	if(ATP_parameterInfo != NULL){
+		for(auto parameterObj in *ATP_parameterInfo){
+			delete parameterObj;
+		}
+	}
+	if(ATO_parameterInfo != NULL){
+		for(auto parameterObj in *ATO_parameterInfo){
+			delete parameterObj;
+		}
+	}
+	for(auto fileObj in fileObjVec){
 		delete fileObj;
 	}
 

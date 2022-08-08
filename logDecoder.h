@@ -7,6 +7,8 @@
 #include <fstream>
 #include <locale.h>
 #include <wchar.h>
+#include <stdint.h>
+#include <time.h>
 
 #define ATO_NUM 0 
 #define ATP_NUM 1 
@@ -19,10 +21,14 @@
 
 #define ATP_ENUMERATED_LABELS_FILENAME "ATP_LABELS.txt"
 #define ATO_ENUMERATED_LABELS_FILENAME "ATO_LABELS.txt"
+#define MAX_ATP_LABELS 26
+#define MAX_ATO_LABELS 149
+#define MAX_ATP_VALUES 99
+#define MAX_ATO_VALUES 256
 
+#define MAX_LINE_SIZE 2700
 #define MAX_STRING_SIZE 512
 #define MAX_SHORT_STRING_SIZE 64
-#define MAX_LABELS_SIZE 100
 #define MAX_ENUMERATED_SIZE 50
 #define MAX_CHARS_SIZE 256
 #define MAX_HEADER_BIT_SIZE 248
@@ -31,12 +37,24 @@
 #define MAX_BYTE_SIZE 8
 #define TXT_SUFFIX ".txt" 
 
-#define unsignedInteger 0
-#define signedInteger 1
+#define UNSIGNED_INTEGER 0
+#define SIGNED_INTEGER 1
 #define NOT_APPLICABLE -1
 
 #define ATP_BIT_NUM_TO_SKIP 10096
 #define ATO_BIT_NUM_TO_SKIP 36
+
+#define DISPLAY_TYPE_ENUMERATED 0
+#define DISPLAY_TYPE_HEXADECIMAL 1
+#define DISPLAY_TYPE_DECIMAL 2
+#define DISPLAY_TYPE_BINARY 3
+#define DISPLAY_TYPE_DATE 4
+#define DISPLAY_TYPE_TIME 5
+
+#define DECIMAL_PRECISION 3
+#define DATE_TIME_BIT_COUNT 64
+#define DATE_TIME_SHORT_BIT_COUNT 32
+#define TIME_SINCE_1900_01_01 2208988800
 
 static const char byteArray[MAX_CHARS_SIZE][MAX_BYTE_SIZE] = ["00000000", "00000001", "00000010", "00000011", "00000100", "00000101", "00000110", "00000111", "00001000", "00001001", 
 "00001010", "00001011", "00001100", "00001101", "00001110", "00001111", "00010000", "00010001", "00010010", "00010011", "00010100", "00010101", "00010110", "00010111", "00011000", "00011001", 
@@ -84,13 +102,16 @@ class parameterInfo {
         int displayType;
         int enumeratedLabel;
         int decimalCount;
-        char* Unit = NULL;
+        char* unit = NULL;
 
-        char* (*intToString)(int) = NULL;
+        char*** enumeratedLabels = NULL;
     public:
+        char* (parameterInfo::*intToString)(long long, char*) = NULL;
+
         parameterInfo();
         ~parameterInfo();
         //ALL METHODS
+        char* IntToEnumeratedLabel(long long value, char* str);
 };
 
 class fileParsingInfo {
@@ -109,8 +130,8 @@ class fileParsingInfo {
 
 std::vector<class parameterInfo*> *ATP_parameterInfo = NULL;
 std::vector<class parameterInfo*> *ATO_parameterInfo = NULL;
-char ATP_EnumeratedLabels[MAX_ENUMERATED_SIZE][MAX_LABELS_SIZE][MAX_SHORT_STRING_SIZE];
-char ATO_EnumeratedLabels[MAX_ENUMERATED_SIZE][MAX_LABELS_SIZE][MAX_SHORT_STRING_SIZE];
+char ATP_EnumeratedLabels[MAX_ATP_LABELS][MAX_ATP_VALUES][MAX_SHORT_STRING_SIZE];
+char ATO_EnumeratedLabels[MAX_ATO_LABELS][MAX_ATO_VALUES][MAX_SHORT_STRING_SIZE];
 
 void parseFile(class fileParsingInfo* fileObj);
 

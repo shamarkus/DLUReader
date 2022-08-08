@@ -82,7 +82,7 @@ fs.readFile('ATOsynthesis.txt','utf8', (err,data) => {
 					decimalCount = line.split('<Decimal_count>').pop().split('</Decimal_count>')[0];
 				}
 				else if(line.includes('<Unit>')){
-					decimalCount = line.split('<Unit>').pop().split('</Unit>')[0];
+					unit = line.split('<Unit>').pop().split('</Unit>')[0];
 				}
 				else if(line.includes('</Field>')){
 					objArray.push({label:label,unsignedInteger:unsignedInteger,bitPosition:bitPosition,bitCount:bitCount,quantum:quantum,offset:offset,displayType:displayType,enumeratedLabel:enumeratedLabel,decimalCount:decimalCount,unit:unit});
