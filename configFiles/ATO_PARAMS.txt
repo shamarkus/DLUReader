@@ -1042,12 +1042,12 @@
 43	Raw calib count	0	5299	10	662	663	1	0	2	-1	-1	-1
 44	Filtered acceleration	1	5309	10	663	664	0.01	0	2	-1	m/s2	-1
 47	Train motion	1	5319	14	664	666	0.001	0	2	-1	m	-1
-NaN	Train speed	1	5333	14	666	668	0.036	0	2	-1	kph	-1
-NaN	Train speed E1	1	5347	14	668	670	0.036	0	2	-1	kph	-1
-NaN	Train speed E2	1	5361	14	670	671	0.036	0	2	-1	kph	-1
+48	Train speed	1	5333	14	666	668	0.036	0	2	-1	kph	-1
+49	Train speed E1	1	5347	14	668	670	0.036	0	2	-1	kph	-1
+51	Train speed E2	1	5361	14	670	671	0.036	0	2	-1	kph	-1
 53	Train motion E1	1	5375	14	671	673	0.001	0	2	-1	m	-1
 54	Train motion E2	1	5389	14	673	675	0.001	0	2	-1	m	-1
-NaN	Train accel	1	5403	10	675	676	0.01	0	2	-1	m/s2	-1
+50	Train accel	1	5403	10	675	676	0.01	0	2	-1	m/s2	-1
 52	Motion from beacon	1	5413	14	676	678	0.001	0	2	-1	m	-1
 46	Filtered Stop	0	5427	1	678	678	1	0	0	81	-1	-1
 60	C1 V TF 2 block id	0	5428	12	678	679	1	0	2	-1	-1	-1
