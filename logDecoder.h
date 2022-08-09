@@ -16,15 +16,20 @@
 #define ATP_STR "80_"
 #define ATO_STR "c0_"
 
-#define ATP_PARAMETERS_FILENAME "ATP_PARAMS.txt"
-#define ATO_PARAMETERS_FILENAME "ATO_PARAMS.txt"
+#define ATP_PARAMETERS_FILENAME "configFiles/ATP_PARAMS.txt"
+#define ATO_PARAMETERS_FILENAME "configFiles/ATO_PARAMS.txt"
 
-#define ATP_ENUMERATED_LABELS_FILENAME "ATP_LABELS.txt"
-#define ATO_ENUMERATED_LABELS_FILENAME "ATO_LABELS.txt"
+#define ATP_ENUMERATED_LABELS_FILENAME "configFiles/ATP_LABELS.txt"
+#define ATO_ENUMERATED_LABELS_FILENAME "configFiles/ATO_LABELS.txt"
+
 #define MAX_ATP_LABELS 26
 #define MAX_ATO_LABELS 149
 #define MAX_ATP_VALUES 99
 #define MAX_ATO_VALUES 256
+#define MAX_ATP_PARAMS 1765
+#define MAX_ATO_PARAMS 3095
+#define MAX_ATP_PARAMS_BIT_SIZE 12496
+#define MAX_ATO_PARAMS_BIT_SIZE 20176
 
 #define MAX_LINE_SIZE 2700
 #define MAX_STRING_SIZE 512
@@ -32,8 +37,10 @@
 #define MAX_ENUMERATED_SIZE 50
 #define MAX_CHARS_SIZE 256
 #define MAX_HEADER_BIT_SIZE 248
+#define MAX_HEADER_BYTE_SIZE 31
 #define HEADER_TIME_BIT_POS 136
 #define INNER_HEADER_BIT_POS 11144
+#define HEADER_TIME_BIT_SIZE 32
 #define MAX_BYTE_SIZE 8
 #define TXT_SUFFIX ".txt" 
 
@@ -41,8 +48,8 @@
 #define SIGNED_INTEGER 1
 #define NOT_APPLICABLE -1
 
-#define ATP_BIT_NUM_TO_SKIP 10096
-#define ATO_BIT_NUM_TO_SKIP 36
+#define ATP_BYTE_NUM_TO_SKIP 1262
+#define ATO_BYTE_NUM_TO_SKIP 4
 
 #define DISPLAY_TYPE_ENUMERATED 0
 #define DISPLAY_TYPE_HEXADECIMAL 1
@@ -76,8 +83,10 @@ static const char byteArray[MAX_CHARS_SIZE][MAX_BYTE_SIZE] = ["00000000", "00000
 
 struct headerInfo {
     size_t headerBitSize;
+    size_t headerByteSize;
     int headerBitPos;
     int timeBitPos;
+    int timeBitSize;
 };
 struct fileInfo {
     char directoryPath[MAX_STRING_SIZE];
@@ -91,7 +100,6 @@ struct fileInfo {
 class parameterInfo {
     private:
         int parameterID;
-        char parameterLabel[MAX_STRING_SIZE];
         int unsignedInt;
         int firstBitPosition;
         int bitCount;
@@ -102,8 +110,8 @@ class parameterInfo {
         int displayType;
         int enumeratedLabel;
         int decimalCount;
-        char* unit = NULL;
 
+        char* unit = NULL;
         char*** enumeratedLabels = NULL;
     public:
         char* (parameterInfo::*intToString)(long long, char*) = NULL;
@@ -111,18 +119,21 @@ class parameterInfo {
         parameterInfo();
         ~parameterInfo();
         //ALL METHODS
-        char* IntToEnumeratedLabel(long long value, char* str);
 };
 
 class fileParsingInfo {
     private:
         struct fileInfo* fileInfoStruct;
         struct headerInfo headerInfoStruct = (struct headerInfo) {MAX_HEADER_BIT_SIZE,
+								  MAX_HEADER_BIT_SIZE/8,
                                                                   INNER_HEADER_BIT_POS,
-                                                                  HEADER_TIME_BIT_POS};
+                                                                  HEADER_TIME_BIT_POS,
+								  HEADER_TIME_BIT_SIZE};
         std::vector<class parameterInfo*> parameterInfoVec;
+	char** stringLabels;
         char*** enumeratedLabels;
-        size_t bitNumToSkip;
+        size_t byteNumToSkip;
+	size_t byteNumForLine;
     public:
         fileParsingInfo(struct fileInfo* fileInfoStruct, int logType);
         ~fileParsingInfo();
@@ -132,6 +143,8 @@ std::vector<class parameterInfo*> *ATP_parameterInfo = NULL;
 std::vector<class parameterInfo*> *ATO_parameterInfo = NULL;
 char ATP_EnumeratedLabels[MAX_ATP_LABELS][MAX_ATP_VALUES][MAX_SHORT_STRING_SIZE];
 char ATO_EnumeratedLabels[MAX_ATO_LABELS][MAX_ATO_VALUES][MAX_SHORT_STRING_SIZE];
+char ATP_StringLabels[MAX_ATP_PARAMS][MAX_STRING_SIZE];
+char ATO_StringLabels[MAX_ATO_PARAMS][MAX_STRING_SIZE];
 
 void parseFile(class fileParsingInfo* fileObj);
 

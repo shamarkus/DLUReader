@@ -1,17 +1,17 @@
 'use strict'
 const fs = require('fs');
 
-fs.readFile('ATOsynthesis.txt','utf8', (err,data) => {
+fs.readFile('ATPsynthesis.txt','utf8', (err,data) => {
 	if (err) {
 		console.log("error brother");
 		return;
 	}
-	fs.readFile('ATO_LABELS.txt','utf8', (err,labels) => {
+	fs.readFile('ATP_LABELS.txt','utf8', (err,labels) => {
 		if (err) {
 			console.log("error brother");
 			return;
 		}
-		fs.readFile('NumToHeaderString_ATO.txt','utf8', (err,actualID) => {
+		fs.readFile('NumToHeaderString_ATP.txt','utf8', (err,actualID) => {
 			if (err) {
 				console.log("error brother");
 				return;
@@ -103,7 +103,7 @@ fs.readFile('ATOsynthesis.txt','utf8', (err,data) => {
 				return `${actualMap.get(obj.label)-1}\t${obj.label}\t${obj.unsignedInteger}\t${obj.bitPosition}\t${obj.bitCount}\t${Math.floor(obj.bitPosition/8)}\t${Math.floor((obj.bitPosition+obj.bitCount-1)/8)}\t${obj.quantum}\t${obj.offset}\t${typeMap.get(obj.displayType)}\t${obj.enumeratedLabel == -1 ? -1 : enumeratedMap.get(obj.enumeratedLabel)}\t${obj.decimalCount}\t${obj.unit}`;
 			});
 
-			fs.writeFile('ATO_PARAMS.txt',str.join('\n'), function (err) {
+			fs.writeFile('ATP_PARAMS.txt',str.join('\n'), function (err) {
 				if (err) return console.log(err);
 			});	
 		});

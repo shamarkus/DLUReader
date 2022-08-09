@@ -1,3 +1,5 @@
+0	Date	0	0	32	0	3	1	0	4	-1	-1	-1
+1	Time	0	0	32	0	3	1	0	5	-1	-1	-1
 698	Id type	0	0	8	0	0	1	0	0	101	-1	-1
 699	Id	0	8	8	1	1	1	0	1	-1	-1	-1
 4	CC-Core int Id	0	16	3	2	2	1	0	2	-1	-1	-1
@@ -15,75 +17,75 @@
 449	CT seq1 failed	0	127	1	15	15	1	0	0	81	-1	-1
 448	CT seq1 successful	0	128	1	16	16	1	0	0	81	-1	-1
 451	CT seq1 step active	0	129	1	16	16	1	0	0	81	-1	-1
-452	CT seq1 step time	0	130	12	16	17	0.1	0	2	-1	s	-1
+452	CT seq1 step time	0	130	12	16	17	0.1	0	2	-1	1	s
 453	CT seq1 coerced	0	142	1	17	17	1	0	0	81	-1	-1
 457	CT seq2 step index	0	143	5	17	18	1	0	2	-1	-1	-1
 454	CT seq2 in progress	0	148	1	18	18	1	0	0	81	-1	-1
 456	CT seq2 failed	0	149	1	18	18	1	0	0	81	-1	-1
 455	CT seq2 successful	0	150	1	18	18	1	0	0	81	-1	-1
 458	CT seq2 step active	0	151	1	18	18	1	0	0	81	-1	-1
-459	CT seq2 step time	0	152	12	19	20	0.1	0	2	-1	s	-1
+459	CT seq2 step time	0	152	12	19	20	0.1	0	2	-1	1	s
 460	CT seq2 coerced	0	164	1	20	20	1	0	0	81	-1	-1
 464	CT seq3 step index	0	165	5	20	21	1	0	2	-1	-1	-1
 461	CT seq3 in progress	0	170	1	21	21	1	0	0	81	-1	-1
 463	CT seq3 failed	0	171	1	21	21	1	0	0	81	-1	-1
 462	CT seq3 successful	0	172	1	21	21	1	0	0	81	-1	-1
 465	CT seq3 step active	0	173	1	21	21	1	0	0	81	-1	-1
-466	CT seq3 step time	0	174	12	21	23	0.1	0	2	-1	s	-1
+466	CT seq3 step time	0	174	12	21	23	0.1	0	2	-1	1	s
 467	CT seq3 coerced	0	186	1	23	23	1	0	0	81	-1	-1
 471	CT seq4 step index	0	187	5	23	23	1	0	2	-1	-1	-1
 468	CT seq4 in progress	0	192	1	24	24	1	0	0	81	-1	-1
 470	CT seq4 failed	0	193	1	24	24	1	0	0	81	-1	-1
 469	CT seq4 successful	0	194	1	24	24	1	0	0	81	-1	-1
 472	CT seq4 step active	0	195	1	24	24	1	0	0	81	-1	-1
-473	CT seq4 step time	0	196	12	24	25	0.1	0	2	-1	s	-1
+473	CT seq4 step time	0	196	12	24	25	0.1	0	2	-1	1	s
 474	CT seq4 coerced	0	208	1	26	26	1	0	0	81	-1	-1
 478	CT seq5 step index	0	209	5	26	26	1	0	2	-1	-1	-1
 475	CT seq5 in progress	0	214	1	26	26	1	0	0	81	-1	-1
 477	CT seq5 failed	0	215	1	26	26	1	0	0	81	-1	-1
 476	CT seq5 successful	0	216	1	27	27	1	0	0	81	-1	-1
 479	CT seq5 step active	0	217	1	27	27	1	0	0	81	-1	-1
-480	CT seq5 step time	0	218	12	27	28	0.1	0	2	-1	s	-1
+480	CT seq5 step time	0	218	12	27	28	0.1	0	2	-1	1	s
 481	CT seq5 coerced	0	230	1	28	28	1	0	0	81	-1	-1
 485	CT seq6 step index	0	231	5	28	29	1	0	2	-1	-1	-1
 482	CT seq6 in progress	0	236	1	29	29	1	0	0	81	-1	-1
 484	CT seq6 failed	0	237	1	29	29	1	0	0	81	-1	-1
 483	CT seq6 successful	0	238	1	29	29	1	0	0	81	-1	-1
 486	CT seq6 step active	0	239	1	29	29	1	0	0	81	-1	-1
-487	CT seq6 step time	0	240	12	30	31	0.1	0	2	-1	s	-1
+487	CT seq6 step time	0	240	12	30	31	0.1	0	2	-1	1	s
 488	CT seq6 coerced	0	252	1	31	31	1	0	0	81	-1	-1
 492	CT seq7 step index	0	253	5	31	32	1	0	2	-1	-1	-1
 489	CT seq7 in progress	0	258	1	32	32	1	0	0	81	-1	-1
 491	CT seq7 failed	0	259	1	32	32	1	0	0	81	-1	-1
 490	CT seq7 successful	0	260	1	32	32	1	0	0	81	-1	-1
 493	CT seq7 step active	0	261	1	32	32	1	0	0	81	-1	-1
-494	CT seq7 step time	0	262	12	32	34	0.1	0	2	-1	s	-1
+494	CT seq7 step time	0	262	12	32	34	0.1	0	2	-1	1	s
 495	CT seq7 coerced	0	274	1	34	34	1	0	0	81	-1	-1
 499	CT seq8 step index	0	275	5	34	34	1	0	2	-1	-1	-1
 496	CT seq8 in progress	0	280	1	35	35	1	0	0	81	-1	-1
 498	CT seq8 failed	0	281	1	35	35	1	0	0	81	-1	-1
 497	CT seq8 successful	0	282	1	35	35	1	0	0	81	-1	-1
 500	CT seq8 step active	0	283	1	35	35	1	0	0	81	-1	-1
-501	CT seq8 step time	0	284	12	35	36	0.1	0	2	-1	s	-1
+501	CT seq8 step time	0	284	12	35	36	0.1	0	2	-1	1	s
 502	CT seq8 coerced	0	296	1	37	37	1	0	0	81	-1	-1
 506	CT seq9 step index	0	297	5	37	37	1	0	2	-1	-1	-1
 503	CT seq9 in progress	0	302	1	37	37	1	0	0	81	-1	-1
 505	CT seq9 failed	0	303	1	37	37	1	0	0	81	-1	-1
 504	CT seq9 successful	0	304	1	38	38	1	0	0	81	-1	-1
 507	CT seq9 step active	0	305	1	38	38	1	0	0	81	-1	-1
-508	CT seq9 step time	0	306	12	38	39	0.1	0	2	-1	s	-1
+508	CT seq9 step time	0	306	12	38	39	0.1	0	2	-1	1	s
 509	CT seq9 coerced	0	318	1	39	39	1	0	0	81	-1	-1
 513	CT seq10 step index	0	319	5	39	40	1	0	2	-1	-1	-1
 510	CT seq10 in progress	0	324	1	40	40	1	0	0	81	-1	-1
 512	CT seq10 failed	0	325	1	40	40	1	0	0	81	-1	-1
 511	CT seq10 successful	0	326	1	40	40	1	0	0	81	-1	-1
 514	CT seq10 step active	0	327	1	40	40	1	0	0	81	-1	-1
-515	CT seq10 step time	0	328	12	41	42	0.1	0	2	-1	s	-1
+515	CT seq10 step time	0	328	12	41	42	0.1	0	2	-1	1	s
 516	CT seq10 coerced	0	340	1	42	42	1	0	0	81	-1	-1
 521	CS req refreshed	0	341	1	42	42	1	0	0	81	-1	-1
 522	CS req sequence id	0	342	10	42	43	1	0	2	-1	-1	-1
 523	CS step index	0	352	7	44	44	1	0	2	-1	-1	-1
-524	CS step time	0	359	12	44	46	0.1	0	2	-1	s	-1
+524	CS step time	0	359	12	44	46	0.1	0	2	-1	1	s
 9	Signature Successful	0	371	1	46	46	1	0	0	81	-1	-1
 707	Curr inp. clos count	0	372	8	46	47	1	0	2	-1	-1	-1
 708	Curr outp. clos count	0	380	8	47	48	1	0	2	-1	-1	-1
@@ -91,7 +93,7 @@
 710	Opening Output Count	0	396	8	49	50	1	0	2	-1	-1	-1
 711	Receive socket Count	0	404	8	50	51	1	0	2	-1	-1	-1
 712	Send socket Count	0	412	8	51	52	1	0	2	-1	-1	-1
-625	Time TRS change	1	420	10	52	53	0.1	0	2	-1	s	-1
+625	Time TRS change	1	420	10	52	53	0.1	0	2	-1	1	s
 2	* MasterCoreSelection	0	430	1	53	53	1	0	0	128	-1	-1
 891	* CBI	0	430	1	53	53	1	0	0	128	-1	-1
 929	* CBI variants used	0	430	1	53	53	1	0	0	128	-1	-1
@@ -267,7 +269,7 @@
 289	Clock date	0	449	64	56	64	1	0	4	-1	-1	-1
 289	Clock date	0	449	32	56	60	1	0	4	-1	-1	-1
 290	Clock time	0	449	32	56	60	1	0	5	-1	-1	-1
-14	Software time	0	481	32	60	64	0.1	0	2	-1	s	-1
+14	Software time	0	481	32	60	64	0.1	0	2	-1	1	s
 1089	ATP1 out of code	0	513	1	64	64	1	0	0	81	-1	-1
 1085	ATP1 filtered stop	0	514	1	64	64	1	0	0	81	-1	-1
 1079	ATP1 in refreshed	0	515	1	64	64	1	0	0	81	-1	-1
@@ -280,15 +282,15 @@
 1077	ATP1 Bea def msg	0	562	1	70	70	1	0	0	81	-1	-1
 1046	ATP1 BM var avail	0	563	1	70	70	1	0	0	81	-1	-1
 1076	ATP1 Beacon cks	0	564	1	70	70	1	0	0	81	-1	-1
-1063	ATP1 BM overlap timer	0	565	14	70	72	0.1	0	2	-1	s	-1
+1063	ATP1 BM overlap timer	0	565	14	70	72	0.1	0	2	-1	1	s
 1015	ATP1 Train loc	0	579	1	72	72	1	0	0	81	-1	-1
 1020	ATP1 End 2 orient	0	580	2	72	72	1	0	0	109	-1	-1
-1028	ATP1 Delta loc	1	582	20	72	75	0.001	0	2	-1	m	-1
+1028	ATP1 Delta loc	1	582	20	72	75	0.001	0	2	-1	3	m
 1016	ATP1 End 2 block	0	602	12	75	76	1	0	2	-1	-1	-1
-1024	ATP1 End 2 absc	0	614	21	76	79	0.001	0	2	-1	m	-1
+1024	ATP1 End 2 absc	0	614	21	76	79	0.001	0	2	-1	3	m
 1009	ATP1 Loop hour	0	635	32	79	83	1	0	2	-1	-1	-1
-1041	ATP1 Max calib	0	667	16	83	85	0.001	0	2	-1	mm	-1
-1038	ATP1 Min calib	0	683	16	85	87	0.001	0	2	-1	mm	-1
+1041	ATP1 Max calib	0	667	16	83	85	0.001	0	2	-1	3	mm
+1038	ATP1 Min calib	0	683	16	85	87	0.001	0	2	-1	3	mm
 1021	ATP1 Mloc validate	0	699	1	87	87	1	0	0	81	-1	-1
 1025	ATP1 Mloc S1	0	700	24	87	90	1	0	1	-1	-1	-1
 1029	ATP1 Mloc S2	0	724	24	90	93	1	0	1	-1	-1	-1
@@ -310,8 +312,8 @@
 1110	ATP1 LstValidIntC. age	0	947	16	118	120	1	0	2	-1	-1	-1
 1033	ATP1 ZC id 1	0	963	8	120	121	1	0	2	-1	-1	-1
 1034	ATP1 ZC id 2	0	971	8	121	122	1	0	2	-1	-1	-1
-1071	ATP1 Rlbk dist end 1	1	979	20	122	124	0.001	0	2	-1	m	-1
-1074	ATP1 Rlbk dist end 2	1	999	20	124	127	0.001	0	2	-1	m	-1
+1071	ATP1 Rlbk dist end 1	1	979	20	122	124	0.001	0	2	-1	3	m
+1074	ATP1 Rlbk dist end 2	1	999	20	124	127	0.001	0	2	-1	3	m
 1039	ATP1dg no MINABIS	0	1019	1	127	127	1	0	0	81	-1	-1
 1042	ATP1dg no dep	0	1020	1	127	127	1	0	0	81	-1	-1
 1045	ATP1dg TEHD cl E1E2	0	1021	2	127	127	1	0	3	-1	-1	-1
@@ -376,7 +378,7 @@
 1115	ATP1 TU integrity	0	1167	1	145	145	1	0	0	81	-1	-1
 1119	ATP1 TU active	0	1168	1	146	146	1	0	0	81	-1	-1
 1118	ATP1 ZC loc rep[1..16]	0	1169	16	146	148	1	0	3	-1	-1	-1
-1139	ATP1 SMI speed	0	1185	13	148	149	0.036	0	2	-1	kph	-1
+1139	ATP1 SMI speed	0	1185	13	148	149	0.036	0	2	-1	2	kph
 1138	ATP1 SMI applied	0	1198	1	149	149	1	0	0	81	-1	-1
 1035	ATP1 ZC loc used	0	1199	1	149	149	1	0	0	81	-1	-1
 1223	ATP2 out of code	0	1200	1	150	150	1	0	0	81	-1	-1
@@ -391,12 +393,12 @@
 1211	ATP2 Bea def msg	0	1249	1	156	156	1	0	0	81	-1	-1
 1180	ATP2 BM var avail	0	1250	1	156	156	1	0	0	81	-1	-1
 1210	ATP2 Beacon cks	0	1251	1	156	156	1	0	0	81	-1	-1
-1197	ATP2 BM overlap timer	0	1252	14	156	158	0.1	0	2	-1	s	-1
+1197	ATP2 BM overlap timer	0	1252	14	156	158	0.1	0	2	-1	1	s
 1149	ATP2 Train loc	0	1266	1	158	158	1	0	0	81	-1	-1
 1154	ATP2 End 2 orient	0	1267	2	158	158	1	0	0	109	-1	-1
-1162	ATP2 Delta loc	1	1269	20	158	161	0.001	0	2	-1	m	-1
+1162	ATP2 Delta loc	1	1269	20	158	161	0.001	0	2	-1	3	m
 1150	ATP2 End 2 block	0	1289	12	161	162	1	0	2	-1	-1	-1
-1158	ATP2 End 2 absc	0	1301	21	162	165	0.001	0	2	-1	m	-1
+1158	ATP2 End 2 absc	0	1301	21	162	165	0.001	0	2	-1	3	m
 1143	ATP2 Loop hour	0	1322	32	165	169	1	0	2	-1	-1	-1
 1226	ATP2 OL rel sendable	0	1354	1	169	169	1	0	0	81	-1	-1
 1157	ATP2 TU loc knw path	0	1355	1	169	169	1	0	0	81	-1	-1
@@ -406,8 +408,8 @@
 1151	ATP2 Coherent Mloc	0	1359	1	169	169	1	0	0	81	-1	-1
 1165	ATP2 Mloc red ctrl inh	0	1360	1	170	170	1	0	0	81	-1	-1
 1244	ATP2 LstValidIntC. age	0	1361	16	170	172	1	0	2	-1	-1	-1
-1206	ATP2 Rlbk dist end 1	1	1377	20	172	174	0.001	0	2	-1	m	-1
-1208	ATP2 Rlbk dist end 2	1	1397	20	174	177	0.001	0	2	-1	m	-1
+1206	ATP2 Rlbk dist end 1	1	1377	20	172	174	0.001	0	2	-1	3	m
+1208	ATP2 Rlbk dist end 2	1	1397	20	174	177	0.001	0	2	-1	3	m
 1173	ATP2dg no MINABIS	0	1417	1	177	177	1	0	0	81	-1	-1
 1176	ATP2dg no dep	0	1418	1	177	177	1	0	0	81	-1	-1
 1179	ATP2dg TEHD cl E1E2	0	1419	2	177	177	1	0	3	-1	-1	-1
@@ -450,8 +452,8 @@
 1267	ATP2 HILC2 enabled	0	1471	1	183	183	1	0	0	81	-1	-1
 1259	ATP2 TDO enabled req	0	1472	1	184	184	1	0	0	81	-1	-1
 1260	ATP2 Sleeping enable	0	1473	1	184	184	1	0	0	81	-1	-1
-1175	ATP2 Max calib	0	1474	16	184	186	0.001	0	2	-1	mm	-1
-1172	ATP2 Min calib	0	1490	16	186	188	0.001	0	2	-1	mm	-1
+1175	ATP2 Max calib	0	1474	16	184	186	0.001	0	2	-1	3	mm
+1172	ATP2 Min calib	0	1490	16	186	188	0.001	0	2	-1	3	mm
 1155	ATP2 Mloc validate	0	1506	1	188	188	1	0	0	81	-1	-1
 1159	ATP2 Mloc S1	0	1507	24	188	191	1	0	1	-1	-1	-1
 1163	ATP2 Mloc S2	0	1531	24	191	194	1	0	1	-1	-1	-1
@@ -485,7 +487,7 @@
 1249	ATP2 TU integrity	0	1838	1	229	229	1	0	0	81	-1	-1
 1253	ATP2 TU active	0	1839	1	229	229	1	0	0	81	-1	-1
 1252	ATP2 ZC loc rep[1..16]	0	1840	16	230	231	1	0	3	-1	-1	-1
-1273	ATP2 SMI speed	0	1856	13	232	233	0.036	0	2	-1	kph	-1
+1273	ATP2 SMI speed	0	1856	13	232	233	0.036	0	2	-1	2	kph
 1272	ATP2 SMI applied	0	1869	1	233	233	1	0	0	81	-1	-1
 1167	ATP2 ZC id 1	0	1870	8	233	234	1	0	2	-1	-1	-1
 1168	ATP2 ZC id 2	0	1878	8	234	235	1	0	2	-1	-1	-1
@@ -496,8 +498,8 @@
 1164	ATP2 SGD version	0	1908	16	238	240	1	0	2	-1	-1	-1
 86	New bea rec C1	0	1924	1	240	240	1	0	0	81	-1	-1
 90	New bea rec C2	0	1925	1	240	240	1	0	0	81	-1	-1
-1008	ATP1 vital time	0	1926	32	240	244	0.1	0	2	-1	s	-1
-1142	ATP2 vital time	0	1958	32	244	248	0.1	0	2	-1	s	-1
+1008	ATP1 vital time	0	1926	32	240	244	0.1	0	2	-1	1	s
+1142	ATP2 vital time	0	1958	32	244	248	0.1	0	2	-1	1	s
 1275	EB not req	0	1990	1	248	248	1	0	0	81	-1	-1
 1276	PB not req	0	1991	1	248	248	1	0	0	81	-1	-1
 1277	DOEA	0	1992	1	249	249	1	0	0	81	-1	-1
@@ -638,7 +640,7 @@
 1413	ZC not ATC bypass	0	2220	1	277	277	1	0	0	81	-1	-1
 1414	ZC CBTC mode select	0	2221	1	277	277	1	0	0	81	-1	-1
 826	SMI speed applied	0	2222	1	277	277	1	0	0	81	-1	-1
-825	SMI app RP speed	0	2223	13	277	279	0.036	0	2	-1	kph	-1
+825	SMI app RP speed	0	2223	13	277	279	0.036	0	2	-1	2	kph
 1345	Coherent Mem Loc	0	2236	1	279	279	1	0	0	81	-1	-1
 850	Mem loc lim sp RP c.	0	2237	1	279	279	1	0	2	-1	-1	-1
 852	N conf TF type RP c.	0	2238	1	279	279	1	0	2	-1	-1	-1
@@ -757,8 +759,8 @@
 1687	Mem loc S2	0	2391	24	298	301	1	0	1	-1	-1	-1
 1689	NTP time	0	2415	64	301	309	1	0	5	-1	-1	-1
 1688	NTP date	0	2415	64	301	309	1	0	4	-1	-1	-1
-1711	Min req visib dist	0	2447	15	305	307	0.1	0	2	-1	m	-1
-1711	Min req visib dist	0	2447	15	305	307	0.1	0	2	-1	m	-1
+1711	Min req visib dist	0	2447	15	305	307	0.1	0	2	-1	1	m
+1711	Min req visib dist	0	2447	15	305	307	0.1	0	2	-1	1	m
 1696	Var Req CBI Id	0	2462	7	307	308	1	0	2	-1	-1	-1
 1690	CBIId PrioList unpack1	0	2469	7	308	309	1	0	2	-1	-1	-1
 1691	CBIId PrioList unpack2	0	2476	7	309	310	1	0	2	-1	-1	-1
@@ -769,10 +771,10 @@
 1703	Engage req 3	0	2493	1	311	311	1	0	0	81	-1	-1
 1704	Engage req 4	0	2494	1	311	311	1	0	0	81	-1	-1
 1693	NV E1 loc Block Id	0	2495	12	311	313	1	0	2	-1	-1	-1
-1694	NV E1 loc abs	0	2507	15	313	315	0.1	0	2	-1	m	-1
+1694	NV E1 loc abs	0	2507	15	313	315	0.1	0	2	-1	1	m
 1695	NV E1 loc orient	0	2522	2	315	315	1	0	0	58	-1	-1
 1697	NV E2 loc Block Id	0	2524	12	315	316	1	0	2	-1	-1	-1
-1698	NV E2 loc abs	0	2536	15	317	318	0.1	0	2	-1	m	-1
+1698	NV E2 loc abs	0	2536	15	317	318	0.1	0	2	-1	1	m
 1699	NV E2 loc orient	0	2551	2	318	319	1	0	0	58	-1	-1
 1705	LC id unpack 1	0	2553	5	319	319	1	0	2	-1	-1	-1
 1706	LC id unpack 2	0	2558	5	319	320	1	0	2	-1	-1	-1
@@ -793,7 +795,7 @@
 905	Var appl id	0	2679	7	334	335	1	0	2	-1	-1	-1
 906	Var appl LH	0	2686	32	335	339	1	0	2	-1	-1	-1
 907	ATP LH	0	2718	32	339	343	1	0	2	-1	-1	-1
-908	Var appl rem time	0	2750	14	343	345	0.1	0	2	-1	s	-1
+908	Var appl rem time	0	2750	14	343	345	0.1	0	2	-1	1	s
 909	Var appl var1 [1..16]	0	2764	16	345	347	1	0	3	-1	-1	-1
 910	Var appl var1 [17..32]	0	2780	16	347	349	1	0	3	-1	-1	-1
 911	Var appl var1 [33..48]	0	2796	16	349	351	1	0	3	-1	-1	-1
@@ -801,7 +803,7 @@
 913	Var appl id2	0	2828	7	353	354	1	0	2	-1	-1	-1
 914	Var appl LH2	0	2835	32	354	358	1	0	2	-1	-1	-1
 915	ATP LH2	0	2867	32	358	362	1	0	2	-1	-1	-1
-916	Var appl rem time2	0	2899	14	362	364	0.1	0	2	-1	s	-1
+916	Var appl rem time2	0	2899	14	362	364	0.1	0	2	-1	1	s
 917	Var appl var2 [1..16]	0	2913	16	364	366	1	0	3	-1	-1	-1
 918	Var appl var2 [17..32]	0	2929	16	366	368	1	0	3	-1	-1	-1
 919	Var appl var2 [33..48]	0	2945	16	368	370	1	0	3	-1	-1	-1
@@ -809,7 +811,7 @@
 921	Var appl id3	0	2977	7	372	372	1	0	2	-1	-1	-1
 922	Var appl LH3	0	2984	32	373	376	1	0	2	-1	-1	-1
 923	ATP LH3	0	3016	32	377	380	1	0	2	-1	-1	-1
-924	Var appl rem time3	0	3048	14	381	382	0.1	0	2	-1	s	-1
+924	Var appl rem time3	0	3048	14	381	382	0.1	0	2	-1	1	s
 925	Var appl var3 [1..16]	0	3062	16	382	384	1	0	3	-1	-1	-1
 926	Var appl var3 [17..32]	0	3078	16	384	386	1	0	3	-1	-1	-1
 927	Var appl var3 [33..48]	0	3094	16	386	388	1	0	3	-1	-1	-1
@@ -823,15 +825,15 @@
 904	Var appl def [17..32]	0	3175	16	396	398	1	0	3	-1	-1	-1
 1456	Dist core presence	0	3191	1	398	398	1	0	0	81	-1	-1
 1457	NV input refreshed	0	3192	1	399	399	1	0	0	81	-1	-1
-1458	Dist TM from last reloc	0	3193	18	399	401	0.01	0	2	-1	m	-1
+1458	Dist TM from last reloc	0	3193	18	399	401	0.01	0	2	-1	2	m
 1462	Dist BA test failed	0	3211	1	401	401	1	0	0	81	-1	-1
 1459	Dist end1 block	0	3212	12	401	402	1	0	2	-1	-1	-1
-1460	Dist end1 absissa	0	3224	21	403	405	0.001	0	2	-1	m	-1
+1460	Dist end1 absissa	0	3224	21	403	405	0.001	0	2	-1	3	m
 1461	Dist end1 orientation	0	3245	1	405	405	1	0	0	109	-1	-1
 1463	Dist end2 block	0	3246	12	405	407	1	0	2	-1	-1	-1
-1464	Dist end2 absissa	0	3258	21	407	409	0.001	0	2	-1	m	-1
+1464	Dist end2 absissa	0	3258	21	407	409	0.001	0	2	-1	3	m
 1465	Dist end2 orientation	0	3279	1	409	409	1	0	0	109	-1	-1
-1467	Dist train speed	1	3280	14	410	411	0.036	0	2	-1	kph	-1
+1467	Dist train speed	1	3280	14	410	411	0.036	0	2	-1	2	kph
 1468	Dist master core	0	3294	1	411	411	1	0	0	81	-1	-1
 1487	Dist VIO o disab 1..16	0	3295	16	411	413	1	0	3	-1	-1	-1
 1488	Dist VIO o disab 17..32	0	3311	16	413	415	1	0	3	-1	-1	-1
@@ -870,7 +872,7 @@
 1508	Dist HDC2 value	0	3416	1	427	427	1	0	0	81	-1	-1
 1509	Dist NTP date	0	3417	64	427	435	1	0	4	-1	-1	-1
 1510	Dist NTP time	0	3417	64	427	435	1	0	5	-1	-1	-1
-1476	Dist min req vis dst	0	3449	15	431	432	0.1	0	2	-1	m	-1
+1476	Dist min req vis dst	0	3449	15	431	432	0.1	0	2	-1	1	m
 1511	Dist CBI var req id	0	3464	7	433	433	1	0	2	-1	-1	-1
 1512	Dist CBIId PrioList 1	0	3471	7	433	434	1	0	2	-1	-1	-1
 1513	Dist CBIId PrioList 2	0	3478	7	434	435	1	0	2	-1	-1	-1
@@ -893,7 +895,7 @@
 1416	Message refreshed	0	3560	1	445	445	1	0	0	81	-1	-1
 1447	Train Sit Reject Cause	0	3561	3	445	445	1	0	0	140	-1	-1
 1448	Train Situat Count	0	3564	4	445	445	1	0	2	-1	-1	-1
-1449	Train Sit remain count	0	3568	14	446	447	0.1	0	2	-1	s	-1
+1449	Train Sit remain count	0	3568	14	446	447	0.1	0	2	-1	1	s
 1450	Train Situat TF Id	0	3582	8	447	448	1	0	2	-1	-1	-1
 1451	Train Sit TF confirmed	0	3590	1	448	448	1	0	0	81	-1	-1
 1452	Train Sit TF integrity	0	3591	1	448	448	1	0	0	81	-1	-1
@@ -907,9 +909,9 @@
 1422	EOA LH	0	3731	32	466	470	1	0	2	-1	-1	-1
 1423	EOA train front end	0	3763	2	470	470	1	0	0	132	-1	-1
 1424	EOA block	0	3765	12	470	472	1	0	2	-1	-1	-1
-1425	EOA abscissa	0	3777	18	472	474	0.01	0	2	-1	m	-1
+1425	EOA abscissa	0	3777	18	472	474	0.01	0	2	-1	2	m
 1428	EOA wo spacing block	0	3795	12	474	475	1	0	2	-1	-1	-1
-1429	EOA wo spacing absc	0	3807	18	475	478	0.01	0	2	-1	m	-1
+1429	EOA wo spacing absc	0	3807	18	475	478	0.01	0	2	-1	2	m
 1427	EOA wo sp ZC LH	0	3825	32	478	482	1	0	2	-1	-1	-1
 1426	EOA wo sp  type	0	3857	4	482	482	1	0	0	99	-1	-1
 1430	Var line sect count	0	3861	4	482	483	1	0	2	-1	-1	-1
@@ -920,7 +922,7 @@
 1435	Var line sect Id (2)	0	3941	6	492	493	1	0	2	-1	-1	-1
 1436	Var synch date (2)	0	3947	32	493	497	1	0	2	-1	-1	-1
 1443	ADL Block id	0	3979	12	497	498	1	0	2	-1	-1	-1
-1444	ADL absc	0	3991	21	498	501	0.001	0	2	-1	m	-1
+1444	ADL absc	0	3991	21	498	501	0.001	0	2	-1	3	m
 1445	ADL no RiskOfREOA	0	4012	1	501	501	1	0	0	81	-1	-1
 975	Variants LS count	0	4013	3	501	501	1	0	2	-1	-1	-1
 976	Variants (0) LS	0	4016	6	502	502	1	0	2	-1	-1	-1
@@ -955,10 +957,10 @@
 1005	Variants (1.[209..224])	0	4460	16	557	559	1	0	3	-1	-1	-1
 1439	Var Line sect Id (0)	0	4476	6	559	560	1	0	2	-1	-1	-1
 1441	Var Line sect Id (1)	0	4482	6	560	560	1	0	2	-1	-1	-1
-1437	EOA remain time	0	4488	14	561	562	0.1	0	2	-1	s	-1
-1438	EOA wo sp rem time	0	4502	14	562	564	0.1	0	2	-1	s	-1
-1440	Var remain time (0)	0	4516	14	564	566	0.1	0	2	-1	s	-1
-1442	Var remain time (1)	0	4530	14	566	567	0.1	0	2	-1	s	-1
+1437	EOA remain time	0	4488	14	561	562	0.1	0	2	-1	1	s
+1438	EOA wo sp rem time	0	4502	14	562	564	0.1	0	2	-1	1	s
+1440	Var remain time (0)	0	4516	14	564	566	0.1	0	2	-1	1	s
+1442	Var remain time (1)	0	4530	14	566	567	0.1	0	2	-1	1	s
 1446	ZC id write in NVRAM	0	4544	1	568	568	1	0	0	81	-1	-1
 1536	LC refreshed	0	4545	16	568	570	1	0	3	-1	-1	-1
 1538	Ver rcv reject cause	0	4561	3	570	570	1	0	0	135	-1	-1
@@ -1037,44 +1039,44 @@
 530	EB no mode selected	0	5262	1	657	657	1	0	0	81	-1	-1
 575	No driving mode PB	0	5263	1	657	657	1	0	0	81	-1	-1
 941	Coerce Interval	0	5264	3	658	658	1	0	0	147	-1	-1
-41	Calibration	1	5267	16	658	660	0.001	0	2	-1	mm	-1
-42	Raw calibration	1	5283	16	660	662	0.001	0	2	-1	mm	-1
+41	Calibration	1	5267	16	658	660	0.001	0	2	-1	3	mm
+42	Raw calibration	1	5283	16	660	662	0.001	0	2	-1	3	mm
 43	Raw calib count	0	5299	10	662	663	1	0	2	-1	-1	-1
-44	Filtered acceleration	1	5309	10	663	664	0.01	0	2	-1	m/s2	-1
-47	Train motion	1	5319	14	664	666	0.001	0	2	-1	m	-1
-48	Train speed	1	5333	14	666	668	0.036	0	2	-1	kph	-1
-49	Train speed E1	1	5347	14	668	670	0.036	0	2	-1	kph	-1
-51	Train speed E2	1	5361	14	670	671	0.036	0	2	-1	kph	-1
-53	Train motion E1	1	5375	14	671	673	0.001	0	2	-1	m	-1
-54	Train motion E2	1	5389	14	673	675	0.001	0	2	-1	m	-1
-50	Train accel	1	5403	10	675	676	0.01	0	2	-1	m/s2	-1
-52	Motion from beacon	1	5413	14	676	678	0.001	0	2	-1	m	-1
+44	Filtered acceleration	1	5309	10	663	664	0.01	0	2	-1	2	m/s2
+47	Train motion	1	5319	14	664	666	0.001	0	2	-1	3	m
+48	Train speed	1	5333	14	666	668	0.036	0	2	-1	2	kph
+49	Train speed E1	1	5347	14	668	670	0.036	0	2	-1	2	kph
+51	Train speed E2	1	5361	14	670	671	0.036	0	2	-1	2	kph
+53	Train motion E1	1	5375	14	671	673	0.001	0	2	-1	3	m
+54	Train motion E2	1	5389	14	673	675	0.001	0	2	-1	3	m
+50	Train accel	1	5403	10	675	676	0.01	0	2	-1	2	m/s2
+52	Motion from beacon	1	5413	14	676	678	0.001	0	2	-1	3	m
 46	Filtered Stop	0	5427	1	678	678	1	0	0	81	-1	-1
 60	C1 V TF 2 block id	0	5428	12	678	679	1	0	2	-1	-1	-1
-61	C1 V TF 2 abscissa	0	5440	18	680	682	0.01	0	2	-1	m	-1
-62	C1 V TF train length	1	5458	17	682	684	0.01	0	2	-1	m	-1
+61	C1 V TF 2 abscissa	0	5440	18	680	682	0.01	0	2	-1	2	m
+62	C1 V TF train length	1	5458	17	682	684	0.01	0	2	-1	2	m
 64	C2 V TF 2 block id	0	5475	12	684	685	1	0	2	-1	-1	-1
-65	C2 V TF 2 abscissa	0	5487	18	685	688	0.01	0	2	-1	m	-1
-66	C2 V TF train length	1	5505	17	688	690	0.01	0	2	-1	m	-1
-69	C1 Vital motion	0	5522	17	690	692	0.01	0	2	-1	m	-1
-70	C2 Vital motion	0	5539	17	692	694	0.01	0	2	-1	m	-1
+65	C2 V TF 2 abscissa	0	5487	18	685	688	0.01	0	2	-1	2	m
+66	C2 V TF train length	1	5505	17	688	690	0.01	0	2	-1	2	m
+69	C1 Vital motion	0	5522	17	690	692	0.01	0	2	-1	2	m
+70	C2 Vital motion	0	5539	17	692	694	0.01	0	2	-1	2	m
 63	C1 V Error state	0	5556	9	694	695	1	0	3	-1	-1	-1
 67	C2 V error state	0	5565	9	695	696	1	0	3	-1	-1	-1
 68	C1/C2 V error state	0	5574	2	696	696	1	0	3	-1	-1	-1
 71	C1 Cls Track Ed imp	0	5576	1	697	697	1	0	0	81	-1	-1
 72	C2 Cls Track Ed imp	0	5577	1	697	697	1	0	0	81	-1	-1
-76	Drv V TF train length	1	5578	17	697	699	0.01	0	2	-1	m	-1
+76	Drv V TF train length	1	5578	17	697	699	0.01	0	2	-1	2	m
 74	Drv V TF 2 block id	0	5595	12	699	700	1	0	2	-1	-1	-1
-75	Drv V TF 2 abscissa	0	5607	18	700	703	0.01	0	2	-1	m	-1
+75	Drv V TF 2 abscissa	0	5607	18	700	703	0.01	0	2	-1	2	m
 77	Drv V error state	0	5625	9	703	704	1	0	3	-1	-1	-1
 85	Reloc on loc ATP	0	5634	1	704	704	1	0	0	81	-1	-1
 83	Reloc on beacon	0	5635	1	704	704	1	0	0	81	-1	-1
-88	TM from last reloc	0	5636	18	704	706	0.01	0	2	-1	m	-1
+88	TM from last reloc	0	5636	18	704	706	0.01	0	2	-1	2	m
 84	Reloc on distant	0	5654	1	706	706	1	0	0	81	-1	-1
-87	Latest reloc distance	1	5655	17	706	708	0.01	0	2	-1	m	-1
+87	Latest reloc distance	1	5655	17	706	708	0.01	0	2	-1	2	m
 79	TF 2 block id	0	5672	12	709	710	1	0	2	-1	-1	-1
-80	TF 2 abscissa	0	5684	18	710	712	0.01	0	2	-1	m	-1
-81	TF 2 train length	1	5702	17	712	714	0.01	0	2	-1	m	-1
+80	TF 2 abscissa	0	5684	18	710	712	0.01	0	2	-1	2	m
+81	TF 2 train length	1	5702	17	712	714	0.01	0	2	-1	2	m
 89	Cls Track Ed impact	0	5719	1	714	714	1	0	0	81	-1	-1
 82	NV Error state	0	5720	8	715	715	1	0	3	-1	-1	-1
 671	Missed bea count	0	5728	3	716	716	1	0	2	-1	-1	-1
@@ -1091,14 +1093,14 @@
 659	Loc BA  side B cmd	0	5815	1	726	726	1	0	0	81	-1	-1
 660	Latest bea given cmd	0	5816	13	727	728	1	0	2	-1	-1	-1
 661	Nloc BA side cmd	0	5829	1	728	728	1	0	0	81	-1	-1
-662	Nloc sw remain dist	0	5830	16	728	730	0.01	0	2	-1	m	-1
+662	Nloc sw remain dist	0	5830	16	728	730	0.01	0	2	-1	2	m
 663	Test BA side cmd	0	5846	1	730	730	1	0	0	81	-1	-1
 664	Test BA in progress	0	5847	1	730	730	1	0	0	81	-1	-1
 665	Test BA failed	0	5848	1	731	731	1	0	0	81	-1	-1
 666	Test BA successful	0	5849	1	731	731	1	0	0	81	-1	-1
 667	Test BA bea missed	0	5850	1	731	731	1	0	0	81	-1	-1
 668	Test BA already done	0	5851	1	731	731	1	0	0	81	-1	-1
-669	Test BA distance	0	5852	18	731	733	0.01	0	2	-1	m	-1
+669	Test BA distance	0	5852	18	731	733	0.01	0	2	-1	2	m
 11	Cabin of driver	0	5870	2	733	733	1	0	2	-1	-1	-1
 701	Mot req sense E1	0	5872	1	734	734	1	0	0	81	-1	-1
 702	Mot req sense E2	0	5873	1	734	734	1	0	0	81	-1	-1
@@ -1125,9 +1127,9 @@
 629	TU ATM TFE	0	5945	2	743	743	1	0	0	132	-1	-1
 237	ATM TFE	0	5945	2	743	743	1	0	0	132	-1	-1
 754	SSA RP count	0	5947	5	743	743	1	0	2	-1	-1	-1
-755	SSA RP0 dist	1	5952	19	744	746	0.01	0	2	-1	m	-1
+755	SSA RP0 dist	1	5952	19	744	746	0.01	0	2	-1	2	m
 756	SSA RP0 strategy id	0	5971	6	746	747	1	0	2	-1	-1	-1
-757	SSA RP1 dist	1	5977	19	747	749	0.01	0	2	-1	m	-1
+757	SSA RP1 dist	1	5977	19	747	749	0.01	0	2	-1	2	m
 758	SSA RP1 strategy id	0	5996	6	749	750	1	0	2	-1	-1	-1
 235	ATM defined	0	6002	1	750	750	1	0	0	81	-1	-1
 239	ATM source	0	6003	2	750	750	1	0	0	117	-1	-1
@@ -1151,7 +1153,7 @@
 250	Real stop area dir	0	6157	1	769	769	1	0	0	109	-1	-1
 258	Real stop area time	0	6158	64	769	777	1	0	5	-1	-1	-1
 254	Real stop area date	0	6158	64	769	777	1	0	4	-1	-1	-1
-266	Real stop area P time	0	6190	64	773	781	0.1	0	5	-1	s	-1
+266	Real stop area P time	0	6190	64	773	781	0.1	0	5	-1	1	s
 262	Real stop area state	0	6211	2	776	776	1	0	0	59	-1	-1
 271	Short docking	0	6213	1	776	776	1	0	0	81	-1	-1
 272	Correct docking	0	6214	1	776	776	1	0	0	81	-1	-1
@@ -1175,7 +1177,7 @@
 396	SB train in VPEZ	0	6262	1	782	782	1	0	0	81	-1	-1
 380	SA train in VPEZ PSD	0	6263	1	782	782	1	0	0	81	-1	-1
 397	SB train in VPEZ PSD	0	6264	1	783	783	1	0	0	81	-1	-1
-734	Active SSP dist	1	6265	19	783	785	0.01	0	2	-1	m	-1
+734	Active SSP dist	1	6265	19	783	785	0.01	0	2	-1	2	m
 583	Imm PPZ wo PSD	0	6284	1	785	785	1	0	0	81	-1	-1
 585	Imm bad orient ATM	0	6285	1	785	785	1	0	0	81	-1	-1
 581	Imm no ATM	0	6286	1	785	785	1	0	0	81	-1	-1
@@ -1186,22 +1188,22 @@
 735	No mot sense change	0	6291	1	786	786	1	0	0	81	-1	-1
 733	Sense change count	0	6292	6	786	787	1	0	2	-1	-1	-1
 732	Traction train end	0	6298	2	787	787	1	0	0	132	-1	-1
-742	Min dst act prplt SSP	1	6300	19	787	789	0.01	0	2	-1	m	-1
+742	Min dst act prplt SSP	1	6300	19	787	789	0.01	0	2	-1	2	m
 740	Immo PP SSP reach	0	6319	1	789	789	1	0	0	81	-1	-1
 741	PrePltfrm SSA Id reach	0	6320	10	790	791	1	0	2	-1	-1	-1
-685	Time befor train start	1	6330	13	791	792	1	0	2	-1	s	-1
+685	Time befor train start	1	6330	13	791	792	1	0	2	-1	-1	s
 92	TFE id	0	6343	2	792	793	1	0	0	132	-1	-1
 627	TF TFE id	0	6343	2	792	793	1	0	0	132	-1	-1
 627	TF TFE id	0	6343	2	792	793	1	0	0	132	-1	-1
-102	TFE speed	1	6345	14	793	794	0.036	0	2	-1	kph	-1
-103	TFE acceleration	1	6359	10	794	796	0.01	0	2	-1	m/s2	-1
+102	TFE speed	1	6345	14	793	794	0.036	0	2	-1	2	kph
+103	TFE acceleration	1	6359	10	794	796	0.01	0	2	-1	2	m/s2
 99	TFE TF block id	0	6370	12	796	797	1	0	2	-1	-1	-1
-100	TFE TF abscissa	0	6382	18	797	799	0.01	0	2	-1	m	-1
+100	TFE TF abscissa	0	6382	18	797	799	0.01	0	2	-1	2	m
 93	TFE TF orientation	0	6400	1	800	800	1	0	0	109	-1	-1
 95	TFE TF drv V block id	0	6402	12	800	801	1	0	2	-1	-1	-1
-96	TFE TF drv V abscissa	0	6414	18	801	803	0.01	0	2	-1	m	-1
+96	TFE TF drv V abscissa	0	6414	18	801	803	0.01	0	2	-1	2	m
 104	TFE near ant core id	0	6433	2	804	804	1	0	0	132	-1	-1
-105	TFE near ant dist	1	6435	19	804	806	0.01	0	2	-1	m	-1
+105	TFE near ant dist	1	6435	19	804	806	0.01	0	2	-1	2	m
 631	TU master request	0	6454	1	806	806	1	0	0	81	-1	-1
 632	TU master	0	6455	1	806	806	1	0	0	81	-1	-1
 633	Dist TU master req	0	6456	1	807	807	1	0	0	81	-1	-1
@@ -1209,20 +1211,20 @@
 630	TU TFE	0	6458	2	807	807	1	0	0	132	-1	-1
 97	TFE V error state	0	6460	2	807	807	1	0	3	-1	-1	-1
 101	TFE NV error state	0	6462	3	807	808	1	0	3	-1	-1	-1
-351	Train drv speed	0	6465	13	808	809	0.036	0	2	-1	kph	-1
-164	Filt Train drv speed	0	6478	13	809	811	0.036	0	2	-1	kph	-1
-351	Train drv speed	0	6478	13	809	811	0.036	0	2	-1	kph	-1
-165	Train drv accel	1	6491	10	811	812	0.01	0	2	-1	m/s2	-1
-166	Filt Train drv accel	1	6501	10	812	813	0.01	0	2	-1	m/s2	-1
-167	Train drv vital speed	0	6511	13	813	815	0.036	0	2	-1	kph	-1
-168	Train drv vital accel	1	6524	10	815	816	0.01	0	2	-1	m/s2	-1
-121	Gradient accel	1	6534	10	816	817	0.01	0	2	-1	m/s2	-1
-224	Auto speed from grad	0	6544	13	818	819	0.036	0	2	-1	kph	-1
-225	Auto space from grad	1	6557	19	819	821	0.01	0	2	-1	m	-1
-226	Manu speed from grad	0	6576	13	822	823	0.036	0	2	-1	kph	-1
-227	Manu space from grad	1	6589	19	823	825	0.01	0	2	-1	m	-1
+351	Train drv speed	0	6465	13	808	809	0.036	0	2	-1	2	kph
+164	Filt Train drv speed	0	6478	13	809	811	0.036	0	2	-1	2	kph
+351	Train drv speed	0	6478	13	809	811	0.036	0	2	-1	2	kph
+165	Train drv accel	1	6491	10	811	812	0.01	0	2	-1	2	m/s2
+166	Filt Train drv accel	1	6501	10	812	813	0.01	0	2	-1	2	m/s2
+167	Train drv vital speed	0	6511	13	813	815	0.036	0	2	-1	2	kph
+168	Train drv vital accel	1	6524	10	815	816	0.01	0	2	-1	2	m/s2
+121	Gradient accel	1	6534	10	816	817	0.01	0	2	-1	2	m/s2
+224	Auto speed from grad	0	6544	13	818	819	0.036	0	2	-1	2	kph
+225	Auto space from grad	1	6557	19	819	821	0.01	0	2	-1	2	m
+226	Manu speed from grad	0	6576	13	822	823	0.036	0	2	-1	2	kph
+227	Manu space from grad	1	6589	19	823	825	0.01	0	2	-1	2	m
 936	BM variant beacon	0	6608	13	826	827	1	0	2	-1	-1	-1
-937	BM validity time	0	6621	13	827	829	1	0	2	-1	s	-1
+937	BM validity time	0	6621	13	827	829	1	0	2	-1	-1	s
 938	BM variants [1. 8]	0	6634	8	829	830	1	0	3	-1	-1	-1
 939	BM variants [9. 16]	0	6642	8	830	831	1	0	3	-1	-1	-1
 975	Variants LS count	0	6650	3	831	831	1	0	2	-1	-1	-1
@@ -1257,66 +1259,66 @@
 972	Var LS 2 [193..208]	0	7081	16	885	887	1	0	3	-1	-1	-1
 973	Var LS 2 [209..224]	0	7097	16	887	889	1	0	3	-1	-1	-1
 930	CBI var used	0	7113	1	889	889	1	0	0	81	-1	-1
-823	EOA w. sp ref acc	1	7114	10	889	890	0.01	0	2	-1	m/s2	-1
+823	EOA w. sp ref acc	1	7114	10	889	890	0.01	0	2	-1	2	m/s2
 821	EOA w. sp RP count	0	7124	1	890	890	1	0	2	-1	-1	-1
-822	EOA w. sp RP speed	1	7125	19	890	892	0.01	0	2	-1	m	-1
+822	EOA w. sp RP speed	1	7125	19	890	892	0.01	0	2	-1	2	m
 824	SMI app RP count	0	7144	1	893	893	1	0	2	-1	-1	-1
 872	CTE RP count	0	7145	2	893	893	1	0	2	-1	-1	-1
-875	CTE RP0 dist	1	7147	19	893	895	0.01	0	2	-1	m	-1
+875	CTE RP0 dist	1	7147	19	893	895	0.01	0	2	-1	2	m
 873	OTE RP count	0	7166	1	895	895	1	0	2	-1	-1	-1
-876	OTE RP0 dist	1	7167	19	895	898	0.01	0	2	-1	m	-1
+876	OTE RP0 dist	1	7167	19	895	898	0.01	0	2	-1	2	m
 874	SP RP count	0	7186	1	898	898	1	0	2	-1	-1	-1
-877	SP RP0 dist	1	7187	19	898	900	0.01	0	2	-1	m	-1
+877	SP RP0 dist	1	7187	19	898	900	0.01	0	2	-1	2	m
 766	EOA RP count	0	7206	1	900	900	1	0	2	-1	-1	-1
-767	EOA RP0 dist	1	7207	19	900	903	0.01	0	2	-1	m	-1
+767	EOA RP0 dist	1	7207	19	900	903	0.01	0	2	-1	2	m
 746	EOA available	0	7226	1	903	903	1	0	0	81	-1	-1
 747	CBTC EOA avail	0	7227	1	903	903	1	0	0	81	-1	-1
-748	CBTC EOA dist	1	7228	19	903	905	0.01	0	2	-1	m	-1
+748	CBTC EOA dist	1	7228	19	903	905	0.01	0	2	-1	2	m
 781	ADL RP count	0	7247	1	905	905	1	0	2	-1	-1	-1
-782	ADL RP0 dist	1	7248	19	906	908	0.01	0	2	-1	m	-1
+782	ADL RP0 dist	1	7248	19	906	908	0.01	0	2	-1	2	m
 783	ADL RP0 Type	0	7267	3	908	908	1	0	0	118	-1	-1
-784	ADL EOA dist	1	7270	19	908	911	0.01	0	2	-1	m	-1
+784	ADL EOA dist	1	7270	19	908	911	0.01	0	2	-1	2	m
 561	EB for signal overrun	0	7289	1	911	911	1	0	0	81	-1	-1
 886	Signal RP count	0	7290	5	911	911	1	0	2	-1	-1	-1
 887	Signal RP0 type	0	7295	3	911	912	1	0	0	118	-1	-1
-888	Signal RP0 dist	1	7298	19	912	914	0.01	0	2	-1	m	-1
+888	Signal RP0 dist	1	7298	19	912	914	0.01	0	2	-1	2	m
 889	Signal RP1 type	0	7317	3	914	914	1	0	0	118	-1	-1
-890	Signal RP1 dist	1	7320	19	915	917	0.01	0	2	-1	m	-1
+890	Signal RP1 dist	1	7320	19	915	917	0.01	0	2	-1	2	m
 932	BM OL Timer permiss	0	7339	1	917	917	1	0	0	81	-1	-1
 933	BM OL release	0	7340	1	917	917	1	0	0	81	-1	-1
 934	OL Rel zone triggered	0	7341	7	917	918	1	0	2	-1	-1	-1
 882	OE RP count	0	7348	3	918	918	1	0	2	-1	-1	-1
-883	OE RP0 dist	1	7351	19	918	921	0.01	0	2	-1	m	-1
+883	OE RP0 dist	1	7351	19	918	921	0.01	0	2	-1	2	m
 866	PZ RP count	0	7370	1	921	921	1	0	2	-1	-1	-1
-867	PZ RP0 dist	1	7371	19	921	923	0.01	0	2	-1	m	-1
+867	PZ RP0 dist	1	7371	19	921	923	0.01	0	2	-1	2	m
 789	PSDZ RP count	0	7390	1	923	923	1	0	2	-1	-1	-1
-790	PSDZ RP0 dist	1	7391	19	923	926	0.01	0	2	-1	m	-1
+790	PSDZ RP0 dist	1	7391	19	923	926	0.01	0	2	-1	2	m
 791	PSDCZ Imm RP count	0	7410	1	926	926	1	0	2	-1	-1	-1
 792	PSDCZI MinDstWoD c.	0	7411	1	926	926	1	0	2	-1	-1	-1
 832	Vital Zone RP count	0	7412	3	926	926	1	0	2	-1	-1	-1
 833	Vital Zone RP0 type	0	7415	3	926	927	1	0	0	118	-1	-1
-834	Vital Zone RP0 dist	1	7418	19	927	929	0.01	0	2	-1	m	-1
+834	Vital Zone RP0 dist	1	7418	19	927	929	0.01	0	2	-1	2	m
 835	Vital Zone RP1 type	0	7437	3	929	929	1	0	0	118	-1	-1
-836	Vital Zone RP1 dist	1	7440	19	930	932	0.01	0	2	-1	m	-1
+836	Vital Zone RP1 dist	1	7440	19	930	932	0.01	0	2	-1	2	m
 884	SOB RP count	0	7459	3	932	932	1	0	2	-1	-1	-1
-885	SOB RP0 dist	1	7462	19	932	935	0.01	0	2	-1	m	-1
-587	Vsanc speed E1	0	7481	13	935	936	0.036	0	2	-1	kph	-1
-588	Vsanc speed E2	0	7494	13	936	938	0.036	0	2	-1	kph	-1
-589	Vsanc1 dst E1	1	7507	19	938	940	0.01	0	2	-1	m	-1
-590	Vsanc1 dst E2	1	7526	19	940	943	0.01	0	2	-1	m	-1
-595	Vsanc2 dst E1	1	7545	19	943	945	0.01	0	2	-1	m	-1
-596	Vsanc2 dst E2	1	7564	19	945	947	0.01	0	2	-1	m	-1
-601	Vsanc3 dst E1	1	7583	19	947	950	0.01	0	2	-1	m	-1
-602	Vsanc3 dst E2	1	7602	19	950	952	0.01	0	2	-1	m	-1
+885	SOB RP0 dist	1	7462	19	932	935	0.01	0	2	-1	2	m
+587	Vsanc speed E1	0	7481	13	935	936	0.036	0	2	-1	2	kph
+588	Vsanc speed E2	0	7494	13	936	938	0.036	0	2	-1	2	kph
+589	Vsanc1 dst E1	1	7507	19	938	940	0.01	0	2	-1	2	m
+590	Vsanc1 dst E2	1	7526	19	940	943	0.01	0	2	-1	2	m
+595	Vsanc2 dst E1	1	7545	19	943	945	0.01	0	2	-1	2	m
+596	Vsanc2 dst E2	1	7564	19	945	947	0.01	0	2	-1	2	m
+601	Vsanc3 dst E1	1	7583	19	947	950	0.01	0	2	-1	2	m
+602	Vsanc3 dst E2	1	7602	19	950	952	0.01	0	2	-1	2	m
 593	Vsanc1 reset E1E2	0	7621	2	952	952	1	0	3	-1	-1	-1
 599	Vsanc2 reset E1E2	0	7623	2	952	953	1	0	3	-1	-1	-1
 605	Vsanc3 reset E1E2	0	7625	2	953	953	1	0	3	-1	-1	-1
-591	Vsanc1 dst ct E1	1	7627	19	953	955	0.01	0	2	-1	m	-1
-592	Vsanc1 dst ct E2	1	7646	19	955	958	0.01	0	2	-1	m	-1
-597	Vsanc2 dst ct E1	1	7665	19	958	960	0.01	0	2	-1	m	-1
-598	Vsanc2 dst ct E2	1	7684	19	960	962	0.01	0	2	-1	m	-1
-603	Vsanc3 dst ct E1	1	7703	19	962	965	0.01	0	2	-1	m	-1
-604	Vsanc3 dst ct E2	1	7722	19	965	967	0.01	0	2	-1	m	-1
+591	Vsanc1 dst ct E1	1	7627	19	953	955	0.01	0	2	-1	2	m
+592	Vsanc1 dst ct E2	1	7646	19	955	958	0.01	0	2	-1	2	m
+597	Vsanc2 dst ct E1	1	7665	19	958	960	0.01	0	2	-1	2	m
+598	Vsanc2 dst ct E2	1	7684	19	960	962	0.01	0	2	-1	2	m
+603	Vsanc3 dst ct E1	1	7703	19	962	965	0.01	0	2	-1	2	m
+604	Vsanc3 dst ct E2	1	7722	19	965	967	0.01	0	2	-1	2	m
 537	EB forV san V E1E2	0	7741	2	967	967	1	0	3	-1	-1	-1
 594	Vsanc1 trig E1E2	0	7743	2	967	968	1	0	3	-1	-1	-1
 600	Vsanc2 trig E1E2	0	7745	2	968	968	1	0	3	-1	-1	-1
@@ -1328,48 +1330,48 @@
 578	PB forV san2 D E1E2	0	7757	2	969	969	1	0	3	-1	-1	-1
 579	PB forV san3 D E1E2	0	7759	2	969	970	1	0	3	-1	-1	-1
 786	Mot Prot Inhib RP count	0	7761	1	970	970	1	0	2	-1	-1	-1
-787	Mot Prot Inhib speed	0	7762	13	970	971	0.036	0	2	-1	kph	-1
+787	Mot Prot Inhib speed	0	7762	13	970	971	0.036	0	2	-1	2	kph
 529	EB BM over speed	0	7775	1	971	971	1	0	0	81	-1	-1
 794	VPSR RP count	0	7776	4	972	972	1	0	2	-1	-1	-1
-795	VPSR RP0 dist	1	7780	19	972	974	0.01	0	2	-1	m	-1
-796	VPSR RP0 speed	0	7799	13	974	976	0.036	0	2	-1	kph	-1
-797	VPSR RP1 dist	1	7812	19	976	978	0.01	0	2	-1	m	-1
-798	VPSR RP1 speed	0	7831	13	978	980	0.036	0	2	-1	kph	-1
-799	VPSR RP2 dist	1	7844	19	980	982	0.01	0	2	-1	m	-1
-800	VPSR RP2 speed	0	7863	13	982	984	0.036	0	2	-1	kph	-1
-801	VPSR RP3 dist	1	7876	19	984	986	0.01	0	2	-1	m	-1
-802	VPSR RP3 speed	0	7895	13	986	988	0.036	0	2	-1	kph	-1
+795	VPSR RP0 dist	1	7780	19	972	974	0.01	0	2	-1	2	m
+796	VPSR RP0 speed	0	7799	13	974	976	0.036	0	2	-1	2	kph
+797	VPSR RP1 dist	1	7812	19	976	978	0.01	0	2	-1	2	m
+798	VPSR RP1 speed	0	7831	13	978	980	0.036	0	2	-1	2	kph
+799	VPSR RP2 dist	1	7844	19	980	982	0.01	0	2	-1	2	m
+800	VPSR RP2 speed	0	7863	13	982	984	0.036	0	2	-1	2	kph
+801	VPSR RP3 dist	1	7876	19	984	986	0.01	0	2	-1	2	m
+802	VPSR RP3 speed	0	7895	13	986	988	0.036	0	2	-1	2	kph
 828	BSR RP count	0	7908	1	988	988	1	0	2	-1	-1	-1
-829	BSR RP0 dist	1	7909	19	988	990	0.01	0	2	-1	m	-1
-830	BSR RP0 speed	0	7928	13	991	992	0.036	0	2	-1	kph	-1
+829	BSR RP0 dist	1	7909	19	988	990	0.01	0	2	-1	2	m
+830	BSR RP0 speed	0	7928	13	991	992	0.036	0	2	-1	2	kph
 804	WZ RP count	0	7941	5	992	993	1	0	2	-1	-1	-1
-805	WZ RP0 dist	1	7946	19	993	995	0.01	0	2	-1	m	-1
-806	WZ RP0 speed	0	7965	13	995	997	0.036	0	2	-1	kph	-1
-807	WZ RP1 dist	1	7978	19	997	999	0.01	0	2	-1	m	-1
-808	WZ RP1 speed	0	7997	13	999	1001	0.036	0	2	-1	kph	-1
-809	WZ RP2 dist	1	8010	19	1001	1003	0.01	0	2	-1	m	-1
-810	WZ RP2 speed	0	8029	13	1003	1005	0.036	0	2	-1	kph	-1
+805	WZ RP0 dist	1	7946	19	993	995	0.01	0	2	-1	2	m
+806	WZ RP0 speed	0	7965	13	995	997	0.036	0	2	-1	2	kph
+807	WZ RP1 dist	1	7978	19	997	999	0.01	0	2	-1	2	m
+808	WZ RP1 speed	0	7997	13	999	1001	0.036	0	2	-1	2	kph
+809	WZ RP2 dist	1	8010	19	1001	1003	0.01	0	2	-1	2	m
+810	WZ RP2 speed	0	8029	13	1003	1005	0.036	0	2	-1	2	kph
 811	WZ MinDstWoD RP c	0	8042	1	1005	1005	1	0	2	-1	-1	-1
 769	NCC RP count	0	8043	5	1005	1005	1	0	2	-1	-1	-1
-770	NCC RP0 dist	1	8048	19	1006	1008	0.01	0	2	-1	m	-1
-771	NCC RP0 speed	0	8067	13	1008	1009	0.036	0	2	-1	kph	-1
-772	NCC RP1 dist	1	8080	19	1010	1012	0.01	0	2	-1	m	-1
-773	NCC RP1 speed	0	8099	13	1012	1013	0.036	0	2	-1	kph	-1
-774	NCC RP2 dist	1	8112	19	1014	1016	0.01	0	2	-1	m	-1
-775	NCC RP2 speed	0	8131	13	1016	1017	0.036	0	2	-1	kph	-1
+770	NCC RP0 dist	1	8048	19	1006	1008	0.01	0	2	-1	2	m
+771	NCC RP0 speed	0	8067	13	1008	1009	0.036	0	2	-1	2	kph
+772	NCC RP1 dist	1	8080	19	1010	1012	0.01	0	2	-1	2	m
+773	NCC RP1 speed	0	8099	13	1012	1013	0.036	0	2	-1	2	kph
+774	NCC RP2 dist	1	8112	19	1014	1016	0.01	0	2	-1	2	m
+775	NCC RP2 speed	0	8131	13	1016	1017	0.036	0	2	-1	2	kph
 343	NDTR RP source	0	8144	6	1018	1018	1	0	0	113	-1	-1
 342	No dist to restart	0	8150	1	1018	1018	1	0	0	81	-1	-1
 527	EB ATS train hold	0	8151	1	1018	1018	1	0	0	81	-1	-1
 345	No dist to leave PPZ	0	8152	1	1019	1019	1	0	0	81	-1	-1
 526	EB no dist to lea PPZ	0	8153	1	1019	1019	1	0	0	81	-1	-1
 346	NDTLPPZ RP source	0	8154	6	1019	1019	1	0	0	113	-1	-1
-344	Dist to leave PPZ	1	8160	19	1020	1022	0.01	0	2	-1	m	-1
-743	App. Skip limit speed	0	8180	13	1022	1024	0.036	0	2	-1	kph	-1
+344	Dist to leave PPZ	1	8160	19	1020	1022	0.01	0	2	-1	2	m
+743	App. Skip limit speed	0	8180	13	1022	1024	0.036	0	2	-1	2	kph
 760	Skip RP count	0	8193	3	1024	1024	1	0	2	-1	-1	-1
-761	Skip RP0 dist	1	8196	19	1024	1026	0.01	0	2	-1	m	-1
-762	Skip RP0 speed	0	8215	13	1026	1028	0.036	0	2	-1	kph	-1
-763	Skip RP1 dist	1	8228	19	1028	1030	0.01	0	2	-1	m	-1
-764	Skip RP1 speed	0	8247	13	1030	1032	0.036	0	2	-1	kph	-1
+761	Skip RP0 dist	1	8196	19	1024	1026	0.01	0	2	-1	2	m
+762	Skip RP0 speed	0	8215	13	1026	1028	0.036	0	2	-1	2	kph
+763	Skip RP1 dist	1	8228	19	1028	1030	0.01	0	2	-1	2	m
+764	Skip RP1 speed	0	8247	13	1030	1032	0.036	0	2	-1	2	kph
 528	EB Skip limit speed	0	8260	1	1032	1032	1	0	0	81	-1	-1
 841	Imm RP releas. c.	0	8261	1	1032	1032	1	0	2	-1	-1	-1
 842	Imm RP nreleas. c.	0	8262	1	1032	1032	1	0	2	-1	-1	-1
@@ -1379,45 +1381,45 @@
 693	Stop more min dur	0	8266	1	1033	1033	1	0	0	81	-1	-1
 694	Not start in interval	0	8267	1	1033	1033	1	0	0	81	-1	-1
 813	NVPSR RP count	0	8268	4	1033	1033	1	0	2	-1	-1	-1
-814	NVPSR RP0 dist	1	8272	19	1034	1036	0.01	0	2	-1	m	-1
-815	NVPSR RP0 speed	0	8291	13	1036	1037	0.036	0	2	-1	kph	-1
-816	NVPSR RP1 dist	1	8304	19	1038	1040	0.01	0	2	-1	m	-1
-817	NVPSR RP1 speed	0	8323	13	1040	1041	0.036	0	2	-1	kph	-1
-818	NVPSR RP2 dist	1	8336	19	1042	1044	0.01	0	2	-1	m	-1
-819	NVPSR RP2 speed	0	8355	13	1044	1045	0.036	0	2	-1	kph	-1
-284	MTR ref speed	0	8368	13	1046	1047	0.036	0	2	-1	kph	-1
-285	MTR remaining time	1	8381	13	1047	1049	1	0	2	-1	s	-1
+814	NVPSR RP0 dist	1	8272	19	1034	1036	0.01	0	2	-1	2	m
+815	NVPSR RP0 speed	0	8291	13	1036	1037	0.036	0	2	-1	2	kph
+816	NVPSR RP1 dist	1	8304	19	1038	1040	0.01	0	2	-1	2	m
+817	NVPSR RP1 speed	0	8323	13	1040	1041	0.036	0	2	-1	2	kph
+818	NVPSR RP2 dist	1	8336	19	1042	1044	0.01	0	2	-1	2	m
+819	NVPSR RP2 speed	0	8355	13	1044	1045	0.036	0	2	-1	2	kph
+284	MTR ref speed	0	8368	13	1046	1047	0.036	0	2	-1	2	kph
+285	MTR remaining time	1	8381	13	1047	1049	1	0	2	-1	-1	s
 287	Remaining time def	0	8394	1	1049	1049	1	0	0	81	-1	-1
-288	Remaining time	1	8395	13	1049	1050	1	0	2	-1	s	-1
+288	Remaining time	1	8395	13	1049	1050	1	0	2	-1	-1	s
 292	Run. Profile sel.	0	8408	10	1051	1052	1	0	2	-1	-1	-1
 844	NV Reg sp. RP count	0	8418	1	1052	1052	1	0	2	-1	-1	-1
-293	TimeReg speed	0	8419	13	1052	1053	0.036	0	2	-1	kph	-1
+293	TimeReg speed	0	8419	13	1052	1053	0.036	0	2	-1	2	kph
 294	TimeReg dev auth	0	8432	2	1054	1054	1	0	0	138	-1	-1
 295	TimeReg dev prof sel	0	8434	10	1054	1055	1	0	2	-1	-1	-1
 533	EB for MINABIS exc.	0	8444	1	1055	1055	1	0	0	81	-1	-1
-637	MINABIS dist run E1	0	8445	16	1055	1057	0.01	0	2	-1	m	-1
-642	MINABIS dist run E2	0	8461	16	1057	1059	0.01	0	2	-1	m	-1
-641	MINABIS rem dist E1	1	8477	19	1059	1061	0.01	0	2	-1	m	-1
-646	MINABIS rem dist E2	1	8496	19	1062	1064	0.01	0	2	-1	m	-1
-638	MINABIS Speed E1	1	8515	14	1064	1066	0.036	0	2	-1	kph	-1
-643	MINABIS Speed E2	1	8529	14	1066	1067	0.036	0	2	-1	kph	-1
-639	MINABISZ dist E1 C1	1	8543	19	1067	1070	0.01	0	2	-1	m	-1
-644	MINABISZ dist E2 C1	1	8562	19	1070	1072	0.01	0	2	-1	m	-1
-640	MINABISZ dist E1 C2	1	8581	19	1072	1074	0.01	0	2	-1	m	-1
-645	MINABISZ dist E2 C2	1	8600	19	1075	1077	0.01	0	2	-1	m	-1
+637	MINABIS dist run E1	0	8445	16	1055	1057	0.01	0	2	-1	2	m
+642	MINABIS dist run E2	0	8461	16	1057	1059	0.01	0	2	-1	2	m
+641	MINABIS rem dist E1	1	8477	19	1059	1061	0.01	0	2	-1	2	m
+646	MINABIS rem dist E2	1	8496	19	1062	1064	0.01	0	2	-1	2	m
+638	MINABIS Speed E1	1	8515	14	1064	1066	0.036	0	2	-1	2	kph
+643	MINABIS Speed E2	1	8529	14	1066	1067	0.036	0	2	-1	2	kph
+639	MINABISZ dist E1 C1	1	8543	19	1067	1070	0.01	0	2	-1	2	m
+644	MINABISZ dist E2 C1	1	8562	19	1070	1072	0.01	0	2	-1	2	m
+640	MINABISZ dist E1 C2	1	8581	19	1072	1074	0.01	0	2	-1	2	m
+645	MINABISZ dist E2 C2	1	8600	19	1075	1077	0.01	0	2	-1	2	m
 777	MINABIS RP count	0	8619	2	1077	1077	1	0	2	-1	-1	-1
-778	MINABIS RP1 Distance	1	8621	19	1077	1079	0.01	0	2	-1	m	-1
-779	MINABIS RP2 Speed	0	8640	13	1080	1081	0.036	0	2	-1	kph	-1
-636	MINABIS d. run Pr. Inh.	0	8653	16	1081	1083	0.01	0	2	-1	m	-1
-648	MINRSL Speed E1	1	8669	14	1083	1085	0.036	0	2	-1	kph	-1
-649	MINRSL Speed E2	1	8683	14	1085	1087	0.036	0	2	-1	kph	-1
-650	MINRSL dist run end 1	0	8697	16	1087	1089	0.01	0	2	-1	m	-1
-651	MINRSL dist run end 2	0	8713	16	1089	1091	0.01	0	2	-1	m	-1
+778	MINABIS RP1 Distance	1	8621	19	1077	1079	0.01	0	2	-1	2	m
+779	MINABIS RP2 Speed	0	8640	13	1080	1081	0.036	0	2	-1	2	kph
+636	MINABIS d. run Pr. Inh.	0	8653	16	1081	1083	0.01	0	2	-1	2	m
+648	MINRSL Speed E1	1	8669	14	1083	1085	0.036	0	2	-1	2	kph
+649	MINRSL Speed E2	1	8683	14	1085	1087	0.036	0	2	-1	2	kph
+650	MINRSL dist run end 1	0	8697	16	1087	1089	0.01	0	2	-1	2	m
+651	MINRSL dist run end 2	0	8713	16	1089	1091	0.01	0	2	-1	2	m
 532	EB for MINRSL excess	0	8729	1	1091	1091	1	0	0	81	-1	-1
 545	EBA from RS	0	8730	1	1091	1091	1	0	0	81	-1	-1
 541	EB for NCC RP excess	0	8731	1	1091	1091	1	0	0	81	-1	-1
 546	EB not applied	0	8732	1	1091	1091	1	0	0	81	-1	-1
-542	EB fr NCC RP lim sp.	0	8733	13	1091	1093	0.036	0	2	-1	kph	-1
+542	EB fr NCC RP lim sp.	0	8733	13	1091	1093	0.036	0	2	-1	2	kph
 543	EB for NCC RP source	0	8746	6	1093	1093	1	0	0	113	-1	-1
 848	Rte excl imm RP c.	0	8752	1	1094	1094	1	0	2	-1	-1	-1
 838	Door RP c.	0	8753	1	1094	1094	1	0	2	-1	-1	-1
@@ -1438,19 +1440,19 @@
 403	SA PSD opening cmd	0	8769	1	1096	1096	1	0	0	81	-1	-1
 404	SA PSD closing cmd	0	8770	1	1096	1096	1	0	0	81	-1	-1
 407	SA door cmd	0	8771	2	1096	1096	1	0	0	94	-1	-1
-381	SA time TD cmd chg	0	8773	10	1096	1097	0.1	0	2	-1	s	-1
+381	SA time TD cmd chg	0	8773	10	1096	1097	0.1	0	2	-1	1	s
 382	SA TD cmd chg	0	8783	1	1097	1097	1	0	0	81	-1	-1
-383	SA time PSD cmd chg	0	8784	10	1098	1099	0.1	0	2	-1	s	-1
+383	SA time PSD cmd chg	0	8784	10	1098	1099	0.1	0	2	-1	1	s
 384	SA PSD cmd chg	0	8794	1	1099	1099	1	0	0	81	-1	-1
 369	SA aut manage op	0	8795	1	1099	1099	1	0	0	81	-1	-1
 370	SA aut manage clos	0	8796	1	1099	1099	1	0	0	81	-1	-1
 371	SA door cmd ref op.	0	8797	1	1099	1099	1	0	0	81	-1	-1
 372	SA door cmd ref clos.	0	8798	1	1099	1099	1	0	0	81	-1	-1
-376	SA open cmd latency	0	8799	10	1099	1101	0.1	0	2	-1	s	-1
-377	SA clos cmd latency	0	8809	10	1101	1102	0.1	0	2	-1	s	-1
+376	SA open cmd latency	0	8799	10	1099	1101	0.1	0	2	-1	1	s
+377	SA clos cmd latency	0	8809	10	1101	1102	0.1	0	2	-1	1	s
 373	SA cmd ref driver op	0	8819	1	1102	1102	1	0	0	81	-1	-1
 374	SA cmd ref driver clos	0	8820	1	1102	1102	1	0	0	81	-1	-1
-375	SA ref rem time close	0	8821	14	1102	1104	0.1	0	2	-1	s	-1
+375	SA ref rem time close	0	8821	14	1102	1104	0.1	0	2	-1	1	s
 378	SA exch pass req	0	8835	1	1104	1104	1	0	0	81	-1	-1
 428	SB PSD opening t-out	0	8836	1	1104	1104	1	0	0	81	-1	-1
 429	SB PSD closing t-out	0	8837	1	1104	1104	1	0	0	81	-1	-1
@@ -1467,19 +1469,19 @@
 420	SB PSD opening cmd	0	8848	1	1106	1106	1	0	0	81	-1	-1
 421	SB PSD closing cmd	0	8849	1	1106	1106	1	0	0	81	-1	-1
 424	SB door cmd	0	8850	2	1106	1106	1	0	0	94	-1	-1
-398	SB time TD cmd chg	0	8852	10	1106	1107	0.1	0	2	-1	s	-1
+398	SB time TD cmd chg	0	8852	10	1106	1107	0.1	0	2	-1	1	s
 399	SB TD cmd chg	0	8862	1	1107	1107	1	0	0	81	-1	-1
-400	SB time PSD cmd chg	0	8863	10	1107	1109	0.1	0	2	-1	s	-1
+400	SB time PSD cmd chg	0	8863	10	1107	1109	0.1	0	2	-1	1	s
 401	SB PSD cmd chg	0	8873	1	1109	1109	1	0	0	81	-1	-1
 386	SB aut manage op	0	8874	1	1109	1109	1	0	0	81	-1	-1
 387	SB aut manage clos	0	8875	1	1109	1109	1	0	0	81	-1	-1
 388	SB door cmd rf op.	0	8876	1	1109	1109	1	0	0	81	-1	-1
 389	SB door cmd rf clos.	0	8877	1	1109	1109	1	0	0	81	-1	-1
-393	SB open cmd latency	0	8878	10	1109	1110	0.1	0	2	-1	s	-1
-394	SB clos cmd latency	0	8888	10	1111	1112	0.1	0	2	-1	s	-1
+393	SB open cmd latency	0	8878	10	1109	1110	0.1	0	2	-1	1	s
+394	SB clos cmd latency	0	8888	10	1111	1112	0.1	0	2	-1	1	s
 390	SB cmd ref driver op	0	8898	1	1112	1112	1	0	0	81	-1	-1
 391	SB cmd ref driver clos	0	8899	1	1112	1112	1	0	0	81	-1	-1
-392	SB ref rem time close	0	8900	14	1112	1114	0.1	0	2	-1	s	-1
+392	SB ref rem time close	0	8900	14	1112	1114	0.1	0	2	-1	1	s
 395	SB exch pass req	0	8914	1	1114	1114	1	0	0	81	-1	-1
 437	Train Door managed	0	8915	1	1114	1114	1	0	0	81	-1	-1
 438	PSD managed	0	8916	1	1114	1114	1	0	0	81	-1	-1
@@ -1491,191 +1493,191 @@
 654	Horn active	0	8922	1	1115	1115	1	0	0	81	-1	-1
 653	Horn requested	0	8923	1	1115	1115	1	0	0	81	-1	-1
 297	Vmax coast enabled	0	8924	1	1115	1115	1	0	0	81	-1	-1
-306	Vmax	0	8925	13	1115	1117	0.036	0	2	-1	kph	-1
+306	Vmax	0	8925	13	1115	1117	0.036	0	2	-1	2	kph
 298	Vmax trans. Step	0	8938	2	1117	1117	1	0	2	-1	-1	-1
 303	Deviation S. RP count	0	8940	3	1117	1117	1	0	2	-1	-1	-1
 304	Coasting order	0	8943	1	1117	1117	1	0	0	81	-1	-1
 308	TimeReg coast enab.	0	8944	1	1118	1118	1	0	0	81	-1	-1
 309	TimeReg trans. Step	0	8945	2	1118	1118	1	0	2	-1	-1	-1
-305	Coasting accel.	1	8947	10	1118	1119	0.01	0	2	-1	m/s2	-1
-310	TimeReg KRP speed	0	8957	13	1119	1121	0.036	0	2	-1	kph	-1
-299	Vmax KRP speed	0	8970	13	1121	1122	0.036	0	2	-1	kph	-1
-311	TimeReg KRP acc	1	8983	10	1122	1124	0.01	0	2	-1	m/s2	-1
-300	Vmax KRP acc	1	8993	10	1124	1125	0.01	0	2	-1	m/s2	-1
-312	TReg start coast lim	0	9003	13	1125	1126	0.036	0	2	-1	kph	-1
-313	TReg stop coast lim	0	9016	13	1127	1128	0.036	0	2	-1	kph	-1
-301	Vmax start coast lim	0	9029	13	1128	1130	0.036	0	2	-1	kph	-1
-302	Vmax stop coast lim	0	9042	13	1130	1131	0.036	0	2	-1	kph	-1
+305	Coasting accel.	1	8947	10	1118	1119	0.01	0	2	-1	2	m/s2
+310	TimeReg KRP speed	0	8957	13	1119	1121	0.036	0	2	-1	2	kph
+299	Vmax KRP speed	0	8970	13	1121	1122	0.036	0	2	-1	2	kph
+311	TimeReg KRP acc	1	8983	10	1122	1124	0.01	0	2	-1	2	m/s2
+300	Vmax KRP acc	1	8993	10	1124	1125	0.01	0	2	-1	2	m/s2
+312	TReg start coast lim	0	9003	13	1125	1126	0.036	0	2	-1	2	kph
+313	TReg stop coast lim	0	9016	13	1127	1128	0.036	0	2	-1	2	kph
+301	Vmax start coast lim	0	9029	13	1128	1130	0.036	0	2	-1	2	kph
+302	Vmax stop coast lim	0	9042	13	1130	1131	0.036	0	2	-1	2	kph
 307	Vmax origin	0	9055	6	1131	1132	1	0	0	113	-1	-1
-36	Min D W Dg	1	9061	19	1132	1134	0.01	0	2	-1	m	-1
+36	Min D W Dg	1	9061	19	1132	1134	0.01	0	2	-1	2	m
 37	Min D W Dg RP src	0	9080	6	1135	1135	1	0	0	113	-1	-1
-38	Min D W Dg SMI	1	9086	19	1135	1138	0.01	0	2	-1	m	-1
+38	Min D W Dg SMI	1	9086	19	1135	1138	0.01	0	2	-1	2	m
 39	Min D W Dg SMI RP src	0	9105	6	1138	1138	1	0	0	113	-1	-1
 860	NSZ RP count	0	9111	3	1138	1139	1	0	2	-1	-1	-1
 856	NSZ RP0 type	0	9114	3	1139	1139	1	0	0	118	-1	-1
-857	NSZ RP0 dist	1	9117	19	1139	1141	0.01	0	2	-1	m	-1
+857	NSZ RP0 dist	1	9117	19	1139	1141	0.01	0	2	-1	2	m
 858	NSZ RP1 type	0	9136	3	1142	1142	1	0	0	118	-1	-1
-859	NSZ RP1 dist	1	9139	19	1142	1144	0.01	0	2	-1	m	-1
-752	App. NSZ limit speed	0	9158	13	1144	1146	0.036	0	2	-1	kph	-1
+859	NSZ RP1 dist	1	9139	19	1142	1144	0.01	0	2	-1	2	m
+752	App. NSZ limit speed	0	9158	13	1144	1146	0.036	0	2	-1	2	kph
 536	EB for NSZ lim sp exc	0	9171	1	1146	1146	1	0	0	81	-1	-1
 862	First restric NSZ id	0	9172	16	1146	1148	1	0	2	-1	-1	-1
 863	RP src NSZ id	0	9188	16	1148	1150	1	0	2	-1	-1	-1
 861	RP src NSZ type	0	9204	2	1150	1150	1	0	0	148	-1	-1
 864	Double spacing lv	0	9206	2	1150	1150	1	0	0	146	-1	-1
 353	Update conditions	0	9208	1	1151	1151	1	0	0	81	-1	-1
-354	Dep stat appl cmd	1	9209	10	1151	1152	0.01	0	2	-1	m/s2	-1
-355	Dep stat appl cmd tr	1	9219	10	1152	1153	0.01	0	2	-1	m/s2	-1
+354	Dep stat appl cmd	1	9209	10	1151	1152	0.01	0	2	-1	2	m/s2
+355	Dep stat appl cmd tr	1	9219	10	1152	1153	0.01	0	2	-1	2	m/s2
 350	TL acq conditions	0	9229	1	1153	1153	1	0	0	81	-1	-1
-348	Train load est.	0	9230	14	1153	1155	0.01	0	2	-1	%	-1
+348	Train load est.	0	9230	14	1153	1155	0.01	0	2	-1	2	%
 366	Incorrect TL estim.	0	9244	1	1155	1155	1	0	0	81	-1	-1
 356	Relevant train speed	0	9245	1	1155	1155	1	0	0	81	-1	-1
-349	Filt acceleration	1	9246	10	1155	1156	0.01	0	2	-1	m/s2	-1
-352	Accel for train load est	1	9256	10	1157	1158	0.01	0	2	-1	m/s2	-1
+349	Filt acceleration	1	9246	10	1155	1156	0.01	0	2	-1	2	m/s2
+352	Accel for train load est	1	9256	10	1157	1158	0.01	0	2	-1	2	m/s2
 357	CCCore moto req	0	9266	1	1158	1158	1	0	0	81	-1	-1
 358	Rel train spd cond	0	9267	1	1158	1158	1	0	0	81	-1	-1
 359	CCCore moto req cond	0	9268	1	1158	1158	1	0	0	81	-1	-1
 360	EB not appl cond	0	9269	1	1158	1158	1	0	0	81	-1	-1
-361	Avg filt train speed	1	9270	14	1158	1160	0.036	0	2	-1	kph	-1
-362	Avg dep stat app com	1	9284	10	1160	1161	0.01	0	2	-1	m/s2	-1
-363	Avg filt accel	1	9294	10	1161	1162	0.01	0	2	-1	m/s2	-1
-364	Avg train load	0	9304	7	1163	1163	1	0	2	-1	%	-1
-365	Avg motor req level	0	9311	7	1163	1164	1	0	2	-1	%	-1
-119	Train load	0	9318	7	1164	1165	1	0	2	-1	%	-1
-174	Braking limit accel	1	9325	10	1165	1166	0.01	0	2	-1	m/s2	-1
-175	Braking avail rate	0	9335	7	1166	1167	1	0	2	-1	%	-1
-173	Min RC accel	1	9342	10	1167	1168	0.01	0	2	-1	m/s2	-1
-178	Ref accel RTT brak	0	9352	10	1169	1170	0.01	0	2	-1	s	-1
-220	Automatic speed	0	9362	13	1170	1171	0.036	0	2	-1	kph	-1
-221	Automatic space	1	9375	19	1171	1174	0.01	0	2	-1	m	-1
-222	Manual speed	0	9394	13	1174	1175	0.036	0	2	-1	kph	-1
-223	Manual space	1	9407	19	1175	1178	0.01	0	2	-1	m	-1
-228	Speed on traction	0	9426	13	1178	1179	0.036	0	2	-1	kph	-1
-229	Space on traction	1	9439	19	1179	1182	0.01	0	2	-1	m	-1
-231	Min reachable accel	1	9458	10	1182	1183	0.01	0	2	-1	m/s2	-1
-179	Drivability rate	0	9468	7	1183	1184	1	0	2	-1	%	-1
+361	Avg filt train speed	1	9270	14	1158	1160	0.036	0	2	-1	2	kph
+362	Avg dep stat app com	1	9284	10	1160	1161	0.01	0	2	-1	2	m/s2
+363	Avg filt accel	1	9294	10	1161	1162	0.01	0	2	-1	2	m/s2
+364	Avg train load	0	9304	7	1163	1163	1	0	2	-1	-1	%
+365	Avg motor req level	0	9311	7	1163	1164	1	0	2	-1	-1	%
+119	Train load	0	9318	7	1164	1165	1	0	2	-1	-1	%
+174	Braking limit accel	1	9325	10	1165	1166	0.01	0	2	-1	2	m/s2
+175	Braking avail rate	0	9335	7	1166	1167	1	0	2	-1	-1	%
+173	Min RC accel	1	9342	10	1167	1168	0.01	0	2	-1	2	m/s2
+178	Ref accel RTT brak	0	9352	10	1169	1170	0.01	0	2	-1	2	s
+220	Automatic speed	0	9362	13	1170	1171	0.036	0	2	-1	2	kph
+221	Automatic space	1	9375	19	1171	1174	0.01	0	2	-1	2	m
+222	Manual speed	0	9394	13	1174	1175	0.036	0	2	-1	2	kph
+223	Manual space	1	9407	19	1175	1178	0.01	0	2	-1	2	m
+228	Speed on traction	0	9426	13	1178	1179	0.036	0	2	-1	2	kph
+229	Space on traction	1	9439	19	1179	1182	0.01	0	2	-1	2	m
+231	Min reachable accel	1	9458	10	1182	1183	0.01	0	2	-1	2	m/s2
+179	Drivability rate	0	9468	7	1183	1184	1	0	2	-1	-1	%
 107	Light braking request	0	9475	1	1184	1184	1	0	0	81	-1	-1
 108	Filt Light brak req	0	9476	1	1184	1184	1	0	0	81	-1	-1
-172	Reference accel	1	9477	10	1184	1185	0.01	0	2	-1	m/s2	-1
+172	Reference accel	1	9477	10	1184	1185	0.01	0	2	-1	2	m/s2
 170	Motor inh antic brak	0	9487	1	1185	1185	1	0	0	81	-1	-1
 171	Brak maintain enabl	0	9488	1	1186	1186	1	0	0	81	-1	-1
-176	RP RA	1	9489	10	1186	1187	0.01	0	2	-1	m/s2	-1
-177	ARP RA	1	9499	10	1187	1188	0.01	0	2	-1	m/s2	-1
+176	RP RA	1	9489	10	1186	1187	0.01	0	2	-1	2	m/s2
+177	ARP RA	1	9499	10	1187	1188	0.01	0	2	-1	2	m/s2
 180	RP1 RA RP source	0	9509	6	1188	1189	1	0	0	113	-1	-1
 187	RP1 RA RP RC count	0	9515	3	1189	1189	1	0	2	-1	-1	-1
 181	RP1 RA RP type	0	9518	3	1189	1190	1	0	0	118	-1	-1
-182	RP1 RA RP distance	1	9521	19	1190	1192	0.01	0	2	-1	m	-1
-184	RP1 RA RP gradient	1	9540	10	1192	1193	0.01	0	2	-1	m/s2	-1
-183	RP1 RA RP speed	0	9550	13	1193	1195	0.036	0	2	-1	kph	-1
+182	RP1 RA RP distance	1	9521	19	1190	1192	0.01	0	2	-1	2	m
+184	RP1 RA RP gradient	1	9540	10	1192	1193	0.01	0	2	-1	2	m/s2
+183	RP1 RA RP speed	0	9550	13	1193	1195	0.036	0	2	-1	2	kph
 186	RP1 RA RP strategy	0	9563	6	1195	1196	1	0	2	-1	-1	-1
-185	RP1 RA RP EB accel	1	9569	10	1196	1197	0.01	0	2	-1	m/s2	-1
-216	RP1 RA RP K Accel	1	9579	10	1197	1198	0.01	0	2	-1	m/s2	-1
+185	RP1 RA RP EB accel	1	9569	10	1196	1197	0.01	0	2	-1	2	m/s2
+216	RP1 RA RP K Accel	1	9579	10	1197	1198	0.01	0	2	-1	2	m/s2
 188	RP1 RA RP RC index	0	9589	3	1198	1198	1	0	2	-1	-1	-1
-189	RP1 RA RP RC speed	0	9592	13	1199	1200	0.036	0	2	-1	kph	-1
-190	RP1 RA RP RC accel	1	9605	10	1200	1201	0.01	0	2	-1	m/s2	-1
+189	RP1 RA RP RC speed	0	9592	13	1199	1200	0.036	0	2	-1	2	kph
+190	RP1 RA RP RC accel	1	9605	10	1200	1201	0.01	0	2	-1	2	m/s2
 191	RP1 RA RP RC boost	0	9615	1	1201	1201	1	0	0	81	-1	-1
 192	RP2 RA RP source	0	9616	6	1202	1202	1	0	0	113	-1	-1
 199	RP2 RA RP RC count	0	9622	3	1202	1203	1	0	2	-1	-1	-1
 193	RP2 RA RP type	0	9625	3	1203	1203	1	0	0	118	-1	-1
-194	RP2 RA RP distance	1	9628	19	1203	1205	0.01	0	2	-1	m	-1
-196	RP2 RA RP gradient	1	9647	10	1205	1207	0.01	0	2	-1	m/s2	-1
-195	RP2 RA RP speed	0	9657	13	1207	1208	0.036	0	2	-1	kph	-1
+194	RP2 RA RP distance	1	9628	19	1203	1205	0.01	0	2	-1	2	m
+196	RP2 RA RP gradient	1	9647	10	1205	1207	0.01	0	2	-1	2	m/s2
+195	RP2 RA RP speed	0	9657	13	1207	1208	0.036	0	2	-1	2	kph
 198	RP2 RA RP strategy	0	9670	6	1208	1209	1	0	2	-1	-1	-1
-197	RP2 RA RP EB accel	1	9676	10	1209	1210	0.01	0	2	-1	m/s2	-1
-217	RP2 RA RP K Accel	1	9686	10	1210	1211	0.01	0	2	-1	m/s2	-1
+197	RP2 RA RP EB accel	1	9676	10	1209	1210	0.01	0	2	-1	2	m/s2
+217	RP2 RA RP K Accel	1	9686	10	1210	1211	0.01	0	2	-1	2	m/s2
 200	RP2 RA RP RC index	0	9696	3	1212	1212	1	0	2	-1	-1	-1
-201	RP2 RA RP RC speed	0	9699	13	1212	1213	0.036	0	2	-1	kph	-1
-202	RP2 RA RP RC accel	1	9712	10	1214	1215	0.01	0	2	-1	m/s2	-1
+201	RP2 RA RP RC speed	0	9699	13	1212	1213	0.036	0	2	-1	2	kph
+202	RP2 RA RP RC accel	1	9712	10	1214	1215	0.01	0	2	-1	2	m/s2
 203	RP2 RA RP RC boost	0	9722	1	1215	1215	1	0	0	81	-1	-1
 204	ARP RA RP source	0	9723	6	1215	1216	1	0	0	113	-1	-1
 211	ARP RA RP RC count	0	9729	3	1216	1216	1	0	2	-1	-1	-1
 205	ARP RA RP type	0	9732	3	1216	1216	1	0	0	118	-1	-1
-206	ARP RA RP distance	1	9735	19	1216	1219	0.01	0	2	-1	m	-1
-208	ARP RA RP gradient	1	9754	10	1219	1220	0.01	0	2	-1	m/s2	-1
-207	ARP RA RP speed	0	9764	13	1220	1222	0.036	0	2	-1	kph	-1
+206	ARP RA RP distance	1	9735	19	1216	1219	0.01	0	2	-1	2	m
+208	ARP RA RP gradient	1	9754	10	1219	1220	0.01	0	2	-1	2	m/s2
+207	ARP RA RP speed	0	9764	13	1220	1222	0.036	0	2	-1	2	kph
 210	ARP RA RP strategy	0	9777	6	1222	1222	1	0	2	-1	-1	-1
-209	ARP RA RP EB accel	1	9783	10	1222	1224	0.01	0	2	-1	m/s2	-1
-218	ARP RA RP K Accel	1	9793	10	1224	1225	0.01	0	2	-1	m/s2	-1
+209	ARP RA RP EB accel	1	9783	10	1222	1224	0.01	0	2	-1	2	m/s2
+218	ARP RA RP K Accel	1	9793	10	1224	1225	0.01	0	2	-1	2	m/s2
 212	ARP RA RP RC index	0	9803	3	1225	1225	1	0	2	-1	-1	-1
-213	ARP RA RP RC speed	0	9806	13	1225	1227	0.036	0	2	-1	kph	-1
-214	ARP RA RP RC accel	1	9819	10	1227	1228	0.01	0	2	-1	m/s2	-1
+213	ARP RA RP RC speed	0	9806	13	1225	1227	0.036	0	2	-1	2	kph
+214	ARP RA RP RC accel	1	9819	10	1227	1228	0.01	0	2	-1	2	m/s2
 215	ARP RA RP RC boost	0	9829	1	1228	1228	1	0	0	81	-1	-1
-124	Motoring limit accel	1	9830	10	1228	1229	0.01	0	2	-1	m/s2	-1
-125	Motoring avail rate	0	9840	7	1230	1230	1	0	2	-1	%	-1
+124	Motoring limit accel	1	9830	10	1228	1229	0.01	0	2	-1	2	m/s2
+125	Motoring avail rate	0	9840	7	1230	1230	1	0	2	-1	-1	%
 584	Immobilisation cmd	0	9847	1	1230	1230	1	0	0	81	-1	-1
 109	Software cmd applied	0	9848	1	1231	1231	1	0	0	81	-1	-1
-146	Command accel	1	9849	10	1231	1232	0.01	0	2	-1	m/s2	-1
-146	Command accel	1	9849	10	1231	1232	0.01	0	2	-1	m/s2	-1
-146	Command accel	1	9849	10	1231	1232	0.01	0	2	-1	m/s2	-1
-112	Cmd accel if no immo	1	9859	10	1232	1233	0.01	0	2	-1	m/s2	-1
-113	Cmd accel RTT motor	0	9869	10	1233	1234	0.01	0	2	-1	s	-1
-114	Cmd accel RTT brak	0	9879	10	1234	1236	0.01	0	2	-1	s	-1
-132	Command ref accel	1	9889	10	1236	1237	0.01	0	2	-1	m/s2	-1
-132	Command ref accel	1	9889	10	1236	1237	0.01	0	2	-1	m/s2	-1
-122	Resistance to motion	1	9899	10	1237	1238	0.01	0	2	-1	m/s2	-1
-120	Closed loop error	1	9909	10	1238	1239	0.01	0	2	-1	m/s2	-1
-116	Cmd accel proportional	1	9919	10	1239	1241	0.01	0	2	-1	m/s2	-1
-117	Cmd accel integral	1	9929	10	1241	1242	0.01	0	2	-1	m/s2	-1
-118	Filt Cmd accel integral	1	9939	10	1242	1243	0.01	0	2	-1	m/s2	-1
-115	Closed loop cmd accel	1	9949	10	1243	1244	0.01	0	2	-1	m/s2	-1
-126	TkM acceleration	1	9959	10	1244	1246	0.01	0	2	-1	m/s2	-1
-127	TkM applied cmd	1	9969	10	1246	1247	0.01	0	2	-1	m/s2	-1
-128	TkM RTT motoring	0	9979	10	1247	1248	0.01	0	2	-1	s	-1
-129	TkM RTT braking	0	9989	10	1248	1249	0.01	0	2	-1	s	-1
+146	Command accel	1	9849	10	1231	1232	0.01	0	2	-1	2	m/s2
+146	Command accel	1	9849	10	1231	1232	0.01	0	2	-1	2	m/s2
+146	Command accel	1	9849	10	1231	1232	0.01	0	2	-1	2	m/s2
+112	Cmd accel if no immo	1	9859	10	1232	1233	0.01	0	2	-1	2	m/s2
+113	Cmd accel RTT motor	0	9869	10	1233	1234	0.01	0	2	-1	2	s
+114	Cmd accel RTT brak	0	9879	10	1234	1236	0.01	0	2	-1	2	s
+132	Command ref accel	1	9889	10	1236	1237	0.01	0	2	-1	2	m/s2
+132	Command ref accel	1	9889	10	1236	1237	0.01	0	2	-1	2	m/s2
+122	Resistance to motion	1	9899	10	1237	1238	0.01	0	2	-1	2	m/s2
+120	Closed loop error	1	9909	10	1238	1239	0.01	0	2	-1	2	m/s2
+116	Cmd accel proportional	1	9919	10	1239	1241	0.01	0	2	-1	2	m/s2
+117	Cmd accel integral	1	9929	10	1241	1242	0.01	0	2	-1	2	m/s2
+118	Filt Cmd accel integral	1	9939	10	1242	1243	0.01	0	2	-1	2	m/s2
+115	Closed loop cmd accel	1	9949	10	1243	1244	0.01	0	2	-1	2	m/s2
+126	TkM acceleration	1	9959	10	1244	1246	0.01	0	2	-1	2	m/s2
+127	TkM applied cmd	1	9969	10	1246	1247	0.01	0	2	-1	2	m/s2
+128	TkM RTT motoring	0	9979	10	1247	1248	0.01	0	2	-1	2	s
+129	TkM RTT braking	0	9989	10	1248	1249	0.01	0	2	-1	2	s
 130	TkM motoring req	0	9999	1	1249	1249	1	0	0	81	-1	-1
 131	TkM braking req	0	10000	1	1250	1250	1	0	0	81	-1	-1
-133	TM acceleration	1	10001	10	1250	1251	0.01	0	2	-1	m/s2	-1
-134	TM applied cmd	1	10011	10	1251	1252	0.01	0	2	-1	m/s2	-1
-135	TM RTT motoring	0	10021	10	1252	1253	0.01	0	2	-1	s	-1
-136	TM RTT braking	0	10031	10	1253	1255	0.01	0	2	-1	s	-1
+133	TM acceleration	1	10001	10	1250	1251	0.01	0	2	-1	2	m/s2
+134	TM applied cmd	1	10011	10	1251	1252	0.01	0	2	-1	2	m/s2
+135	TM RTT motoring	0	10021	10	1252	1253	0.01	0	2	-1	2	s
+136	TM RTT braking	0	10031	10	1253	1255	0.01	0	2	-1	2	s
 137	TM motoring req	0	10041	1	1255	1255	1	0	0	81	-1	-1
 138	TM braking req	0	10042	1	1255	1255	1	0	0	81	-1	-1
-140	TMWD acceleration	1	10043	10	1255	1256	0.01	0	2	-1	m/s2	-1
-141	TMWD applied cmd	1	10053	10	1256	1257	0.01	0	2	-1	m/s2	-1
-142	TMWD RTT motoring	0	10063	10	1257	1259	0.01	0	2	-1	s	-1
-143	TMWD RTT braking	0	10073	10	1259	1260	0.01	0	2	-1	s	-1
+140	TMWD acceleration	1	10043	10	1255	1256	0.01	0	2	-1	2	m/s2
+141	TMWD applied cmd	1	10053	10	1256	1257	0.01	0	2	-1	2	m/s2
+142	TMWD RTT motoring	0	10063	10	1257	1259	0.01	0	2	-1	2	s
+143	TMWD RTT braking	0	10073	10	1259	1260	0.01	0	2	-1	2	s
 144	TMWD motoring req	0	10083	1	1260	1260	1	0	0	81	-1	-1
 145	TMWD braking req	0	10084	1	1260	1260	1	0	0	81	-1	-1
-148	Avg Acc Cmd Incr	1	10085	10	1260	1261	0.01	0	2	-1	m/s2	-1
-149	Acc cons w small chg	1	10095	10	1261	1263	0.01	0	2	-1	m/s2	-1
+148	Avg Acc Cmd Incr	1	10085	10	1260	1261	0.01	0	2	-1	2	m/s2
+149	Acc cons w small chg	1	10095	10	1261	1263	0.01	0	2	-1	2	m/s2
 151	Active	0	10105	1	1263	1263	1	0	0	81	-1	-1
 150	Steady state	0	10106	1	1263	1263	1	0	0	81	-1	-1
-152	Acc reduction	1	10107	10	1263	1264	0.01	0	2	-1	m/s2	-1
+152	Acc reduction	1	10107	10	1263	1264	0.01	0	2	-1	2	m/s2
 154	Motoring request	0	10117	1	1264	1264	1	0	0	81	-1	-1
 155	Braking request	0	10118	1	1264	1264	1	0	0	81	-1	-1
-156	Motoring braking level	0	10119	14	1264	1266	0.01	0	2	-1	%	-1
+156	Motoring braking level	0	10119	14	1264	1266	0.01	0	2	-1	2	%
 157	Filt Mot request	0	10133	1	1266	1266	1	0	0	81	-1	-1
 158	Filt Brak request	0	10134	1	1266	1266	1	0	0	81	-1	-1
-159	Filt Mot brak level	0	10135	14	1266	1268	0.01	0	2	-1	%	-1
-160	Filt Mot cmd correct	0	10149	7	1268	1269	1	0	2	-1	%	-1
-161	Filt Brak cmd correct	0	10156	7	1269	1270	1	0	2	-1	%	-1
-153	Acc increment	1	10163	10	1270	1271	0.01	0	2	-1	m/s2	-1
-333	No EB DB req speed	0	10173	13	1271	1273	0.036	0	2	-1	kph	-1
+159	Filt Mot brak level	0	10135	14	1266	1268	0.01	0	2	-1	2	%
+160	Filt Mot cmd correct	0	10149	7	1268	1269	1	0	2	-1	-1	%
+161	Filt Brak cmd correct	0	10156	7	1269	1270	1	0	2	-1	-1	%
+153	Acc increment	1	10163	10	1270	1271	0.01	0	2	-1	2	m/s2
+333	No EB DB req speed	0	10173	13	1271	1273	0.036	0	2	-1	2	kph
 334	No EB DB req source	0	10186	6	1273	1273	1	0	0	113	-1	-1
-335	No EB DB rel speed	0	10192	13	1274	1275	0.036	0	2	-1	kph	-1
+335	No EB DB rel speed	0	10192	13	1274	1275	0.036	0	2	-1	2	kph
 336	No EB DB rel source	0	10205	6	1275	1276	1	0	0	113	-1	-1
 573	Park braking req	0	10211	1	1276	1276	1	0	0	81	-1	-1
-574	Park brak apll time	0	10212	10	1276	1277	0.1	0	2	-1	s	-1
+574	Park brak apll time	0	10212	10	1276	1277	0.1	0	2	-1	1	s
 531	EB PB to open door	0	10222	1	1277	1277	1	0	0	81	-1	-1
 576	PB to open door	0	10223	1	1277	1277	1	0	0	81	-1	-1
 338	Start possible	0	10224	1	1278	1278	1	0	0	81	-1	-1
-339	SP ref accel	1	10225	10	1278	1279	0.01	0	2	-1	m/s2	-1
+339	SP ref accel	1	10225	10	1278	1279	0.01	0	2	-1	2	m/s2
 340	SP RP source	0	10235	6	1279	1280	1	0	0	113	-1	-1
-322	Reference speed	0	10241	13	1280	1281	0.036	0	2	-1	kph	-1
+322	Reference speed	0	10241	13	1280	1281	0.036	0	2	-1	2	kph
 323	RS source	0	10254	6	1281	1282	1	0	0	113	-1	-1
-326	Target point dist	0	10260	18	1282	1284	0.01	0	2	-1	m	-1
-327	Target point speed	0	10278	13	1284	1286	0.036	0	2	-1	kph	-1
+326	Target point dist	0	10260	18	1282	1284	0.01	0	2	-1	2	m
+327	Target point speed	0	10278	13	1284	1286	0.036	0	2	-1	2	kph
 328	TP source	0	10291	6	1286	1287	1	0	0	113	-1	-1
-329	Warning speed	0	10297	13	1287	1288	0.036	0	2	-1	kph	-1
-324	Estimat EB speed	0	10310	13	1288	1290	0.036	0	2	-1	kph	-1
+329	Warning speed	0	10297	13	1287	1288	0.036	0	2	-1	2	kph
+324	Estimat EB speed	0	10310	13	1288	1290	0.036	0	2	-1	2	kph
 330	Warning source	0	10323	6	1290	1291	1	0	0	113	-1	-1
 325	Estim. EB sp. source	0	10329	6	1291	1291	1	0	0	113	-1	-1
 331	Warning	0	10335	1	1291	1291	1	0	0	81	-1	-1
 315	Switch possible	0	10336	1	1292	1292	1	0	0	81	-1	-1
-317	RA after Delta T	1	10337	10	1292	1293	0.01	0	2	-1	m/s2	-1
+317	RA after Delta T	1	10337	10	1292	1293	0.01	0	2	-1	2	m/s2
 316	RA after DT source	0	10347	6	1293	1294	1	0	0	113	-1	-1
-318	Limit speed after DT	0	10353	13	1294	1295	0.036	0	2	-1	kph	-1
-320	Distance cst accel	0	10366	16	1295	1297	0.01	0	2	-1	m	-1
-319	Speed cst accel	0	10382	13	1297	1299	0.036	0	2	-1	kph	-1
+318	Limit speed after DT	0	10353	13	1294	1295	0.036	0	2	-1	2	kph
+320	Distance cst accel	0	10366	16	1295	1297	0.01	0	2	-1	2	m
+319	Speed cst accel	0	10382	13	1297	1299	0.036	0	2	-1	2	kph
 680	Train start if request	0	10395	1	1299	1299	1	0	0	81	-1	-1
 681	Motoring without eff	0	10396	1	1299	1299	1	0	0	81	-1	-1
 682	No trai sta aft sta tim	0	10397	1	1299	1299	1	0	0	81	-1	-1
@@ -1714,16 +1716,16 @@
 1726	Needed in TF	0	10437	1	1304	1304	1	0	0	81	-1	-1
 689	Reset warning	0	10438	1	1304	1304	1	0	0	81	-1	-1
 534	EB for reset warning	0	10438	1	1304	1304	1	0	0	81	-1	-1
-714	Cyclic task dur	1	10439	18	1304	1307	0.001	0	2	-1	ms	-1
-715	Call time	1	10457	18	1307	1309	0.001	0	2	-1	ms	-1
-716	Cyclic task dur +	1	10475	18	1309	1311	0.001	0	2	-1	ms	-1
-717	Cyclic task dur ++	1	10493	18	1311	1313	0.001	0	2	-1	ms	-1
+714	Cyclic task dur	1	10439	18	1304	1307	0.001	0	2	-1	3	ms
+715	Call time	1	10457	18	1307	1309	0.001	0	2	-1	3	ms
+716	Cyclic task dur +	1	10475	18	1309	1311	0.001	0	2	-1	3	ms
+717	Cyclic task dur ++	1	10493	18	1311	1313	0.001	0	2	-1	3	ms
 610	TF id loading	0	10511	8	1313	1314	1	0	2	-1	-1	-1
 611	NV TF id loaded in TU	0	10519	8	1314	1315	1	0	2	-1	-1	-1
 608	TF Id ioaded	0	10527	8	1315	1316	1	0	2	-1	-1	-1
 609	Index Function	0	10535	8	1316	1317	1	0	2	-1	-1	-1
 718	Funct dur + id type	0	10543	8	1317	1318	1	0	0	100	-1	-1
-719	Funct dur +	1	10551	18	1318	1321	0.001	0	2	-1	ms	-1
+719	Funct dur +	1	10551	18	1318	1321	0.001	0	2	-1	3	ms
 1728	*TU-TU informations	0	11168	1	1396	1396	1	0	0	128	-1	-1
 1729	TU_ATO_version_major_Active	0	11169	8	1396	1397	1	0	2	-1	-1	-1
 1730	TU_ATO_version_major_First	0	11177	8	1397	1398	1	0	2	-1	-1	-1
@@ -1968,15 +1970,15 @@
 1969	TU_train_formation_id_validated_in_train_unit_Position_2	0	13452	7	1681	1682	1	0	2	-1	-1	-1
 1970	TU_train_formation_id_validated_in_train_unit_Position_3	0	13459	7	1682	1683	1	0	2	-1	-1	-1
 1971	TU_train_formation_id_validated_in_train_unit_Position_4	0	13466	7	1683	1684	1	0	2	-1	-1	-1
-1972	TU_train_location_end2_abscissa_Active	0	13473	18	1684	1686	0.01	0	2	-1	m	-1
-1973	TU_train_location_end2_abscissa_First	0	13491	18	1686	1688	0.01	0	2	-1	m	-1
-1974	TU_train_location_end2_abscissa_Last	0	13509	18	1688	1690	0.01	0	2	-1	m	-1
-1975	TU_train_location_end2_abscissa_Local	0	13527	18	1690	1693	0.01	0	2	-1	m	-1
-1976	TU_train_location_end2_abscissa_Master	0	13545	18	1693	1695	0.01	0	2	-1	m	-1
-1977	TU_train_location_end2_abscissa_Position_1	0	13563	18	1695	1697	0.01	0	2	-1	m	-1
-1978	TU_train_location_end2_abscissa_Position_2	0	13581	18	1697	1699	0.01	0	2	-1	m	-1
-1979	TU_train_location_end2_abscissa_Position_3	0	13599	18	1699	1702	0.01	0	2	-1	m	-1
-1980	TU_train_location_end2_abscissa_Position_4	0	13617	18	1702	1704	0.01	0	2	-1	m	-1
+1972	TU_train_location_end2_abscissa_Active	0	13473	18	1684	1686	0.01	0	2	-1	2	m
+1973	TU_train_location_end2_abscissa_First	0	13491	18	1686	1688	0.01	0	2	-1	2	m
+1974	TU_train_location_end2_abscissa_Last	0	13509	18	1688	1690	0.01	0	2	-1	2	m
+1975	TU_train_location_end2_abscissa_Local	0	13527	18	1690	1693	0.01	0	2	-1	2	m
+1976	TU_train_location_end2_abscissa_Master	0	13545	18	1693	1695	0.01	0	2	-1	2	m
+1977	TU_train_location_end2_abscissa_Position_1	0	13563	18	1695	1697	0.01	0	2	-1	2	m
+1978	TU_train_location_end2_abscissa_Position_2	0	13581	18	1697	1699	0.01	0	2	-1	2	m
+1979	TU_train_location_end2_abscissa_Position_3	0	13599	18	1699	1702	0.01	0	2	-1	2	m
+1980	TU_train_location_end2_abscissa_Position_4	0	13617	18	1702	1704	0.01	0	2	-1	2	m
 1981	TU_train_location_end2_block_id_Active	0	13635	12	1704	1705	0.01	0	2	-1	-1	-1
 1982	TU_train_location_end2_block_id_First	0	13647	12	1705	1707	0.01	0	2	-1	-1	-1
 1983	TU_train_location_end2_block_id_Last	0	13659	12	1707	1708	0.01	0	2	-1	-1	-1
@@ -2073,12 +2075,12 @@
 2074	UEVOL_sounds_allowed_on_DMI2	0	13958	8	1744	1745	1	0	2	-1	-1	-1
 2075	Display_MCS_driving_speed_indication	0	13966	8	1745	1746	1	0	2	-1	-1	-1
 2076	Within_braking_curve_area	0	13974	8	1746	1747	1	0	2	-1	-1	-1
-2077	Advisory_speed_for_SMI	0	13982	14	1747	1749	0.01	0	2	-1	kph	-1
-2078	Advisory_speed_for_ATS_max_functional_speed	0	13996	14	1749	1751	0.01	0	2	-1	kph	-1
-2079	Advisory_speed_for_MCS_time_regulation	0	14010	14	1751	1752	0.01	0	2	-1	kph	-1
-2080	Advisory_speed_for_skip_station	0	14024	14	1753	1754	0.01	0	2	-1	kph	-1
-2081	Advisory_speed_for_all_but_SMI	0	14038	14	1754	1756	0.01	0	2	-1	kph	-1
-2082	Advisory_speed	0	14052	14	1756	1758	0.01	0	2	-1	kph	-1
+2077	Advisory_speed_for_SMI	0	13982	14	1747	1749	0.01	0	2	-1	2	kph
+2078	Advisory_speed_for_ATS_max_functional_speed	0	13996	14	1749	1751	0.01	0	2	-1	2	kph
+2079	Advisory_speed_for_MCS_time_regulation	0	14010	14	1751	1752	0.01	0	2	-1	2	kph
+2080	Advisory_speed_for_skip_station	0	14024	14	1753	1754	0.01	0	2	-1	2	kph
+2081	Advisory_speed_for_all_but_SMI	0	14038	14	1754	1756	0.01	0	2	-1	2	kph
+2082	Advisory_speed	0	14052	14	1756	1758	0.01	0	2	-1	2	kph
 2083	Current_work_zone_authorises_MCS_driving_mode	0	14066	8	1758	1759	1	0	2	-1	-1	-1
 2084	MCS_driving_mode_is_authorised_in_current_work_zone	0	14074	8	1759	1760	1	0	2	-1	-1	-1
 2085	Next_work_zone_is_applicable_for_available_mode_anticipation	0	14082	8	1760	1761	1	0	2	-1	-1	-1
@@ -2240,8 +2242,8 @@
 2241	NEXT_STOP	0	14490	8	1811	1812	1	0	2	-1	-1	-1
 2242	DOOR_SIDE	0	14498	8	1812	1813	1	0	2	-1	-1	-1
 2243	*Target_distance_data	0	14506	1	1813	1813	1	0	0	128	-1	-1
-2244	Min_distance_without_danger_Shifted	1	14507	19	1813	1815	1	0	2	-1	m	-1
-2245	Target_distance_Shifted	1	14526	19	1815	1818	1	0	2	-1	m	-1
+2244	Min_distance_without_danger_Shifted	1	14507	19	1813	1815	1	0	2	-1	2	m
+2245	Target_distance_Shifted	1	14526	19	1815	1818	1	0	2	-1	2	m
 2246	*Display	0	14545	1	1818	1818	1	0	0	128	-1	-1
 2247	CC_TCMS_INTERFACE_REVISION	0	14546	32	1818	1822	1	0	1	-1	-1	-1
 2248	ATC_STATUS	0	14578	8	1822	1823	1	0	2	-1	-1	-1
@@ -2438,7 +2440,7 @@
 2439	40hrs_elapsed	0	15884	2	1985	1985	1	0	0	86	-1	-1
 2440	3min_to_48hrs	0	15886	2	1985	1985	1	0	0	86	-1	-1
 2441	Nominal_reset	0	15888	2	1986	1986	1	0	0	86	-1	-1
-2442	Consolidated_SW_Time	0	15890	24	1986	1989	0.1	0	2	-1	s	-1
+2442	Consolidated_SW_Time	0	15890	24	1986	1989	0.1	0	2	-1	1	s
 2443	Reset_3min_to_48hrs	0	15914	2	1989	1989	0.1	0	0	86	-1	-1
 2444	Reset_30sec_to_48hrs	0	15916	2	1989	1989	0.1	0	0	86	-1	-1
 2445	Reset_after_47hrs	0	15918	2	1989	1989	0.1	0	0	86	-1	-1
@@ -2555,9 +2557,9 @@
 2556	Train_Stop	0	16208	2	2026	2026	1	0	0	86	-1	-1
 2557	Skip_Station	0	16210	2	2026	2026	1	0	0	86	-1	-1
 2558	Regulation	0	16212	2	2026	2026	1	0	0	86	-1	-1
-2559	Speed_Advisory	0	16214	14	2026	2028	0.01	0	2	-1	kph	-1
+2559	Speed_Advisory	0	16214	14	2026	2028	0.01	0	2	-1	2	kph
 2560	Speed_Advisory_Scaled	0	16228	16	2028	2030	0.01	0	2	-1	-1	-1
-2561	Regulation_Adv	0	16244	14	2030	2032	0.01	0	2	-1	kph	-1
+2561	Regulation_Adv	0	16244	14	2030	2032	0.01	0	2	-1	2	kph
 2562	*TBC Position	0	16258	1	2032	2032	1	0	0	128	-1	-1
 2563	Deadman	0	16259	2	2032	2032	1	0	0	86	-1	-1
 2564	TBC_Power	0	16261	2	2032	2032	1	0	0	86	-1	-1
@@ -2664,7 +2666,7 @@
 2665	Maintenance_needed_on_local_cc_core	0	16857	2	2107	2107	1	0	0	86	-1	-1
 2666	Maintenance_needed_on_distant_cc_core	0	16859	2	2107	2107	1	0	0	86	-1	-1
 2667	CC_ATS_Train_driving_mode	0	16861	4	2107	2108	1	0	2	-1	-1	-1
-2668	Train_speed_absolute_value	0	16865	14	2108	2109	0.01	0	2	-1	kph	-1
+2668	Train_speed_absolute_value	0	16865	14	2108	2109	0.01	0	2	-1	2	kph
 2669	CC_ATS_Train_validated_mode	0	16879	4	2109	2110	0.01	0	2	-1	-1	-1
 2670	CC_to_ATS_Trainborne_ATC_maintenance_needed	0	16883	8	2110	2111	0.01	0	2	-1	-1	-1
 2671	RM_driving_mode_selectable	0	16891	2	2111	2111	0.01	0	0	86	-1	-1
@@ -2917,15 +2919,15 @@
 2918	Skip_order	0	18660	2	2332	2332	0.01	0	0	86	-1	-1
 2919	Train_motion_impossible_for_incompatible_train_front_end_selection	0	18662	2	2332	2332	0.01	0	0	86	-1	-1
 2920	Emergency_braking_from_rolling_stock	0	18664	2	2333	2333	0.01	0	0	86	-1	-1
-2921	SSP_reference_speed	0	18666	14	2333	2334	0.01	0	2	-1	kph	-1
-2922	SSP_reference_speed_distance	1	18680	19	2335	2337	0.01	0	2	-1	m	-1
-2923	No_sanction_reference_to_driver_reference_speed	0	18699	14	2337	2339	0.01	0	2	-1	kph	-1
-2924	No_sanction_reference_to_driver_target_point_distance	1	18713	19	2339	2341	0.01	0	2	-1	m	-1
+2921	SSP_reference_speed	0	18666	14	2333	2334	0.01	0	2	-1	2	kph
+2922	SSP_reference_speed_distance	1	18680	19	2335	2337	0.01	0	2	-1	2	m
+2923	No_sanction_reference_to_driver_reference_speed	0	18699	14	2337	2339	0.01	0	2	-1	2	kph
+2924	No_sanction_reference_to_driver_target_point_distance	1	18713	19	2339	2341	0.01	0	2	-1	2	m
 2925	CC_DMI_Speed_order	0	18732	8	2341	2342	0.01	0	2	-1	-1	-1
 2926	CC_DMI_Target_speed	0	18740	8	2342	2343	0.01	0	2	-1	-1	-1
-2927	CC_DMI_Target_distance	1	18748	19	2343	2345	1	0	2	-1	m	-1
+2927	CC_DMI_Target_distance	1	18748	19	2343	2345	1	0	2	-1	2	m
 2928	Train_start_if_requested	0	18767	2	2345	2346	1	0	0	86	-1	-1
-2929	No_sanction_reference_to_driver_target_point_speed	0	18769	14	2346	2347	0.01	0	2	-1	kph	-1
+2929	No_sanction_reference_to_driver_target_point_speed	0	18769	14	2346	2347	0.01	0	2	-1	2	kph
 2930	Door_opening_sideA	0	18783	2	2347	2348	0.01	0	0	86	-1	-1
 2931	Door_opening_sideB	0	18785	2	2348	2348	0.01	0	0	86	-1	-1
 2932	Skip_speed_automatic_driving_impact	0	18787	2	2348	2348	0.01	0	0	86	-1	-1
@@ -2941,15 +2943,15 @@
 2942	EB_for_motion_in_not_authorised_by_interlocking_sense_for_end_1	0	18807	2	2350	2351	0.01	0	0	86	-1	-1
 2943	EB_for_motion_in_not_authorised_by_interlocking_sense_for_end_2	0	18809	2	2351	2351	0.01	0	0	86	-1	-1
 2944	SSP_reference_speed_source	0	18811	3	2351	2351	0.01	0	0	51	-1	-1
-2945	Anticipated_SSP_reference_speed	0	18814	14	2351	2353	0.01	0	2	-1	kph	-1
+2945	Anticipated_SSP_reference_speed	0	18814	14	2351	2353	0.01	0	2	-1	2	kph
 2994	Remaining_time_before_train_start	0	18828	32	2353	2357	0.01	0	2	-1	-1	-1
 2947	Estimated_start_area_time_applicable	0	18860	2	2357	2357	0.01	0	0	86	-1	-1
 2948	CC_DMI_Speed_num	0	18862	16	2357	2359	0.01	0	2	-1	-1	-1
 2949	Start_PB_failure	0	18878	2	2359	2359	0.01	0	0	86	-1	-1
 2950	CC_DMI_Dwell_time_value	1	18880	8	2360	2360	0.01	0	2	-1	-1	-1
 2951	CC_DMI_Dwell_time_command	0	18888	8	2361	2361	0.01	0	2	-1	-1	-1
-2952	Active_SSP_D	1	18896	19	2362	2364	1	0	2	-1	m	-1
-2953	Operational_SSP_D	1	18915	19	2364	2366	1	0	2	-1	m	-1
+2952	Active_SSP_D	1	18896	19	2362	2364	1	0	2	-1	2	m
+2953	Operational_SSP_D	1	18915	19	2364	2366	1	0	2	-1	2	m
 2954	No_undetectable_danger_automatic_driving_impact	0	18934	2	2366	2366	1	0	0	86	-1	-1
 2955	No_undetectable_danger_for_end1	0	18936	2	2367	2367	1	0	0	86	-1	-1
 2956	No_undetectable_danger_for_end2	0	18938	2	2367	2367	1	0	0	86	-1	-1
@@ -3004,24 +3006,24 @@
 3005	Local_time_hour_in_the_day	0	19327	8	2415	2416	1	0	2	86	-1	-1
 3006	*Odometer	0	19335	1	2416	2416	1	0	0	128	-1	-1
 3007	ODO_init	0	19336	2	2417	2417	1	0	0	86	-1	-1
-3008	*MAL Source and Distance	0	19338	1	2417	2417	1	0	2	-1	m	-1
+3008	*MAL Source and Distance	0	19338	1	2417	2417	1	0	2	-1	2	m
 3009	RS_MAL_Source	0	19339	8	2417	2418	1	0	2	-1	-1	-1
 3010	MAL_Source	0	19347	16	2418	2420	1	0	0	113	-1	-1
-3011	Visibility_distance	1	19363	19	2420	2422	0.01	0	2	-1	m	-1
+3011	Visibility_distance	1	19363	19	2420	2422	0.01	0	2	-1	2	m
 3012	MNBIS_act	0	19382	2	2422	2422	0.01	0	0	86	-1	-1
 3013	NVPSR_act	0	19384	2	2423	2423	0.01	0	0	86	-1	-1
 3014	PPSSP_act	1	19386	2	2423	2423	0.01	0	0	86	-1	-1
-3015	MAL_VD	1	19388	19	2423	2425	0.01	0	2	-1	m	-1
-3016	PPSSP	1	19407	19	2425	2428	0.01	0	2	-1	m	-1
+3015	MAL_VD	1	19388	19	2423	2425	0.01	0	2	-1	2	m
+3016	PPSSP	1	19407	19	2425	2428	0.01	0	2	-1	2	m
 3017	Local_ODO_Discrepancy	0	19426	2	2428	2428	0.01	0	0	86	-1	-1
 3018	Distant_ODO_Discrepancy	0	19428	2	2428	2428	0.01	0	0	86	-1	-1
 3019	Local_ODO_Reset	0	19430	2	2428	2428	0.01	0	0	86	-1	-1
 3020	Distant_ODO_Reset	0	19432	2	2429	2429	0.01	0	0	86	-1	-1
 3021	Local_Not_F_ODO_Detection	0	19434	2	2429	2429	0.01	0	0	86	-1	-1
 3022	Distant_Not_F_ODO_Detection	0	19436	2	2429	2429	0.01	0	0	86	-1	-1
-3023	Redundant_TS	0	19438	16	2429	2431	0.036	0	2	-1	kph	-1
+3023	Redundant_TS	0	19438	16	2429	2431	0.036	0	2	-1	-1	kph
 3024	FO_Redundant_TS	0	19454	8	2431	2432	0.036	0	2	-1	-1	-1
-3025	Redundant_TS_undif	0	19462	16	2432	2434	0.036	0	2	-1	kph	-1
+3025	Redundant_TS_undif	0	19462	16	2432	2434	0.036	0	2	-1	2	kph
 3026	FO_TCMS_CC_TS	0	19478	8	2434	2435	0.036	0	2	-1	-1	-1
 3027	TCMS_CC_TS_undif	0	19486	8	2435	2436	0.036	0	2	-1	-1	-1
 3028	Local_ODO_Discrepancy_Ch2_Train_Stop	0	19494	2	2436	2436	0.036	0	0	86	-1	-1
@@ -3037,11 +3039,11 @@
 3038	* CS observability	0	19514	1	2439	2439	1	0	0	128	-1	-1
 3039	CS Motoring_requested coerced	0	19515	1	2439	2439	1	0	0	81	-1	-1
 3040	CS Braking_requested coerced	0	19516	1	2439	2439	1	0	0	81	-1	-1
-3041	CS Motoring_braking_level coerced	0	19517	14	2439	2441	0.01	0	2	-1	%	-1
+3041	CS Motoring_braking_level coerced	0	19517	14	2439	2441	0.01	0	2	-1	2	%
 3042	* TL supervision	0	19531	1	2441	2441	1	0	0	128	-1	-1
 3043	TL_output_M	0	19532	1	2441	2441	1	0	0	81	-1	-1
 3044	TL_output_B	0	19533	1	2441	2441	1	0	0	81	-1	-1
-3045	TL_output_MBL	0	19534	16	2441	2443	0.01	0	2	-1	%	-1
+3045	TL_output_MBL	0	19534	16	2441	2443	0.01	0	2	-1	2	%
 3046	* Particular Case	0	19550	1	2443	2443	1	0	0	128	-1	-1
 3047	PC_Necessary_cond	0	19551	1	2443	2443	1	0	0	81	-1	-1
 3048	PC_Release_effort_min	0	19552	1	2444	2444	1	0	0	81	-1	-1
@@ -3051,7 +3053,7 @@
 3052	PC_Force_weak_cmd	0	19556	1	2444	2444	1	0	0	81	-1	-1
 3053	PC_output_M	0	19557	1	2444	2444	1	0	0	81	-1	-1
 3054	PC_output_B	0	19558	1	2444	2444	1	0	0	81	-1	-1
-3055	PC_output_MBL	0	19559	16	2444	2446	0.01	0	2	-1	%	-1
+3055	PC_output_MBL	0	19559	16	2444	2446	0.01	0	2	-1	2	%
 3056	*ATO anti-pumping data	0	19575	1	2446	2446	1	0	0	128	-1	-1
 3057	ATO_train_speed	0	19576	8	2447	2447	1	0	2	-1	-1	-1
 3058	ATO_target_speed	0	19584	8	2448	2448	1	0	2	-1	-1	-1

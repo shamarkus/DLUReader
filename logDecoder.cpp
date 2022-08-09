@@ -1,8 +1,10 @@
 #include <logDecoder.h>
+
 fileParsingInfo::fileParsingInfo(struct fileInfo* fileInfoStruct, int logType) : fileInfoStruct(fileInfoStruct) {
     //If log is of ATP type
     if(logType == ATP_NUM){
-        this->bitNumToSkip = ATP_BIT_NUM_TO_SKIP; 
+        this->byteNumToSkip = ATP_BYTE_NUM_TO_SKIP - 1; 
+	this->byteNumForLine = MAX_ATP_PARAMS_BIT_SIZE/8;
 
         if(ATP_parameterInfo != NULL){
             this->parameterInfoVec = *ATP_parameterInfo;
@@ -10,14 +12,16 @@ fileParsingInfo::fileParsingInfo(struct fileInfo* fileInfoStruct, int logType) :
         else{
             parseLabelsConfigFile(ATP_EnumeratedLabels,logType,fileInfoStruct->directoryPath);
 
-            parseParameterConfigFile(this->parameterInfoVec,logType,fileInfoStruct->directoryPath,ATP_EnumeratedLabels);
+            parseParameterConfigFile(this->parameterInfoVec,logType,fileInfoStruct->directoryPath,ATP_EnumeratedLabels,ATP_StringLabels);
             ATP_parameterInfo = &(this->parameterInfoVec); 
         }
+	this->stringLabels = ATP_StringLabels;
         this->enumeratedLabels = ATP_EnumeratedLabels;
     }
     //if log is of ATO type
     else{
-        this->bitNumToSkip = ATO_BIT_NUM_TO_SKIP; 
+        this->byteNumToSkip = ATO_BYTE_NUM_TO_SKIP - 1; 
+	this->byteNumForLine = MAX_ATO_PARAMS_BIT_SIZE/8;
 
         if(ATO_parameterInfo != NULL){
             this->parameterInfoVec = *ATO_parameterInfo;
@@ -25,9 +29,10 @@ fileParsingInfo::fileParsingInfo(struct fileInfo* fileInfoStruct, int logType) :
         else{
             parseLabelsConfigFile(ATO_EnumeratedLabels,logType,fileInfoStruct->directoryPath);
 
-            parseParameterConfigFile(this->parameterInfoVec,logType,fileInfoStruct->directoryPath,ATO_EnumeratedLabels);
+            parseParameterConfigFile(this->parameterInfoVec,logType,fileInfoStruct->directoryPath,ATO_EnumeratedLabels,ATO_StringLabels);
             ATO_parameterInfo = &(this->parameterInfoVec); 
         }
+	this->stringLabels = ATO_StringLabels;
         this->enumeratedLabels = ATO_EnumeratedLabels;
     }
 }
@@ -37,11 +42,11 @@ fileParsingInfo::~fileParsingInfo(){
     free(this->fileInfoStruct);
 }
 
-parameterInfo::parameterInfo(char* line,char*** enumeratedLabels){
+parameterInfo::parameterInfo(char* line,char*** enumeratedLabels,char** stringLabels){
     this->parameterID = fast_atoi(strtok(line,"\t"));
-    strcpy(this->parameterID,strtok(NULL,"\t"));
+    strcpy(stringLabels[this->parameterID],strtok(NULL,"\t"));
     this->unsignedInt = fast_atoi(strtok(NULL,"\t"));
-    this->firstbitPosition = fast_atoi(strtok(NULL,"\t"));
+    this->firstBitPosition = fast_atoi(strtok(NULL,"\t"));
     this->bitCount = fast_atoi(strtok(NULL,"\t"));
     this->firstByte = fast_atoi(strtok(NULL,"\t"));
     this->lastByte = fast_atoi(strtok(NULL,"\t"));
@@ -61,6 +66,10 @@ parameterInfo::parameterInfo(char* line,char*** enumeratedLabels){
     }
     else{
         //do nothing
+    }
+
+    if(this->firstBitPosition > INNER_HEADER_BIT_POS){
+	    this->firstBitPosition += MAX_HEADER_BIT_SIZE;
     }
 
     //Function declaration based on the above variables
@@ -153,7 +162,7 @@ long long parameterInfo::unsignedBinaryToDecimal(const char* binaryStr){
     }
     return val;
 }
-long long parameterInfo::signedbinaryToDecimal(const char* binaryStr){
+long long parameterInfo::signedBinaryToDecimal(const char* binaryStr){
     //Check if MSB is 1
     if(*binaryStr - '0'){
         int len = this->bitCount - 1;       
@@ -168,8 +177,20 @@ long long parameterInfo::signedbinaryToDecimal(const char* binaryStr){
         return val;
     }
     else{
-        return unsignedbinaryToDecimal(binaryStr);
+        return unsignedBinaryToDecimal(binaryStr);
     }
+}
+int parameterInfo::getParameterID(){
+	return this->parameterID;
+}
+int parameterInfo::getUnsignedInt(){
+	return this->unsignedInt;
+}
+int parameterInfo::getFirstBitPosition(){
+	return this->firstBitPosition;
+}
+int parameterInfo::getBitCount(){
+	return this->bitCount;
 }
 
 //Each ATO & ATP Label file is formatted like this:
@@ -208,24 +229,23 @@ void parseLabelsConfigFile(char*** enumeratedLabels,int logType,char* directoryP
  //Each ATO & ATP Parameter file is formatted like this:
  //     Parameter ID    Parameter Label    Unsigned/Signed_Integer    FirstBitPosition    BitCount    FirstByte   LastByte    Quantum    Offset    DisplayType    EnumeratedLabel    DecimalCount    Unit  
  //Sorted by FirstBitPosition
-void parseParameterConfigFile(std::vector<class parameterInfo*> &parameterInfoVec,int logType,char* directoryPath,char*** enumeratedLabels){
-    char filePath[MAX_STRING_SIZE];
-    char line[MAX_STRING_SIZE];
+	void parseParameterConfigFile(std::vector<class parameterInfo*> &parameterInfoVec,int logType,char* directoryPath,char*** enumeratedLabels,char** stringLabels){
+	char filePath[MAX_STRING_SIZE];
+	char line[MAX_STRING_SIZE];
 
-    sprintf(filePath,"%s%s",directoryPath, (logType == ATO_NUM) ? ATO_PARAMETERS_FILENAME : ATP_PARAMETERS_FILENAME);
-    FILE* file = fopen(filePath,"r");
+	sprintf(filePath,"%s%s",directoryPath, (logType == ATO_NUM) ? ATO_PARAMETERS_FILENAME : ATP_PARAMETERS_FILENAME);
+	FILE* file = fopen(filePath,"r");
 
-    while(fgets(line, sizeof(line),filePath) != NULL){
-        //Make object dynamically and push back
-        class parameterInfo* parameterInfoObj = new parameterInfo(line,enumeratedLabels);
-        parameterInfoVec.push_back(parameterInfoObj);
-    }
+	while(fgets(line, sizeof(line),filePath) != NULL){
+		//Make object dynamically and push back
+		class parameterInfo* parameterInfoObj = new parameterInfo(line,enumeratedLabels,stringLabels);
+		parameterInfoVec.push_back(parameterInfoObj);
+	}
 
-    fclose(file);
+	fclose(file);
 }
 //To call function pointer
 // (obj->*(obj->func))();
-void parseFile(class fileParsingInfo* fileObj){
     //Create current line data structure
     //Get timestamp from Header
     //Skip over Header
@@ -234,27 +254,125 @@ void parseFile(class fileParsingInfo* fileObj){
     //Once whole line obtained, print to file
     //REPEAT
 
-	int c;
-	while((c = fgetwc(fileVec[0]->inputFile)) != WEOF){
-		printf("%d\n",c);
+
+void fileParsingInfo::parseFile(){
+	struct headerInfo* headerStruct = &(this->headerInfoStruct);
+	int logType = this->fileInfoStruct->logType;
+
+	int numParamters = (logType == ATO_NUM) ? MAX_ATO_PARAMS : MAX_ATP_PARAMS;
+	int numLineBits = (logType == ATO_NUM) ? MAX_ATO_PARAMS_BIT_SIZE : MAX_ATP_PARAMS_BIT_SIZE;
+	int paramsCharSize = numLineBits / 8;
+	int headerCharSize = headerStruct->headerBitSize / 8;
+	int paramsCharSize = this->byteNumForLine;
+	int headerCharSize = headerStruct->headerByteSize;
+	int skipCharSize = 0;
+
+	char curParams[numParameters][MAX_SHORT_STRING_SIZE];	
+	char curLine[numLineBits + 1];
+	char curHeader[headerStruct->headerBitSize + 1];
+	curLine[0] = '\0';
+	curHeader[0] = '\0';
+
+	char* headerP = curHeader;
+	char* lineP = curLine;
+	int curChar;
+	
+	printHeader(numParameters);
+
+	//Iterate over parameterInfoVec
+	while((curChar = fgetwc(fileVec[0]->inputFile)) != WEOF){
+		//Get Header
+		if(skipCharSize){
+			skipCharSize--;
+			continue;
+		}
+		else if(headerCharSize){
+			headerP = fast_strcat(headerP,byteArray[curChar]);	
+			headerCharSize--;
+			continue;
+		}
+		else if(paramsCharSize){
+			lineP = fast_strcat(lineP,byteArray[curChar]);
+			paramsCharSize--;
+			continue;
+		}
+
+		parseLine(curHeader,curLine,curParams);
+		printLine(curParams,numParameters);
+
+		//Re-initialize -- Skip over nullish sequence
+		memset(curHeader,0,headerStruct->headerBitSize);
+		memset(curLine,0,numLineBits);
+		headerP = curHeader;
+		lineP = curLine;
+
+		//Account for the current character - 1
+		skipCharSize = this->byteNumToSkip;
+		headerCharSize = headerStruct->headerByteSize;
+		paramsCharSize = this->byteNumForLine;
+	}
+}
+
+void fileParsingInfo::parseLine(char* curHeader, char* curLine, char** curParams){
+	//Get timestamp for first 2 params
+	struct headerInfo* headerStruct = &(this->headerInfoStruct);
+
+	char binaryParam[MAX_SHORT_STRING_SIZE];
+	char resultStr[MAX_SHORT_STRING_SIZE];
+	memcpy(binaryParam,curHeader + headerStruct->timeBitPos, headerStruct->timeBitSize);
+
+	class parameterInfo* parameterObj = this->parameterInfoVec[0];
+	long long decimalParam = parameterObj->unsignedBinaryToDecimal(binaryParam);
+
+	(parameterObj->*(parameterObj->intToString))(decimalParam,curParams[0]);
+	parameterObj = this->parameterInfoVec[1];
+	(parameterObj->*(parameterObj->intToString))(decimalParam,curParams[1]);
+
+	
+	for(int i = 2; i < this->parameterInfoVec.size(); i++){
+
+		parameterObj = this->parameterInfoVec[i];
+		memcpy(binaryParam,curLine + parameterObj->getBitPosition(), parameterObj->getBitCount());
+
+		if(parameterObj->getUnsignedInt() == 0){
+			decimalParam = parameterObj->unsignedBinaryToDecimal(binaryParam);
+		}
+		else{
+			decimalParam = parameterObj->signedBinaryToDecimal(binaryParam);
+		}
+
+		(parameterObj->*(parameterObj->intToString))(decimalParam,curParams[parameterObj->getParameterID()]);
+
+	}
+}
+
+void fileParsingInfo::printHeader(int numParameters){
+	for(int i = 0; i < numParameters; i++){
+		fprintf(this->fileInfoStruct->outputFile,"%s,",this->stringLabels[i]);
+	}
+}
+
+void fileParsingInfo::printLine(char** curParams,int numParameters){
+	for(int i = 0; i < numParameters; i++){
+		fprintf(this->fileInfoStruct->outputFile,"%s,",curParams[i]);
 	}
 }
 
 //Outperforms atoi() by 4x
 int fast_atoi(const char* str){
-    int val = 0;
-    while(*str){
-        val = val*10 + (*str++ - '0');
-    }
-    return val;
+	int val = 0;
+	while(*str){
+		val = val*10 + (*str++ - '0');
+	}
+	return val;
 }
 
 //Linear concat algorithm VS O(N^2) strcat()
 char* fast_strcat(char* dest, char* src)
 {
-     while (*dest) dest++;
-     while (*dest++ = *src++);
-     return --dest;
+	while (*dest) dest++;
+	while (*dest++ = *src++);
+	return --dest;
 }
 
 char *strptime_S(const char *buf, const char *fmt, struct tm *tm){
