@@ -1,4 +1,14 @@
-#include <logDecoder.h>
+#include "globals.h"
+#include "logDecoderClass.h"
+
+std::vector<class parameterInfo*> *ATP_parameterInfo = NULL;
+std::vector<class parameterInfo*> *ATO_parameterInfo = NULL;
+
+char ATP_EnumeratedLabels[MAX_ATP_LABELS][MAX_ATO_VALUES][MAX_SHORT_STRING_SIZE];
+char ATO_EnumeratedLabels[MAX_ATO_LABELS][MAX_ATO_VALUES][MAX_SHORT_STRING_SIZE];
+char ATP_StringLabels[MAX_ATP_PARAMS][MAX_STRING_SIZE];
+char ATO_StringLabels[MAX_ATO_PARAMS][MAX_STRING_SIZE];
+
 
 int determineATPorATO(int directoryPathLength, char* fileName);
 void initFileVec(std::vector<fileInfo*> &fileVec,int argc,char** argv);
@@ -42,7 +52,7 @@ int main(int argc,char** argv){
 
 	std::vector<fileInfo*> fileVec; 
 	initFileVec(fileVec,argc,argv);
-
+	
 	//Create an object for every file to parse
 	std::vector<class fileParsingInfo*> fileObjVec;
 	for(auto fileInfo : fileVec){
