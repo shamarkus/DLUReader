@@ -56,6 +56,7 @@ void parseLabelsConfigFile(char (*enumeratedLabels)[MAX_ATO_VALUES][MAX_SHORT_ST
 
 //Outperforms atoi() by 4x
 int fast_atoi(const char* str){
+	if(!(*str - '-')) return fast_atoi(++str) * (-1);
 	int val = 0;
 	while(*str){
 		val = val*10 + (*str++ - '0');

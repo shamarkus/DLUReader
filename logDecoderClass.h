@@ -64,8 +64,8 @@ class parameterInfo {
 	char* IntToInteger(long long value, char* str);
 	char* IntToDecimal(long long value, char* str);
 	char* IntToDecimalPrecision(long long value, char* str);
-	char* IntToDecimalUnit(long long value, char* str);
-	char* IntToDecimalPrecisionUnit(long long value, char* str);
+	//char* IntToDecimalUnit(long long value, char* str);
+	//char* IntToDecimalPrecisionUnit(long long value, char* str);
 	char* IntToDate(long long value, char* str);
 	char* IntToTime(long long value, char* str);
 

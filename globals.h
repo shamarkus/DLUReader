@@ -10,6 +10,7 @@
 #include <stdint.h>
 #include <time.h>
 #include <sys/resource.h>
+#include <chrono>
 
 class parameterInfo;
 
@@ -24,6 +25,8 @@ class parameterInfo;
 
 #define ATP_ENUMERATED_LABELS_FILENAME "configFiles/ATP_LABELS.txt"
 #define ATO_ENUMERATED_LABELS_FILENAME "configFiles/ATO_LABELS.txt"
+
+#define HEADER_TIME_SUFFIX ".000"
 
 #define MAX_ATP_LABELS 26
 #define MAX_ATO_LABELS 149

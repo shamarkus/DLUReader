@@ -76,7 +76,7 @@
 337	* VIO discrepancy	0	0	1	0	0	1	0	0	3	-1	-1	
 982	* Evac	0	0	1	0	0	1	0	0	3	-1	-1	
 988	* Passenger exchange	0	0	1	0	0	1	0	0	3	-1	-1	
-1083	* CC - CC Redundancy	0	0	1	0	0	1	0	0	3	-1	-1	
+1016	* CC - CC Redundancy	0	0	1	0	0	1	0	0	3	-1	-1	
 1017	* Distant to Local report	0	0	1	0	0	1	0	0	3	-1	-1	
 1083	* CC - CC Redundancy	0	0	1	0	0	1	0	0	3	-1	-1	
 1084	* Local to Distant report	0	0	1	0	0	1	0	0	3	-1	-1	
@@ -99,7 +99,7 @@
 194	* Inputs from NV	0	0	1	0	0	1	0	0	3	-1	-1	
 1421	* FSFB2 errors report	0	0	1	0	0	1	0	0	3	-1	-1	
 1445	* FSFB2 Future BSD dtb	0	0	1	0	0	1	0	0	3	-1	-1	
-1460	* Kinematics	0	0	1	0	0	1	0	0	3	-1	-1	
+125	* Kinematics	0	0	1	0	0	1	0	0	3	-1	-1	
 1468	* Slipe Slide	0	0	1	0	0	1	0	0	3	-1	-1	
 168	* Odometer inputs	0	0	1	0	0	1	0	0	3	-1	-1	
 150	* Calibration	0	0	1	0	0	1	0	0	3	-1	-1	
@@ -173,9 +173,9 @@
 95	TDCL	0	421	1	52	52	1	0	0	0	-1	-1	
 102	Train integrity	0	422	1	52	52	1	0	0	0	-1	-1	
 96	Odometer braked	0	423	1	52	52	1	0	0	0	-1	-1	
+98	Coupled by end 1	0	424	1	53	53	1	0	0	0	-1	-1	
 1625	Coupled by end 1	0	424	1	53	53	1	0	0	0	-1	-1	
-1625	Coupled by end 1	0	424	1	53	53	1	0	0	0	-1	-1	
-1626	Coupled by end 2	0	425	1	53	53	1	0	0	0	-1	-1	
+99	Coupled by end 2	0	425	1	53	53	1	0	0	0	-1	-1	
 1626	Coupled by end 2	0	425	1	53	53	1	0	0	0	-1	-1	
 105	PB applied	0	426	1	53	53	1	0	0	0	-1	-1	
 103	EB applied	0	427	1	53	53	1	0	0	0	-1	-1	
@@ -362,9 +362,9 @@
 459	VIO2 DSO2 6	0	1421	1	177	177	1	0	2	-1	-1	-1	
 460	VIO2 DSO2 7	0	1422	1	177	177	1	0	2	-1	-1	-1	
 461	VIO2 DSO2 8 	0	1423	1	177	177	1	0	2	-1	-1	-1	
+542	Cyclic task duration	0	1424	8	178	178	1	12	2	-1	-1	ms	
 1395	Cyclic task duration	0	1424	8	178	178	1	12	2	-1	-1	ms	
-1395	Cyclic task duration	0	1424	8	178	178	1	12	2	-1	-1	ms	
-1420	Max task duration	0	1432	8	179	179	1	12	2	-1	-1	ms	
+543	Max task duration	0	1432	8	179	179	1	12	2	-1	-1	ms	
 1420	Max task duration	0	1432	8	179	179	1	12	2	-1	-1	ms	
 566	VES code OK	0	1441	1	180	180	1	0	0	0	-1	-1	
 565	VIO code OK	0	1443	1	180	180	1	0	0	0	-1	-1	

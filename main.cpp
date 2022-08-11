@@ -48,6 +48,8 @@ void initFileVec(std::vector<fileInfo*> &fileVec,int argc,char** argv){
 
 int main(int argc,char** argv){
 	
+	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+
 	std::setlocale(LC_ALL,"en_US.UTF8");
 
 	std::vector<fileInfo*> fileVec; 
@@ -59,6 +61,9 @@ int main(int argc,char** argv){
 		class fileParsingInfo* fileObj = new fileParsingInfo(fileInfo,fileInfo->logType);
 		fileObjVec.push_back(fileObj);
 	}
+
+	std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
+	std::cout << "Time To Set Data Structs = " << (double) std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()/ 1000000 << "[s]" << std::endl;
 
 	//Potentially multi-thread this
 	for(auto fileObj : fileObjVec){

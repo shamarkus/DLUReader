@@ -14,7 +14,7 @@ fileParsingInfo::fileParsingInfo(struct fileInfo* fileInfoStruct, int logType) :
         else{
             parseLabelsConfigFile(ATP_EnumeratedLabels,logType,fileInfoStruct->directoryPath);
 
-            parseParameterConfigFile(this->parameterInfoVec,logType,fileInfoStruct->directoryPath,ATP_EnumeratedLabels,ATP_StringLabels);
+           parseParameterConfigFile(this->parameterInfoVec,logType,fileInfoStruct->directoryPath,ATP_EnumeratedLabels,ATP_StringLabels);
             ATP_parameterInfo = &(this->parameterInfoVec); 
         }
 	this->stringLabels = ATP_StringLabels;
@@ -67,6 +67,8 @@ void fileParsingInfo::parseFile(){
 	
 	printHeader(numParameters);
 	//Iterate over parameterInfoVec
+	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+
 	while((curChar = fgetc(this->fileInfoStruct->inputFile)) != EOF){
 		//Get Header
 		if(skipCharSize){
@@ -98,6 +100,9 @@ void fileParsingInfo::parseFile(){
 		headerCharSize = headerStruct->headerByteSize;
 		paramsCharSize = this->byteNumForLine;
 	}
+	std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
+
+	std::cout << "Time To Parse = " << (double) std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()/ 1000000 << "[s]" << std::endl;
 }
 
 void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams)[MAX_SHORT_STRING_SIZE]){
@@ -109,11 +114,13 @@ void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams
 
 	memcpy(binaryParam,curHeader + headerStruct->timeBitPos, headerStruct->timeBitSize);
 	binaryParam[headerStruct->timeBitSize] = '\0';
-	long long decimalParam = parameterObj->unsignedBinaryToDecimal(binaryParam);
 
+	long long decimalParam = parameterObj->unsignedBinaryToDecimal(binaryParam);
 	(parameterObj->*(parameterObj->intToString))(decimalParam,curParams[0]);
+
 	parameterObj = this->parameterInfoVec[1];
 	(parameterObj->*(parameterObj->intToString))(decimalParam,curParams[1]);
+	strcat(curParams[1],HEADER_TIME_SUFFIX);
 
 	
 	for(int i = 2; i < this->parameterInfoVec.size(); i++){
@@ -144,14 +151,14 @@ void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams
 
 void fileParsingInfo::printHeader(int numParameters){
 	for(int i = 0; i < numParameters; i++){
-		fprintf(this->fileInfoStruct->outputFile,"%s,",this->stringLabels[i]);
+		fprintf(this->fileInfoStruct->outputFile,"%s\t",this->stringLabels[i]);
 	}
 	fprintf(this->fileInfoStruct->outputFile,"\n");
 }
 
 void fileParsingInfo::printLine(char (*curParams)[MAX_SHORT_STRING_SIZE],int numParameters){
 	for(int i = 0; i < numParameters; i++){
-		fprintf(this->fileInfoStruct->outputFile,"%s,",curParams[i]);
+		fprintf(this->fileInfoStruct->outputFile,"%s\t",curParams[i]);
 	}
 	fprintf(this->fileInfoStruct->outputFile,"\n");
 }
@@ -201,15 +208,9 @@ parameterInfo::parameterInfo(char* line,char (*enumeratedLabels)[MAX_ATO_VALUES]
 		this->intToString = &parameterInfo::IntToTime;
 	}
 	else {
-		//displayType == DISPLAY_TYPE_DECIMAL
-		if(this->decimalCount != -1 && this->unit != NULL){
-			this->intToString = &parameterInfo::IntToDecimalPrecisionUnit;
-		}
-		else if(this->decimalCount != -1){
+		//this->displayType == DISPLAY_TYPE_DECIMAL
+		if(this->decimalCount != -1){
 			this->intToString = &parameterInfo::IntToDecimalPrecision;
-		}
-		else if(this->unit != NULL){
-			this->intToString = &parameterInfo::IntToDecimalUnit;
 		}
 		else if(this->quantum == 1){
 			this->intToString = &parameterInfo::IntToInteger;
@@ -230,11 +231,16 @@ parameterInfo::~parameterInfo(){
 //Accepts integer value, and gets corresponding string label
 char* parameterInfo::IntToEnumeratedLabel(long long value,char* str){
 	//printf("Val: %d, Str: %s \n",value,this->enumeratedLabels[this->enumeratedLabel][value]);
-	strcpy(str,this->enumeratedLabels[this->enumeratedLabel][value]);
+	if(*this->enumeratedLabels[this->enumeratedLabel][value] == '\0'){
+		sprintf(str,"? key : %d", value);
+	}
+	else{
+		strcpy(str,this->enumeratedLabels[this->enumeratedLabel][value]);
+	}
 	return str;
 }
 char* parameterInfo::IntToHexadecimal(long long value, char* str){
-	sprintf(str,"%x",value);
+	sprintf(str,"%0*x",this->bitCount >> 2,value);
 	return str;
 }
 char* parameterInfo::IntToInteger(long long value, char* str){
@@ -242,21 +248,11 @@ char* parameterInfo::IntToInteger(long long value, char* str){
 	return str;
 }
 char* parameterInfo::IntToDecimal(long long value, char* str){
-	//Adjust based on predetermined decimal precision
-	sprintf(str,"%0.*f",DECIMAL_PRECISION,value*this->quantum+this->offset);
+	sprintf(str,"%.0f",value*this->quantum+this->offset);
 	return str;
 }
 char* parameterInfo::IntToDecimalPrecision(long long value, char* str){
 	sprintf(str,"%0.*f",this->decimalCount,value*this->quantum+this->offset);
-	return str;
-}
-char* parameterInfo::IntToDecimalUnit(long long value, char* str){
-	//Adjust based on predetermined decimal precision
-	sprintf(str,"%0.*f %s",DECIMAL_PRECISION,value*this->quantum+this->offset,this->unit);
-	return str;
-}
-char* parameterInfo::IntToDecimalPrecisionUnit(long long value, char* str){
-	sprintf(str,"%0.*f %s",this->decimalCount,value*this->quantum+this->offset,this->unit);
 	return str;
 }
 char* parameterInfo::IntToDate(long long value, char* str){
