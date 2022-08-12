@@ -37,7 +37,7 @@ void initFileVec(std::vector<fileInfo*> &fileVec,int argc,char** argv){
 
 		strcpy(tempFileInfo->directoryPath,argv[1]);
 		strcpy(tempFileInfo->fileName,argv[i]);
-		tempFileInfo->inputFile = fopen(argv[i],"r");
+		tempFileInfo->inputFile = fopen(argv[i],"rb");
 		tempFileInfo->logType = determineATPorATO(strlen(argv[1]),argv[i]);
 
 		tempFileInfo->outputFile = fopen(strcat(argv[i],TXT_SUFFIX),"w");

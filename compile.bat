@@ -1,2 +1,2 @@
-C:\MinGW\bin\g++.exe %~dp0\main.cpp %~dp0\logDecoder.cpp -o %~dp0\DLUReader.exe
+C:\MinGW\bin\g++.exe -g %~dp0\main.cpp %~dp0\logDecoderClass.cpp %~dp0\helperFunctions.cpp -o %~dp0\DLUReader.exe
 pause

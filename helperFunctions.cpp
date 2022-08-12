@@ -73,9 +73,7 @@ char* fast_strcat(char* dest, const char* src)
 }
 
 char* epochTimeToDate(long long value, char* str,const char* fmt){
-	char epochString[MAX_SHORT_STRING_SIZE];
 
-	sprintf(epochString,"%llu",value - (long long) TIME_SINCE_1900_01_01);
 	time_t time = (time_t) (value - (long long) TIME_SINCE_1900_01_01);
 	struct tm* tm = gmtime(&time);
 	strftime(str,MAX_SHORT_STRING_SIZE,fmt,tm);

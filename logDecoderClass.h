@@ -21,6 +21,9 @@ static const char byteArray[MAX_CHARS_SIZE][MAX_BYTE_SIZE + 1] = {"00000000", "0
 "11101010", "11101011", "11101100", "11101101", "11101110", "11101111", "11110000", "11110001", "11110010", "11110011", "11110100", "11110101", "11110110", "11110111", "11111000", "11111001", 
 "11111010", "11111011", "11111100", "11111101", "11111110", "11111111"};
 
+static int ATONullishArray[ATO_BYTE_NUM_TO_SKIP] = {1,85,80,-1};
+static int ATPNullishArray[ATP_BYTE_NUM_TO_SKIP] = {1,85,80,-1};
+
 struct headerInfo {
 	size_t headerBitSize;
 	size_t headerByteSize;

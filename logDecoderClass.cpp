@@ -58,21 +58,31 @@ void fileParsingInfo::parseFile(){
 	char curParams[numParameters][MAX_SHORT_STRING_SIZE];	
 	char curLine[numLineBits + 1];
 	char curHeader[headerStruct->headerBitSize + 1];
+	char curSkipLine[MAX_SHORT_STRING_SIZE];
 	curLine[0] = '\0';
 	curHeader[0] = '\0';
 
 	char* headerP = curHeader;
 	char* lineP = curLine;
+	int* nullishP; 
+	int* nullishArrayP = (logType == ATO_NUM) ? ATONullishArray : ATPNullishArray;
 	int curChar;
 	
 	printHeader(numParameters);
 	//Iterate over parameterInfoVec
 	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 
-	while((curChar = fgetc(this->fileInfoStruct->inputFile)) != EOF){
+	while(curChar != EOF){
+		curChar = fgetc(this->fileInfoStruct->inputFile);
 		//Get Header
 		if(skipCharSize){
-		skipCharSize--;
+			if(*nullishP++ == curChar){
+				skipCharSize--;
+			}
+			else{
+				nullishP = nullishArrayP;
+				skipCharSize = this->byteNumToSkip;
+			}
 			continue;
 		}
 		else if(headerCharSize){
@@ -94,6 +104,7 @@ void fileParsingInfo::parseFile(){
 		memset(curLine,0,numLineBits);
 		headerP = curHeader;
 		lineP = curLine;
+		nullishP = nullishArrayP;
 
 		//Account for the current character - 1
 		skipCharSize = this->byteNumToSkip;
@@ -107,6 +118,7 @@ void fileParsingInfo::parseFile(){
 
 void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams)[MAX_SHORT_STRING_SIZE]){
 	//Get timestamp for first 2 params
+
 	struct headerInfo* headerStruct = &(this->headerInfoStruct);
 	char binaryParam[MAX_SHORT_STRING_SIZE];
 	char resultStr[MAX_SHORT_STRING_SIZE];
@@ -124,6 +136,7 @@ void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams
 
 	
 	for(int i = 2; i < this->parameterInfoVec.size(); i++){
+
 		parameterObj = this->parameterInfoVec[i];
 
 		if(parameterObj->getDisplayType() == DISPLAY_TYPE_BINARY){
@@ -136,7 +149,7 @@ void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams
 		}
 		
 		binaryParam[parameterObj->getBitCount()] = '\0';
-
+		//printf("%s\n",binaryParam);
 		if(parameterObj->getUnsignedInt() == 0){
 			decimalParam = parameterObj->unsignedBinaryToDecimal(binaryParam);
 		}
@@ -182,7 +195,11 @@ parameterInfo::parameterInfo(char* line,char (*enumeratedLabels)[MAX_ATO_VALUES]
 		this->unit = (char*) malloc(MAX_SHORT_STRING_SIZE);
 		strcpy(this->unit,unit);
 	}
-	else if(this->bitCount == DATE_TIME_BIT_COUNT){
+	else{
+		//do nothing
+	}
+
+	if(this->bitCount == DATE_TIME_BIT_COUNT){
 		this->bitCount = DATE_TIME_SHORT_BIT_COUNT;
 	}
 	else{
@@ -191,6 +208,9 @@ parameterInfo::parameterInfo(char* line,char (*enumeratedLabels)[MAX_ATO_VALUES]
 
 	if(this->firstBitPosition > INNER_HEADER_BIT_POS){
 		this->firstBitPosition += MAX_HEADER_BIT_SIZE;
+	}
+	else{
+		//do nothing
 	}
 
 	//Function declaration based on the above variables
@@ -230,9 +250,8 @@ parameterInfo::~parameterInfo(){
 
 //Accepts integer value, and gets corresponding string label
 char* parameterInfo::IntToEnumeratedLabel(long long value,char* str){
-	//printf("Val: %d, Str: %s \n",value,this->enumeratedLabels[this->enumeratedLabel][value]);
-	if(*this->enumeratedLabels[this->enumeratedLabel][value] == '\0'){
-		sprintf(str,"? key : %d", value);
+	if(value > MAX_ATO_VALUES || *this->enumeratedLabels[this->enumeratedLabel][value] == '\0'){
+		sprintf(str,"? key : %llu", value);
 	}
 	else{
 		strcpy(str,this->enumeratedLabels[this->enumeratedLabel][value]);
