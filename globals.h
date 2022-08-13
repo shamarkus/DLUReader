@@ -27,6 +27,7 @@ class parameterInfo;
 
 #define HEADER_TIME_SUFFIX ".000"
 
+#define YEARS_101_TIME 3187296000
 #define MAX_ATP_LABELS 26
 #define MAX_ATO_LABELS 149
 #define MAX_ATP_VALUES 99

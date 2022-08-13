@@ -75,8 +75,13 @@ char* fast_strcat(char* dest, const char* src)
 char* epochTimeToDate(long long value, char* str,const char* fmt){
 
 	time_t time = (time_t) (value - (long long) TIME_SINCE_1900_01_01);
+	if(time < 0){
+		time += (time_t) YEARS_101_TIME;
+	}
+
 	struct tm* tm = gmtime(&time);
 	strftime(str,MAX_SHORT_STRING_SIZE,fmt,tm);
+
 
 	return str;
 }
