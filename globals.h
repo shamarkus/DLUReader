@@ -27,7 +27,6 @@ class parameterInfo;
 
 #define HEADER_TIME_SUFFIX ".000"
 
-#define YEARS_101_TIME 3187296000
 #define MAX_ATP_LABELS 26
 #define MAX_ATO_LABELS 149
 #define MAX_ATP_VALUES 99
@@ -69,6 +68,9 @@ class parameterInfo;
 #define DATE_TIME_SHORT_BIT_COUNT 32
 #define TIME_SINCE_1900_01_01 2208988800
 
+#define        SECS_PER_HOUR        (60 * 60)
+#define        SECS_PER_DAY        (SECS_PER_HOUR * 24)
+
 extern std::vector<class parameterInfo*> *ATP_parameterInfo;
 extern std::vector<class parameterInfo*> *ATO_parameterInfo;
 
@@ -76,5 +78,7 @@ extern char ATP_EnumeratedLabels[MAX_ATP_LABELS][MAX_ATO_VALUES][MAX_SHORT_STRIN
 extern char ATO_EnumeratedLabels[MAX_ATO_LABELS][MAX_ATO_VALUES][MAX_SHORT_STRING_SIZE];
 extern char ATP_StringLabels[MAX_ATP_PARAMS][MAX_STRING_SIZE];
 extern char ATO_StringLabels[MAX_ATO_PARAMS][MAX_STRING_SIZE];
+
+extern struct tm __tm_buf;
 
 #endif

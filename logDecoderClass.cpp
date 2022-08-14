@@ -64,8 +64,8 @@ void fileParsingInfo::parseFile(){
 
 	char* headerP = curHeader;
 	char* lineP = curLine;
-	int* nullishP; 
-	int* nullishArrayP = (logType == ATO_NUM) ? ATONullishArray : ATPNullishArray;
+	int (*nullishP)[2];
+	int (*nullishArrayP)[2] = (logType == ATO_NUM) ? ATONullishArray : ATPNullishArray;
 	int curChar;
 	
 	printHeader(numParameters);
@@ -76,7 +76,7 @@ void fileParsingInfo::parseFile(){
 		curChar = fgetc(this->fileInfoStruct->inputFile);
 		//Get Header
 		if(skipCharSize){
-			if(*nullishP++ == curChar){
+			if(nullishP[this->byteNumToSkip-skipCharSize][0] == curChar || nullishP[this->byteNumToSkip-skipCharSize][1] == curChar){
 				skipCharSize--;
 			}
 			else{
@@ -136,7 +136,6 @@ void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams
 
 	
 	for(int i = 2; i < this->parameterInfoVec.size(); i++){
-
 		parameterObj = this->parameterInfoVec[i];
 
 		if(parameterObj->getDisplayType() == DISPLAY_TYPE_BINARY){
@@ -149,7 +148,6 @@ void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams
 		}
 		
 		binaryParam[parameterObj->getBitCount()] = '\0';
-		//printf("%s\n",binaryParam);
 		if(parameterObj->getUnsignedInt() == 0){
 			decimalParam = parameterObj->unsignedBinaryToDecimal(binaryParam);
 		}
