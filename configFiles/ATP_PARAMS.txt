@@ -1,5 +1,5 @@
-0	Date	0	0	32	0	3	1	0	4	-1	-1	-1	
-1	Time	0	0	32	0	3	1	0	5	-1	-1	-1	
+0	Date	0	0	64	0	3	1	0	4	-1	-1	-1	
+1	Time	0	0	64	0	3	1	0	5	-1	-1	-1	
 2	* Immobilisation	0	0	1	0	0	1	0	0	3	-1	-1	
 822	* Last version msg age	0	0	1	0	0	1	0	0	3	-1	-1	
 826	* Version report	0	0	1	0	0	1	0	0	3	-1	-1	

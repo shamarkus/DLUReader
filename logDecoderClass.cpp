@@ -55,7 +55,7 @@ void fileParsingInfo::parseFile(){
 	int headerCharSize = headerStruct->headerByteSize;
 	int skipCharSize = 0;
 
-	char curParams[numParameters][MAX_SHORT_STRING_SIZE];	
+	char curParams[numParameters][MAX_SHORT_STRING_SIZE + 1];	
 	char curLine[numLineBits + 1];
 	char curHeader[headerStruct->headerBitSize + 1];
 	char curSkipLine[MAX_SHORT_STRING_SIZE];
@@ -116,11 +116,10 @@ void fileParsingInfo::parseFile(){
 	std::cout << "Time To Parse = " << (double) std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()/ 1000000 << "[s]" << std::endl;
 }
 
-void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams)[MAX_SHORT_STRING_SIZE]){
+void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams)[MAX_SHORT_STRING_SIZE + 1]){
 	//Get timestamp for first 2 params
-
 	struct headerInfo* headerStruct = &(this->headerInfoStruct);
-	char binaryParam[MAX_SHORT_STRING_SIZE];
+	char binaryParam[MAX_SHORT_STRING_SIZE + 1];
 	char resultStr[MAX_SHORT_STRING_SIZE];
 	class parameterInfo* parameterObj = this->parameterInfoVec[0];
 
@@ -167,7 +166,7 @@ void fileParsingInfo::printHeader(int numParameters){
 	fprintf(this->fileInfoStruct->outputFile,"\n");
 }
 
-void fileParsingInfo::printLine(char (*curParams)[MAX_SHORT_STRING_SIZE],int numParameters){
+void fileParsingInfo::printLine(char (*curParams)[MAX_SHORT_STRING_SIZE + 1],int numParameters){
 	for(int i = 0; i < numParameters; i++){
 		fprintf(this->fileInfoStruct->outputFile,"%s\t",curParams[i]);
 	}
@@ -197,13 +196,6 @@ parameterInfo::parameterInfo(char* line,char (*enumeratedLabels)[MAX_ATO_VALUES]
 		//do nothing
 	}
 
-	if(this->bitCount == DATE_TIME_BIT_COUNT){
-		this->bitCount = DATE_TIME_SHORT_BIT_COUNT;
-	}
-	else{
-		//do nothing
-	}
-
 	if(this->firstBitPosition > INNER_HEADER_BIT_POS){
 		this->firstBitPosition += MAX_HEADER_BIT_SIZE;
 	}
@@ -223,7 +215,12 @@ parameterInfo::parameterInfo(char* line,char (*enumeratedLabels)[MAX_ATO_VALUES]
 		this->intToString = &parameterInfo::IntToDate;
 	}
 	else if(this->displayType == DISPLAY_TYPE_TIME){
-		this->intToString = &parameterInfo::IntToTime;
+		if(this->decimalCount != -1){
+			this->intToString = &parameterInfo::IntToDecimalTime;
+		}
+		else{
+			this->intToString = &parameterInfo::IntToTime;
+		}
 	}
 	else {
 		//this->displayType == DISPLAY_TYPE_DECIMAL
@@ -273,10 +270,15 @@ char* parameterInfo::IntToDecimalPrecision(long long value, char* str){
 	return str;
 }
 char* parameterInfo::IntToDate(long long value, char* str){
-	return epochTimeToDate(value,str,"%Y/%m/%d");
+	printf("%llu -> %llu\n",value,value >> 31);
+	return epochTimeToDate(value >> 32,str,"%Y/%m/%d");
 }
 char* parameterInfo::IntToTime(long long value, char* str){
-	return epochTimeToDate(value,str,"%H:%M:%S");
+	printf("%llu -> %llu\n",value,value >> 31);
+	return epochTimeToDate(value >> 32,str,"%H:%M:%S");
+}
+char* parameterInfo::IntToDecimalTime(long long value, char* str){
+	return convertToMillisecond(((value & 0xFFC00000) >> 22) - 8,epochTimeToDate(value >> 32,str,"%H:%M:%S"));
 }
 
 long long parameterInfo::unsignedBinaryToDecimal(const char* binaryStr){

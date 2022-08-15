@@ -76,7 +76,7 @@ char* fast_strcat(char* dest, const char* src)
 
 char* epochTimeToDate(long long value, char* str,const char* fmt){
 
-	time_t time = (time_t) (value - (long long) TIME_SINCE_1900_01_01);
+	time_t time = (value - (long long) TIME_SINCE_1900_01_01);
 	struct tm* tm;
 	if(time < 0){
 		tm = negativeEpochTimeToDate(value);
@@ -85,8 +85,6 @@ char* epochTimeToDate(long long value, char* str,const char* fmt){
 		tm = gmtime(&time);
 	}
 	strftime(str,MAX_SHORT_STRING_SIZE,fmt,tm);
-
-
 	return str;
 }
 
@@ -131,7 +129,12 @@ int isLeapYear(long long y){
 	return ((y) % 4 == 0 && ((y) % 100 != 0 || (y) % 400 == 0));
 }
 
+char* convertToMillisecond(long long ms, char* str){
+	char decimalStr[MAX_SHORT_STRING_SIZE];
 
+	sprintf(decimalStr,".%d", ms / 100);
 
+	return strcat(str,decimalStr);
+}
 
 
