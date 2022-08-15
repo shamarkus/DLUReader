@@ -14,13 +14,13 @@ int fast_atoi(const char* str);
 char* fast_strcat(char* dest, const char* src);
 
 
-char* epochTimeToDate(long long value, char* str,const char* fmt);
+char* epochTimeToDate(unsigned long long value, char* str,const char* fmt);
 
-struct tm* negativeEpochTimeToDate(long long time);
+struct tm* negativeEpochTimeToDate(unsigned long long time);
 
-int isLeapYear(long long y);
+int isLeapYear(unsigned long long y);
 
-char* convertToMillisecond(long long ms, char* str);
+char* convertToMillisecond(unsigned long long ms, char* str);
 
 const unsigned short int __mon_yday[2][13] = {
 /* Normal years.  */

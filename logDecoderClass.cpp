@@ -6,7 +6,7 @@ fileParsingInfo::fileParsingInfo(struct fileInfo* fileInfoStruct, int logType) :
     //If log is of ATP type
     if(logType == ATP_NUM){
         this->byteNumToSkip = ATP_BYTE_NUM_TO_SKIP - 1; 
-	this->byteNumForLine = MAX_ATP_PARAMS_BIT_SIZE/8;
+		this->byteNumForLine = MAX_ATP_PARAMS_BIT_SIZE/8;
 
         if(ATP_parameterInfo != NULL){
             this->parameterInfoVec = *ATP_parameterInfo;
@@ -41,6 +41,7 @@ fileParsingInfo::fileParsingInfo(struct fileInfo* fileInfoStruct, int logType) :
 
 //Destructor
 fileParsingInfo::~fileParsingInfo(){
+	fclose(this->fileInfoStruct->inputFile);
     fclose(this->fileInfoStruct->outputFile);
     free(this->fileInfoStruct);
 }
@@ -69,9 +70,8 @@ void fileParsingInfo::parseFile(){
 	int curChar;
 	
 	printHeader(numParameters);
-	//Iterate over parameterInfoVec
-	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 
+	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 	while(curChar != EOF){
 		curChar = fgetc(this->fileInfoStruct->inputFile);
 		//Get Header
@@ -83,6 +83,12 @@ void fileParsingInfo::parseFile(){
 				nullishP = nullishArrayP;
 				skipCharSize = this->byteNumToSkip;
 			}
+			printf("Skips: %d -",this->byteNumToSkip - skipCharSize);
+			int temp = this->byteNumToSkip - skipCharSize;
+			while(temp--){
+				printf("-");
+			}
+			printf(">%d\n",curChar);
 			continue;
 		}
 		else if(headerCharSize){
@@ -98,7 +104,6 @@ void fileParsingInfo::parseFile(){
 
 		parseLine(curHeader,curLine,curParams);
 		printLine(curParams,numParameters);
-
 		//Re-initialize -- Skip over nullish sequence
 		memset(curHeader,0,headerStruct->headerBitSize);
 		memset(curLine,0,numLineBits);
@@ -126,36 +131,21 @@ void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams
 	memcpy(binaryParam,curHeader + headerStruct->timeBitPos, headerStruct->timeBitSize);
 	binaryParam[headerStruct->timeBitSize] = '\0';
 
-	long long decimalParam = parameterObj->unsignedBinaryToDecimal(binaryParam);
-	(parameterObj->*(parameterObj->intToString))(decimalParam,curParams[0]);
+	(parameterObj->*(parameterObj->binaryToString))(binaryParam,curParams[0]);
 
 	parameterObj = this->parameterInfoVec[1];
-	(parameterObj->*(parameterObj->intToString))(decimalParam,curParams[1]);
+	(parameterObj->*(parameterObj->binaryToString))(binaryParam,curParams[1]);
 	strcat(curParams[1],HEADER_TIME_SUFFIX);
 
-	
+	printf("%s \n",curParams[1]);
 	for(int i = 2; i < this->parameterInfoVec.size(); i++){
 		parameterObj = this->parameterInfoVec[i];
 
-		if(parameterObj->getDisplayType() == DISPLAY_TYPE_BINARY){
-			memcpy(curParams[parameterObj->getParameterID()], curLine + parameterObj->getFirstBitPosition(), parameterObj->getBitCount());
-			curParams[parameterObj->getParameterID()][parameterObj->getBitCount()] = '\0';
-			continue;
-		}
-		else{
-			memcpy(binaryParam,curLine + parameterObj->getFirstBitPosition(), parameterObj->getBitCount());
-		}
+		memcpy(binaryParam,curLine + parameterObj->getFirstBitPosition(), parameterObj->getBitCount());
 		
 		binaryParam[parameterObj->getBitCount()] = '\0';
-		if(parameterObj->getUnsignedInt() == 0){
-			decimalParam = parameterObj->unsignedBinaryToDecimal(binaryParam);
-		}
-		else{
-			decimalParam = parameterObj->signedBinaryToDecimal(binaryParam);
-		}
 
-		(parameterObj->*(parameterObj->intToString))(decimalParam,curParams[parameterObj->getParameterID()]);
-
+		(parameterObj->*(parameterObj->binaryToString))(binaryParam,curParams[parameterObj->getParameterID()]);
 	}
 }
 
@@ -206,32 +196,50 @@ parameterInfo::parameterInfo(char* line,char (*enumeratedLabels)[MAX_ATO_VALUES]
 	//Function declaration based on the above variables
 	if(this->displayType == DISPLAY_TYPE_ENUMERATED){
 		this->enumeratedLabels = enumeratedLabels;
-		this->intToString = &parameterInfo::IntToEnumeratedLabel;
+		this->binaryToString = &parameterInfo::unsignedBinaryToEnumeratedLabelStr;
 	}
 	else if(this->displayType == DISPLAY_TYPE_HEXADECIMAL){
-		this->intToString = &parameterInfo::IntToHexadecimal;
+		this->binaryToString = &parameterInfo::unsignedBinaryToHexadecimalStr;
+	}
+	else if(this->displayType == DISPLAY_TYPE_HEXADECIMAL){
+		this->binaryToString = &parameterInfo::binaryToBinaryStr;
 	}
 	else if(this->displayType == DISPLAY_TYPE_DATE){
-		this->intToString = &parameterInfo::IntToDate;
+		this->binaryToString = &parameterInfo::unsignedBinaryToDateStr;
 	}
 	else if(this->displayType == DISPLAY_TYPE_TIME){
 		if(this->decimalCount != -1){
-			this->intToString = &parameterInfo::IntToDecimalTime;
+			this->binaryToString = &parameterInfo::unsignedBinaryToDecimalTimeStr;
 		}
 		else{
-			this->intToString = &parameterInfo::IntToTime;
+			this->binaryToString = &parameterInfo::unsignedBinaryToTimeStr;
 		}
 	}
 	else {
 		//this->displayType == DISPLAY_TYPE_DECIMAL
 		if(this->decimalCount != -1){
-			this->intToString = &parameterInfo::IntToDecimalPrecision;
+			if(this->unsignedInt == SIGNED_INTEGER){
+				this->binaryToString = &parameterInfo::signedBinaryToDecimalPrecisionStr;
+			}
+			else{
+				this->binaryToString = &parameterInfo::unsignedBinaryToDecimalPrecisionStr;
+			}
 		}
 		else if(this->quantum == 1){
-			this->intToString = &parameterInfo::IntToInteger;
+			if(this->unsignedInt == SIGNED_INTEGER){
+				this->binaryToString = &parameterInfo::signedBinaryToIntegerStr;
+			}
+			else{
+				this->binaryToString = &parameterInfo::unsignedBinaryToIntegerStr;
+			}
 		}
 		else{
-			this->intToString = &parameterInfo::IntToDecimal;
+			if(this->unsignedInt == SIGNED_INTEGER){
+				this->binaryToString = &parameterInfo::signedBinaryToDecimalStr;
+			}
+			else{
+				this->binaryToString = &parameterInfo::unsignedBinaryToDecimalStr;
+			}
 		}
 	}
 }
@@ -244,49 +252,42 @@ parameterInfo::~parameterInfo(){
 }
 
 //Accepts integer value, and gets corresponding string label
-char* parameterInfo::IntToEnumeratedLabel(long long value,char* str){
+void parameterInfo::IntToEnumeratedLabel(unsigned long long value,char* str){
 	if(value > MAX_ATO_VALUES || *this->enumeratedLabels[this->enumeratedLabel][value] == '\0'){
 		sprintf(str,"? key : %llu", value);
 	}
 	else{
 		strcpy(str,this->enumeratedLabels[this->enumeratedLabel][value]);
 	}
-	return str;
 }
-char* parameterInfo::IntToHexadecimal(long long value, char* str){
+void parameterInfo::IntToHexadecimal(unsigned long long value, char* str){
 	sprintf(str,"%0*x",this->bitCount >> 2,value);
-	return str;
 }
-char* parameterInfo::IntToInteger(long long value, char* str){
+void parameterInfo::IntToInteger(long long value, char* str){
 	sprintf(str,"%d",value+this->offset);
-	return str;
 }
-char* parameterInfo::IntToDecimal(long long value, char* str){
+void parameterInfo::IntToDecimal(long long value, char* str){
 	sprintf(str,"%.0f",value*this->quantum+this->offset);
-	return str;
 }
-char* parameterInfo::IntToDecimalPrecision(long long value, char* str){
+void parameterInfo::IntToDecimalPrecision(long long value, char* str){
 	sprintf(str,"%0.*f",this->decimalCount,value*this->quantum+this->offset);
-	return str;
 }
-char* parameterInfo::IntToDate(long long value, char* str){
-	printf("%llu -> %llu\n",value,value >> 31);
-	return epochTimeToDate(value >> 32,str,"%Y/%m/%d");
+void parameterInfo::IntToDate(unsigned long long value, char* str){
+	epochTimeToDate(value >> 32,str,"%Y/%m/%d");
 }
-char* parameterInfo::IntToTime(long long value, char* str){
-	printf("%llu -> %llu\n",value,value >> 31);
-	return epochTimeToDate(value >> 32,str,"%H:%M:%S");
+void parameterInfo::IntToTime(unsigned long long value, char* str){
+	epochTimeToDate(value >> 32,str,"%H:%M:%S");
 }
-char* parameterInfo::IntToDecimalTime(long long value, char* str){
-	return convertToMillisecond(((value & 0xFFC00000) >> 22) - 8,epochTimeToDate(value >> 32,str,"%H:%M:%S"));
+void parameterInfo::IntToDecimalTime(unsigned long long value, char* str){
+	convertToMillisecond(((value & 0xFFC00000) >> 22) - 8,epochTimeToDate(value >> 32,str,"%H:%M:%S"));
 }
 
-long long parameterInfo::unsignedBinaryToDecimal(const char* binaryStr){
+unsigned long long parameterInfo::unsignedBinaryToDecimal(const char* binaryStr){
 	int len = this->bitCount - 1;
-	long long val = 0;
+	unsigned long long val = 0;
 	while(*binaryStr){
 		if(*binaryStr++ - '0'){
-			val = val | ( (long long) 1 << len);
+			val = val | ( (unsigned long long) 1 << len);
 		}
 		len--;
 	}
@@ -308,7 +309,7 @@ long long parameterInfo::signedBinaryToDecimal(const char* binaryStr){
 		return val;
 	}
 	else{
-		return unsignedBinaryToDecimal(binaryStr);
+		return (long long) unsignedBinaryToDecimal(binaryStr);
 	}
 }
 
@@ -326,4 +327,41 @@ int parameterInfo::getBitCount(){
 }
 int parameterInfo::getDisplayType(){
 	return this->displayType;
+}
+
+void parameterInfo::unsignedBinaryToEnumeratedLabelStr(char* binaryStr,char* str){
+	IntToEnumeratedLabel(unsignedBinaryToDecimal(binaryStr),str);
+}
+void parameterInfo::unsignedBinaryToHexadecimalStr(char* binaryStr,char* str){
+	IntToHexadecimal(unsignedBinaryToDecimal(binaryStr),str);
+}
+void parameterInfo::unsignedBinaryToIntegerStr(char* binaryStr,char* str){
+	IntToInteger(unsignedBinaryToDecimal(binaryStr),str);
+}
+void parameterInfo::signedBinaryToIntegerStr(char* binaryStr,char* str){
+	IntToInteger(signedBinaryToDecimal(binaryStr),str);
+}
+void parameterInfo::unsignedBinaryToDecimalStr(char* binaryStr,char* str){
+	IntToDecimal(unsignedBinaryToDecimal(binaryStr),str);
+}
+void parameterInfo::signedBinaryToDecimalStr(char* binaryStr,char* str){
+	IntToDecimal(signedBinaryToDecimal(binaryStr),str);
+}
+void parameterInfo::unsignedBinaryToDecimalPrecisionStr(char* binaryStr,char* str){
+	IntToDecimalPrecision(unsignedBinaryToDecimal(binaryStr),str);
+}
+void parameterInfo::signedBinaryToDecimalPrecisionStr(char* binaryStr,char* str){
+	IntToDecimalPrecision(signedBinaryToDecimal(binaryStr),str);
+}
+void parameterInfo::binaryToBinaryStr(char* binaryStr,char* str){
+	memcpy(str,binaryStr,this->bitCount);
+}
+void parameterInfo::unsignedBinaryToDateStr(char* binaryStr,char* str){
+	IntToDate(unsignedBinaryToDecimal(binaryStr),str);
+}
+void parameterInfo::unsignedBinaryToTimeStr(char* binaryStr,char* str){
+	IntToTime(unsignedBinaryToDecimal(binaryStr),str);
+}
+void parameterInfo::unsignedBinaryToDecimalTimeStr(char* binaryStr,char* str){
+	IntToDecimalTime(unsignedBinaryToDecimal(binaryStr),str);
 }

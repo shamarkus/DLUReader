@@ -21,7 +21,7 @@ static const char byteArray[MAX_CHARS_SIZE][MAX_BYTE_SIZE + 1] = {"00000000", "0
 "11101010", "11101011", "11101100", "11101101", "11101110", "11101111", "11110000", "11110001", "11110010", "11110011", "11110100", "11110101", "11110110", "11110111", "11111000", "11111001", 
 "11111010", "11111011", "11111100", "11111101", "11111110", "11111111"};
 
-static int ATONullishArray[ATO_BYTE_NUM_TO_SKIP][2] = {{1,-1},{85,87},{80,-1},{-1}};
+static int ATONullishArray[ATO_BYTE_NUM_TO_SKIP][2] = {{1,-1},{85,87},{80,64},{-1}};
 static int ATPNullishArray[ATP_BYTE_NUM_TO_SKIP][2] = {{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},
 {0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},
 {0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},{0,-1},
@@ -79,28 +79,41 @@ class parameterInfo {
         char* unit = NULL;
         char (*enumeratedLabels)[MAX_ATO_VALUES][MAX_SHORT_STRING_SIZE];
     public:
-        char* (parameterInfo::*intToString)(long long, char*) = NULL;
+        void (parameterInfo::*binaryToString)(char*, char*) = NULL;
 
-	parameterInfo(char* line,char (*enumeratedLabels)[MAX_ATO_VALUES][MAX_SHORT_STRING_SIZE],char (*stringLabels)[MAX_STRING_SIZE]);
-	~parameterInfo();
+		parameterInfo(char* line,char (*enumeratedLabels)[MAX_ATO_VALUES][MAX_SHORT_STRING_SIZE],char (*stringLabels)[MAX_STRING_SIZE]);
+		~parameterInfo();
+	
+		void IntToEnumeratedLabel(unsigned long long value,char* str);
+		void IntToHexadecimal(unsigned long long value, char* str);
+		void IntToInteger(long long value, char* str);
+		void IntToDecimal(long long value, char* str);
+		void IntToDecimalPrecision(long long value, char* str);
+		void IntToDate(unsigned long long value, char* str);
+		void IntToTime(unsigned long long value, char* str);
+		void IntToDecimalTime(unsigned long long value, char* str);
 
-	char* IntToEnumeratedLabel(long long value,char* str);
-	char* IntToHexadecimal(long long value, char* str);
-	char* IntToInteger(long long value, char* str);
-	char* IntToDecimal(long long value, char* str);
-	char* IntToDecimalPrecision(long long value, char* str);
-	char* IntToDate(long long value, char* str);
-	char* IntToTime(long long value, char* str);
-	char* IntToDecimalTime(long long value, char* str);
-
-	long long unsignedBinaryToDecimal(const char* binaryStr);
-	long long signedBinaryToDecimal(const char* binaryStr);
-
-	int getParameterID();
-	int getUnsignedInt();
-	int getFirstBitPosition();
-	int getBitCount();
-	int getDisplayType();
+		void unsignedBinaryToEnumeratedLabelStr(char* binaryStr,char* str);
+		void unsignedBinaryToHexadecimalStr(char* binaryStr,char* str);
+		void unsignedBinaryToIntegerStr(char* binaryStr,char* str);
+		void signedBinaryToIntegerStr(char* binaryStr,char* str);
+		void unsignedBinaryToDecimalStr(char* binaryStr,char* str);
+		void signedBinaryToDecimalStr(char* binaryStr,char* str);
+		void unsignedBinaryToDecimalPrecisionStr(char* binaryStr,char* str);
+		void signedBinaryToDecimalPrecisionStr(char* binaryStr,char* str);
+		void binaryToBinaryStr(char* binaryStr,char* str);
+		void unsignedBinaryToDateStr(char* binaryStr,char* str);
+		void unsignedBinaryToTimeStr(char* binaryStr,char* str);
+		void unsignedBinaryToDecimalTimeStr(char* binaryStr,char* str);
+	
+		unsigned long long unsignedBinaryToDecimal(const char* binaryStr);
+		long long signedBinaryToDecimal(const char* binaryStr);
+	
+		int getParameterID();
+		int getUnsignedInt();
+		int getFirstBitPosition();
+		int getBitCount();
+		int getDisplayType();
 };
 
 class fileParsingInfo {
@@ -120,10 +133,10 @@ class fileParsingInfo {
         fileParsingInfo(struct fileInfo* fileInfoStruct, int logType);
         ~fileParsingInfo();
 
-	void parseFile();
-	void parseLine(char* curHeader, char* curLine, char (*curParams)[MAX_SHORT_STRING_SIZE + 1]);
-	void printHeader(int numParameters);
-	void printLine(char (*curParams)[MAX_SHORT_STRING_SIZE + 1],int numParameters);
+		void parseFile();
+		void parseLine(char* curHeader, char* curLine, char (*curParams)[MAX_SHORT_STRING_SIZE + 1]);
+		void printHeader(int numParameters);
+		void printLine(char (*curParams)[MAX_SHORT_STRING_SIZE + 1],int numParameters);
 };
 
 

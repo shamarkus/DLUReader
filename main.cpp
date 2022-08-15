@@ -40,7 +40,9 @@ void initFileVec(std::vector<fileInfo*> &fileVec,int argc,char** argv){
 		tempFileInfo->inputFile = fopen(argv[i],"rb");
 		tempFileInfo->logType = determineATPorATO(strlen(argv[1]),argv[i]);
 
-		tempFileInfo->outputFile = fopen(strcat(argv[i],TXT_SUFFIX),"w");
+		char filePath[MAX_STRING_SIZE];
+		sprintf(filePath,"%s%s",argv[i],TXT_SUFFIX);
+		tempFileInfo->outputFile = fopen(filePath,"w");
 
 		fileVec.push_back(tempFileInfo);
 	}
@@ -54,7 +56,6 @@ int main(int argc,char** argv){
 
 	std::vector<fileInfo*> fileVec; 
 	initFileVec(fileVec,argc,argv);
-	
 	//Create an object for every file to parse
 	std::vector<class fileParsingInfo*> fileObjVec;
 	for(auto fileInfo : fileVec){
@@ -66,7 +67,9 @@ int main(int argc,char** argv){
 	std::cout << "Time To Set Data Structs = " << (double) std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()/ 1000000 << "[s]" << std::endl;
 
 	//Potentially multi-thread this
+	int i = 1;
 	for(auto fileObj : fileObjVec){
+		printf("File Number : %d\n",i++);
 		fileObj->parseFile();
 	}
 	
