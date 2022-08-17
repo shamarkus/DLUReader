@@ -68,9 +68,14 @@ class parameterInfo;
 #define DATE_TIME_SHORT_BIT_COUNT 32
 #define TIME_SINCE_1900_01_01 2208988800
 
-#define        SECS_PER_HOUR        (60 * 60)
-#define        SECS_PER_DAY        (SECS_PER_HOUR * 24)
+#define SECS_PER_HOUR (60 * 60)
+#define SECS_PER_DAY (SECS_PER_HOUR * 24)
 
+#define ATO_VERIFIED_SET_1 0b10101010101010000
+#define ATO_VERIFIED_SET_2 0b10101011101010000	
+#define ATO_VERIFIED_SET_3 0b10101011101000000	
+
+#define ATP_VERIFIED_SET_1 0b0
 extern std::vector<class parameterInfo*> *ATP_parameterInfo;
 extern std::vector<class parameterInfo*> *ATO_parameterInfo;
 

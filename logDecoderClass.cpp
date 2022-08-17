@@ -65,8 +65,10 @@ void fileParsingInfo::parseFile(){
 
 	char* headerP = curHeader;
 	char* lineP = curLine;
-	int (*nullishP)[2];
-	int (*nullishArrayP)[2] = (logType == ATO_NUM) ? ATONullishArray : ATPNullishArray;
+	int (*skipSeq)(int,int&) = (logType == ATO_NUM) ? &skipSeqATO : &skipSeqATP;
+	int (*verifySeq)(int&) = (logType == ATO_NUM) ? &verifySeqATO : &verifySeqATP;
+	int skipSeqNum = 0;
+
 	int curChar;
 	
 	printHeader(numParameters);
@@ -74,47 +76,46 @@ void fileParsingInfo::parseFile(){
 	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 	while(curChar != EOF){
 		curChar = fgetc(this->fileInfoStruct->inputFile);
-		//Get Header
+
 		if(skipCharSize){
-			if(nullishP[this->byteNumToSkip-skipCharSize][0] == curChar || nullishP[this->byteNumToSkip-skipCharSize][1] == curChar){
+			int proceed = skipSeq(curChar,skipSeqNum);
+			if(proceed == 1){
 				skipCharSize--;
+				if(!skipCharSize && !verifySeq(skipSeqNum)){
+					skipCharSize = this->byteNumToSkip;
+					skipSeqNum = 0;
+				}
+			}
+			else if(proceed == 2){
+				skipCharSize = this->byteNumToSkip - 1;
 			}
 			else{
-				nullishP = nullishArrayP;
 				skipCharSize = this->byteNumToSkip;
 			}
-			printf("Skips: %d -",this->byteNumToSkip - skipCharSize);
-			int temp = this->byteNumToSkip - skipCharSize;
-			while(temp--){
-				printf("-");
-			}
-			printf(">%d\n",curChar);
-			continue;
 		}
 		else if(headerCharSize){
 			headerP = fast_strcat(headerP,byteArray[curChar]);	
 			headerCharSize--;
-			continue;
 		}
 		else if(paramsCharSize){
 			lineP = fast_strcat(lineP,byteArray[curChar]);
 			paramsCharSize--;
-			continue;
 		}
+		else{
+			parseLine(curHeader,curLine,curParams);
+			printLine(curParams,numParameters);
+			//Re-initialize -- Skip over nullish sequence
+			memset(curHeader,0,headerStruct->headerBitSize);
+			memset(curLine,0,numLineBits);
+			headerP = curHeader;
+			lineP = curLine;
+			skipSeqNum = 0;
 
-		parseLine(curHeader,curLine,curParams);
-		printLine(curParams,numParameters);
-		//Re-initialize -- Skip over nullish sequence
-		memset(curHeader,0,headerStruct->headerBitSize);
-		memset(curLine,0,numLineBits);
-		headerP = curHeader;
-		lineP = curLine;
-		nullishP = nullishArrayP;
-
-		//Account for the current character - 1
-		skipCharSize = this->byteNumToSkip;
-		headerCharSize = headerStruct->headerByteSize;
-		paramsCharSize = this->byteNumForLine;
+			//Account for the current character - 1
+			skipCharSize = this->byteNumToSkip;
+			headerCharSize = headerStruct->headerByteSize;
+			paramsCharSize = this->byteNumForLine;
+		}
 	}
 	std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
 

@@ -74,6 +74,51 @@ char* fast_strcat(char* dest, const char* src)
 	return --dest;
 }
 
+int skipSeqATO(int curChar,int& skipSeqNum){
+	if(!skipSeqNum && curChar == 0x1){
+		skipSeqNum = 0x1;
+		return 1;
+	}
+	else if(!skipSeqNum){
+		return 0;
+	}
+	else if(skipSeqNum && curChar == 0x1){
+		skipSeqNum = 0x1;
+		return 2;
+	}
+	else{
+		skipSeqNum = (skipSeqNum << 8) | curChar;
+		return 1;
+	}
+}
+
+int skipSeqATP(int curChar,int& skipSeqNum){
+	if(!curChar){
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
+
+int verifySeqATO(int& skipSeqNum){
+	if(skipSeqNum == ATO_VERIFIED_SET_1 || skipSeqNum == ATO_VERIFIED_SET_2 || skipSeqNum == ATO_VERIFIED_SET_3){
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
+
+int verifySeqATP(int& skipSeqNum){
+	if(skipSeqNum == ATP_VERIFIED_SET_1){
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
+
 char* epochTimeToDate(unsigned long long value, char* str,const char* fmt){
 
 	long long diff = (long long)(value - (long long) TIME_SINCE_1900_01_01);
