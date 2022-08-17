@@ -122,6 +122,8 @@ void fileParsingInfo::parseFile(){
 	std::cout << "Time To Parse = " << (double) std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()/ 1000000 << "[s]" << std::endl;
 }
 
+unsigned long long prevDate = 0;
+
 void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams)[MAX_SHORT_STRING_SIZE + 1]){
 	//Get timestamp for first 2 params
 	struct headerInfo* headerStruct = &(this->headerInfoStruct);
@@ -137,8 +139,14 @@ void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams
 	parameterObj = this->parameterInfoVec[1];
 	(parameterObj->*(parameterObj->binaryToString))(binaryParam,curParams[1]);
 	strcat(curParams[1],HEADER_TIME_SUFFIX);
+	
+	//Temporary
+	unsigned long long curDate = parameterObj->unsignedBinaryToDecimal(binaryParam);
+	if((curDate>>32) - prevDate > 1){
+		printf("CurDate:%s\n",curParams[1]);
+	}
+	prevDate = curDate >> 32;
 
-	printf("%s \n",curParams[1]);
 	for(int i = 2; i < this->parameterInfoVec.size(); i++){
 		parameterObj = this->parameterInfoVec[i];
 
