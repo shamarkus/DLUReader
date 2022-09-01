@@ -19,11 +19,11 @@ class parameterInfo;
 #define ATP_STR "80_"
 #define ATO_STR "c0_"
 
-#define ATP_PARAMETERS_FILENAME "configFiles\\ATP_PARAMS.txt"
-#define ATO_PARAMETERS_FILENAME "configFiles\\ATO_PARAMS.txt"
+#define ATP_PARAMETERS_FILENAME "configFiles/ATP_PARAMS.txt"
+#define ATO_PARAMETERS_FILENAME "configFiles/ATO_PARAMS.txt"
 
-#define ATP_ENUMERATED_LABELS_FILENAME "configFiles\\ATP_LABELS.txt"
-#define ATO_ENUMERATED_LABELS_FILENAME "configFiles\\ATO_LABELS.txt"
+#define ATP_ENUMERATED_LABELS_FILENAME "configFiles/ATP_LABELS.txt"
+#define ATO_ENUMERATED_LABELS_FILENAME "configFiles/ATO_LABELS.txt"
 
 #define HEADER_TIME_SUFFIX ".000"
 

@@ -77,27 +77,27 @@ char* fast_strcat(char* dest, const char* src)
 int skipSeqATO(int curChar,int& skipSeqNum){
 	if(!skipSeqNum && curChar == 0x1){
 		skipSeqNum = 0x1;
-		return 1;
+		return 2;
 	}
 	else if(!skipSeqNum){
 		return 0;
 	}
 	else if(skipSeqNum && curChar == 0x1){
 		skipSeqNum = 0x1;
-		return 2;
+		return -1;
 	}
 	else{
 		skipSeqNum = (skipSeqNum << 8) | curChar;
-		return 1;
+		return 2;
 	}
 }
 
 int skipSeqATP(int curChar,int& skipSeqNum){
 	if(!curChar){
-		return 1;
+		return 2;
 	}
 	else{
-		return 0;
+		return 1;
 	}
 }
 

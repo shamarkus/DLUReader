@@ -4,47 +4,51 @@
 
 fileParsingInfo::fileParsingInfo(struct fileInfo* fileInfoStruct, int logType) : fileInfoStruct(fileInfoStruct) {
     //If log is of ATP type
-    if(logType == ATP_NUM){
-        this->byteNumToSkip = ATP_BYTE_NUM_TO_SKIP - 1; 
+	if(logType == ATP_NUM){
+		this->byteNumToSkip = ATP_BYTE_NUM_TO_SKIP - 1; 
 		this->byteNumForLine = MAX_ATP_PARAMS_BIT_SIZE/8;
 
-        if(ATP_parameterInfo != NULL){
-            this->parameterInfoVec = *ATP_parameterInfo;
-        }
-        else{
-            parseLabelsConfigFile(ATP_EnumeratedLabels,logType,fileInfoStruct->directoryPath);
+		if(ATP_parameterInfo != NULL){
+		    this->parameterInfoVec = *ATP_parameterInfo;
+		}
+		else{
+			parseLabelsConfigFile(ATP_EnumeratedLabels,logType,fileInfoStruct->directoryPath);
 
-           parseParameterConfigFile(this->parameterInfoVec,logType,fileInfoStruct->directoryPath,ATP_EnumeratedLabels,ATP_StringLabels);
-            ATP_parameterInfo = &(this->parameterInfoVec); 
-        }
-	this->stringLabels = ATP_StringLabels;
-        this->enumeratedLabels = ATP_EnumeratedLabels;
-    }
-    //if log is of ATO type
-    else{
-        this->byteNumToSkip = ATO_BYTE_NUM_TO_SKIP - 1; 
-	this->byteNumForLine = MAX_ATO_PARAMS_BIT_SIZE/8;
+			parseParameterConfigFile(this->parameterInfoVec,logType,fileInfoStruct->directoryPath,ATP_EnumeratedLabels,ATP_StringLabels);
+			ATP_parameterInfo = &(this->parameterInfoVec); 
+		}
+		this->stringLabels = ATP_StringLabels;
+		this->enumeratedLabels = ATP_EnumeratedLabels;
+	}
+		//if log is of ATO type
+	else{
+		this->byteNumToSkip = ATO_BYTE_NUM_TO_SKIP - 1; 
+		this->byteNumForLine = MAX_ATO_PARAMS_BIT_SIZE/8;
 
-        if(ATO_parameterInfo != NULL){
-            this->parameterInfoVec = *ATO_parameterInfo;
-        }
-        else{
-            parseLabelsConfigFile(ATO_EnumeratedLabels,logType,fileInfoStruct->directoryPath);
+		if(ATO_parameterInfo != NULL){
+			this->parameterInfoVec = *ATO_parameterInfo;
+		}
+		else{
+			parseLabelsConfigFile(ATO_EnumeratedLabels,logType,fileInfoStruct->directoryPath);
 
-            parseParameterConfigFile(this->parameterInfoVec,logType,fileInfoStruct->directoryPath,ATO_EnumeratedLabels,ATO_StringLabels);
-            ATO_parameterInfo = &(this->parameterInfoVec); 
-        }
-	this->stringLabels = ATO_StringLabels;
-        this->enumeratedLabels = ATO_EnumeratedLabels;
-    }
+			parseParameterConfigFile(this->parameterInfoVec,logType,fileInfoStruct->directoryPath,ATO_EnumeratedLabels,ATO_StringLabels);
+			ATO_parameterInfo = &(this->parameterInfoVec); 
+		}
+		this->stringLabels = ATO_StringLabels;
+		this->enumeratedLabels = ATO_EnumeratedLabels;
+	}
 }
 
 //Destructor
 fileParsingInfo::~fileParsingInfo(){
 	fclose(this->fileInfoStruct->inputFile);
-    fclose(this->fileInfoStruct->outputFile);
-    free(this->fileInfoStruct);
+	fclose(this->fileInfoStruct->outputFile);
+	free(this->fileInfoStruct);
 }
+
+//Temporary
+unsigned long long prevDate;
+//Temporary
 
 void fileParsingInfo::parseFile(){
 	struct headerInfo* headerStruct = &(this->headerInfoStruct);
@@ -73,24 +77,23 @@ void fileParsingInfo::parseFile(){
 	
 	printHeader(numParameters);
 
+	prevDate = 0;
+
 	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 	while(curChar != EOF){
 		curChar = fgetc(this->fileInfoStruct->inputFile);
 
 		if(skipCharSize){
 			int proceed = skipSeq(curChar,skipSeqNum);
-			if(proceed == 1){
+			if(proceed == 2){
 				skipCharSize--;
 				if(!skipCharSize && !verifySeq(skipSeqNum)){
 					skipCharSize = this->byteNumToSkip;
 					skipSeqNum = 0;
 				}
 			}
-			else if(proceed == 2){
-				skipCharSize = this->byteNumToSkip - 1;
-			}
 			else{
-				skipCharSize = this->byteNumToSkip;
+				skipCharSize = this->byteNumToSkip + proceed;
 			}
 		}
 		else if(headerCharSize){
@@ -122,8 +125,6 @@ void fileParsingInfo::parseFile(){
 	std::cout << "Time To Parse = " << (double) std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()/ 1000000 << "[s]" << std::endl;
 }
 
-unsigned long long prevDate = 0;
-
 void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams)[MAX_SHORT_STRING_SIZE + 1]){
 	//Get timestamp for first 2 params
 	struct headerInfo* headerStruct = &(this->headerInfoStruct);
@@ -142,10 +143,11 @@ void fileParsingInfo::parseLine(char* curHeader, char* curLine, char (*curParams
 	
 	//Temporary
 	unsigned long long curDate = parameterObj->unsignedBinaryToDecimal(binaryParam);
-	if((curDate>>32) - prevDate > 1){
-		printf("CurDate:%s\n",curParams[1]);
+	if((curDate>>32) - prevDate > 1 && prevDate != 0){
+		printf("Gap right before %s\n",curParams[1]);
 	}
 	prevDate = curDate >> 32;
+	//Temporary
 
 	for(int i = 2; i < this->parameterInfoVec.size(); i++){
 		parameterObj = this->parameterInfoVec[i];
